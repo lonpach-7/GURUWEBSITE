@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MoxTechzo - Complete Landing Page</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #111111;
+      color: #ffffff;
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3, h4 {
+      color: #ffffff !important;
+      letter-spacing: 0.5px;
+    }
+
+    .subtitle {
+      font-size: 14px;
+      color: #6aa84f !important;
+      margin-bottom: 10px;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+
+    /* --- Animation Styles --- */
+    @keyframes slideUp {
+      from {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes slideInLeft {
+      from {
+        opacity: 0;
+        transform: translateX(-50px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    @keyframes slideInRight {
+      from {
+        opacity: 0;
+        transform: translateX(50px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    .animate-up {
+      opacity: 0;
+      animation: slideUp 1s ease forwards;
+    }
+
+    .animate-left {
+      opacity: 0;
+      animation: slideInLeft 1s ease forwards;
+    }
+
+    .animate-right {
+      opacity: 0;
+      animation: slideInRight 1s ease forwards;
+    }
+
+    /* === Features Section === */
+    .features-section {
+      padding: 80px 0;
+      position: relative;
+      overflow: hidden;
+      background-color: #1a1a1a;
+    }
+
+    .features-section .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .feature-grid {
+      display: flex;
+      gap: 25px;
+      justify-content: center;
+      position: relative;
+      z-index: 2;
+      flex-wrap: wrap;
+    }
+
+    .feature-card {
+      flex: 1;
+      max-width: 25%;
+      background-color: #242424;
+      padding: 30px;
+      border-radius: 10px;
+      text-align: center;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    .feature-card i {
+      font-size: 30px;
+      color: #6aa84f;
+    }
+
+    .feature-card h3 {
+      font-size: 18px;
+      font-weight: 700;
+      margin: 15px 0 10px;
+    }
+
+    .feature-card p {
+      font-size: 14px;
+      color: #cccccc;
+    }
+
+    /* === Testimonials Section === */
+    .testimonials-section {
+      padding: 80px 0;
+      background-color: #242424;
+    }
+
+    .testimonial-grid {
+      display: flex;
+      gap: 30px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .testimonial-card {
+      flex: 1;
+      max-width: 330px;
+      background-color: #111111;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+      transition: transform 0.3s ease;
+    }
+
+    .testimonial-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .testimonial-card p {
+      font-size: 15px;
+      margin-bottom: 0;
+      color: #cccccc;
+    }
+
+    .client-info {
+      display: flex;
+      align-items: center;
+      margin-top: 20px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .client-info img {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-right: 15px;
+    }
+
+    .client-details strong {
+      display: block;
+      font-size: 18px;
+      font-weight: 700;
+      color: #ffffff;
+    }
+
+    .client-details span {
+      font-size: 14px;
+      color: #6aa84f;
+      display: block;
+    }
+
+    /* === Stats Bar === */
+    .stats-bar {
+      background-color: #5b8e43;
+      padding: 30px 0;
+      border-bottom: 5px solid #6aa84f;
+    }
+
+    .stats-grid {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+      display: flex;
+      justify-content: space-around;
+      text-align: center;
+      flex-wrap: wrap;
+    }
+
+    .stat-item h2 {
+      font-size: 40px;
+      font-weight: 800;
+      margin: 0 0 5px;
+      line-height: 1;
+      color: #ffffff;
+    }
+
+    .stat-item p {
+      font-size: 16px;
+      font-weight: 600;
+      color: #ffffff;
+      margin: 0;
+    }
+
+    /* === Responsive === */
+    @media (max-width: 992px) {
+      .feature-card {
+        max-width: 45%;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .feature-card {
+        max-width: 100%;
+      }
+      .stat-item {
+        padding: 15px 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- FEATURES SECTION -->
+  <section class="features-section">
+    <div class="container">
+      <div class="section-header animate-up">
+        <div class="subtitle">WHY CHOOSE US</div>
+        <h2>Providing brilliant ideas for your business.</h2>
+      </div>
+
+      <div style="position: absolute; top: 25%; left: 0; width: 100%; height: 150px; background-image: url('data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 1000 150\'%3E%3Cpath fill=\'none\' stroke=\'%236aa84f\' stroke-width=\'3\' d=\'M0,75 C250,25 250,125 500,75 C750,25 750,125 1000,75\' /%3E%3C/svg%3E'); background-size: cover; opacity: 0.8; z-index: 1;"></div>
+
+      <div class="feature-grid">
+        <div class="feature-card animate-left">
+          <div style="width: 70px; height: 70px; background-color: #ffffff; border-radius: 50%; margin: 0 auto 20px; display: flex; justify-content: center; align-items: center;">
+            <i class="fas fa-globe"></i>
+          </div>
+          <h3>Expertise in Technology</h3>
+          <p>We provide cutting-edge solutions designed for modern business transformation.</p>
+        </div>
+
+        <div class="feature-card animate-up">
+          <div style="width: 70px; height: 70px; background-color: #ffffff; border-radius: 50%; margin: 0 auto 20px; display: flex; justify-content: center; align-items: center;">
+            <i class="fas fa-cogs"></i>
+          </div>
+          <h3>Tailored Solutions & Ideas</h3>
+          <p>Our solutions are customized to fit your specific business goals and challenges.</p>
+        </div>
+
+        <div class="feature-card animate-up">
+          <div style="width: 70px; height: 70px; background-color: #ffffff; border-radius: 50%; margin: 0 auto 20px; display: flex; justify-content: center; align-items: center;">
+            <i class="fas fa-shield-alt"></i>
+          </div>
+          <h3>Smart & Secure Systems</h3>
+          <p>We build secure platforms that protect your business and client data effectively.</p>
+        </div>
+
+        <div class="feature-card animate-right">
+          <div style="width: 70px; height: 70px; background-color: #ffffff; border-radius: 50%; margin: 0 auto 20px; display: flex; justify-content: center; align-items: center;">
+            <i class="fas fa-headset"></i>
+          </div>
+          <h3>24/7 Premium Client Support</h3>
+          <p>Our dedicated team ensures that you always have the help you need, anytime.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS SECTION -->
+  <section class="testimonials-section">
+    <div class="container">
+      <div class="section-header animate-up">
+        <div class="subtitle">TESTIMONIAL</div>
+        <h2>Client Feedback & Reviews</h2>
+      </div>
+
+      <div class="testimonial-grid">
+        <div class="testimonial-card animate-left">
+          <p>MoxTechzo’s web development team exceeded our expectations with a site that’s both stunning and functional.</p>
+          <div class="client-info">
+            <img src="https://i.imgur.com/9C9X4qL.png" alt="Alex Peterson">
+            <div class="client-details">
+              <strong>Alex Peterson</strong>
+              <span>Digital Innovations Agency</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card animate-up">
+          <p>The cybersecurity solutions implemented by MoxTechzo have made our operations more secure and reliable.</p>
+          <div class="client-info">
+            <img src="https://i.imgur.com/9C9X4qL.png" alt="Sarah Miller">
+            <div class="client-details">
+              <strong>Sarah Miller</strong>
+              <span>IT Manager, Global Enterprises Ltd.</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card animate-right">
+          <p>The ERP integration by MoxTechzo streamlined our financial workflows and improved overall accuracy.</p>
+          <div class="client-info">
+            <img src="https://i.imgur.com/9C9X4qL.png" alt="Elena Kowalski">
+            <div class="client-details">
+              <strong>Elena Kowalski</strong>
+              <span>CFO, Finance Dynamics Ltd.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS BAR -->
+  <section class="stats-bar">
+    <div class="container stats-grid">
+      <div class="stat-item animate-left">
+        <h2>61K+</h2>
+        <p>Projects Done</p>
+      </div>
+      <div class="stat-item animate-up">
+        <h2>8K+</h2>
+        <p>Happy Clients</p>
+      </div>
+      <div class="stat-item animate-up">
+        <h2>4.7</h2>
+        <p>Client Ratings</p>
+      </div>
+      <div class="stat-item animate-right">
+        <h2>77</h2>
+        <p>Award Winning</p>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    // Trigger animations on scroll
+    const animatedElements = document.querySelectorAll('.animate-up, .animate-left, .animate-right');
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.animationPlayState = 'running';
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.2 });
+
+    animatedElements.forEach(el => {
+      el.style.animationPlayState = 'paused';
+      observer.observe(el);
+    });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GuruByte</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body style="margin: 0; font-family: 'Poppins', sans-serif; background-color: #1a1a1a; color: #ffffff; line-height: 1.6;">
+
+  <section class="hero-section" style="
+      position: relative; 
+      width: 100%; 
+      min-height: 100vh; 
+      background: linear-gradient(135deg, #1a1a1a, #242424, #111111); 
+      display: flex; 
+      flex-direction: column;
+  ">
+      
+    <!-- Navbar -->
+    <nav class="main-nav" style="
+        display: flex; 
+        justify-content: space-between; 
+        align-items: center; 
+        padding: 20px 5%; 
+        width: 90%; 
+        position: fixed; 
+        top: 0;
+        left: 0;
+        z-index: 100;
+        background: transparent;
+        transition: all 0.3s ease;
+    ">
+      <a href="#" class="logo" style="font-size: 24px; font-weight: 700; color: #ffffff; text-decoration: none;">
+        <span style="color: #093780;">guru</span>byte
+      </a>
+
+      <div class="menu-toggle" id="mobile-menu">
+        <i class="fas fa-bars"></i>
+      </div>
+
+      <ul class="nav-links" style="list-style: none; display: flex; margin: 0; padding: 0;">
+        <li style="margin-left: 30px;"><a href="#" class="nav-link" style="color: #ffffff;" >Home</a></li>
+        <li style="margin-left: 30px;"><a href="#" class="nav-link" style="color: #ffffff;">About Us</a></li>
+
+        <li style="margin-left: 30px; position: relative;">
+          <a href="#" class="nav-link" id="services-toggle" style="color: #ffffff;">Services</a>
+          <div class="dropdown-content" id="services-dropdown">
+            <a href="#">App Development</a>
+            <a href="#">Web Design</a>
+            <a href="#">Consulting</a>
+          </div>
+        </li>
+
+        <li style="margin-left: 30px;"><a href="#" class="nav-link" style="color: #ffffff;">GuruAcademy</a></li>
+        <li style="margin-left: 30px;"><a href="#" class="nav-link" style="color: #ffffff;">Portfolio</a></li>
+        <li style="margin-left: 30px; position: relative;">
+          <a href="#" class="nav-link" id="pages-toggle" style="color: #ffffff;">Pages </a>
+          <div class="dropdown-content" id="pages-dropdown">
+            <a href="#">About</a>
+            <a href="#">Team</a>
+            <a href="#">Contact</a>
+          </div>
+        </li>
+      </ul>
+
+      <a href="#" class="cta-button" style="
+          background-color: #093780; 
+          color: #ffffff; 
+          border: none; 
+          padding: 10px 20px; 
+          border-radius: 5px; 
+          font-size: 16px; 
+          font-weight: 600; 
+          text-decoration: none;
+          box-shadow: 0 5px 15px rgba(9, 55, 128, 0.5);
+
+      ">Get Started</a>
+    </nav>
+
+    <!-- Hero content -->
+    <div class="hero-content" style="
+        flex-grow: 1; 
+        display: flex; 
+        align-items: center; 
+        padding: 100px 5% 0; 
+        position: relative; 
+        z-index: 5; 
+        max-width: 1200px; 
+        margin: 0 auto;
+        animation: fadeInUp 1.2s ease;
+    ">
+      <div class="left-content" style="flex: 1; max-width: 50%; padding-right: 40px;">
+        <div class="subtitle" style="font-size: 16px; color: #093780; margin-bottom: 10px; text-transform: uppercase; letter-spacing: 1px;">
+          gurubyte technologies
+        </div>
+        <h1 style="font-size: 4.5vw; font-weight: 700; line-height: 1.1; margin-bottom: 20px;">
+         Empowering Growth Through Technology and Education.
+        </h1>
+        <p style="font-size: 18px; line-height: 1.6; margin-bottom: 30px; opacity: 0.8; color: #cccccc;">
+         At GuruByte, we combine innovation and learning to create lasting impact.
+We build digital solutions that help businesses thrive — and train future innovators to do the same.
+Together, we’re shaping a smarter, more connected world.
+        </p>
+        <a href="#" class="discover-more-button" style="
+            background-color: #093780; 
+            color: #ffffff; 
+            border: none; 
+            padding: 15px 30px; 
+            border-radius: 5px; 
+            font-size: 18px; 
+            font-weight: 600; 
+            text-decoration: none;
+         box-shadow: 0 5px 25px rgba(9, 55, 128, 0.7), 0 0 15px rgba(9, 55, 128, 0.4);
+
+        ">Discover More</a>
+      </div>
+
+      <div class="right-content hero-image-wrapper" style="
+flex: 1; 
+          display: flex; 
+          justify-content: center; 
+          align-items: center; 
+          position: relative; 
+          max-width: 50%;
+         box-shadow: 0 0 50px rgba(9, 55, 128, 0.6), 0 0 20px rgba(9, 55, 128, 0.3);
+
+          border-radius: 15px; 
+          padding: 10px;
+          animation: float 4s ease-in-out infinite;
+      ">
+        <img src="images/tech.png" alt="Mobile Phone Mockup" class="hero-image" style="
+ width: 100%; height: auto; object-fit: contain; max-width: 650px; border-radius: 10px;">
+      </div>
+    </div>
+  </section>
+
+<!-- ABOUT SECTION -->
+<section class="about-section reveal fade-up" style="display: flex; justify-content: center; align-items: center; padding: 80px 5%; gap: 80px; max-width: 1200px; margin: 0 auto;">
+  <div class="about-image-container reveal slide-left" style="flex: 1; position: relative; min-width: 45%;">
+    <img src="images/who.jpg" alt="Team Working on Technology Project" style="width: 100%; height: auto; display: block; border-radius: 10px;">
+    <div class="revenue-boost-box" style="position: absolute; bottom: 0; left: 0; background-color: #2563EB; padding: 25px 35px; border-radius: 0 10px 0 0; color: #ffffff; text-align: center; font-weight: 700; box-shadow: 0 5px 20px rgba(37,99,235,0.5);">
+      <h2 style="font-size: 38px; margin: 0;">40%+</h2>
+      <p style="font-size: 16px; margin: 5px 0 0;">Efficiency Boost</p>
+    </div>
+  </div>
+
+  <div class="about-content reveal slide-right" style="flex: 1; min-width: 45%; padding: 20px 0;">
+    <div class="subtitle" style="font-size: 14px; color: #2563EB; margin-bottom: 15px; text-transform: uppercase; letter-spacing: 1px; font-weight: 600;">Who We Are</div>
+    <h2 style="font-size: 36px; font-weight: 700; line-height: 1.2; margin-bottom: 25px;">Delivering smart IT and AI-driven solutions to help businesses grow faster.</h2>
+    <p style="font-size: 17px; margin-bottom: 30px; color: #cccccc;">We are a forward-thinking technology team passionate about creating modern software solutions and automating business processes using artificial intelligence. Our mission is to empower organizations with tools that enhance productivity, efficiency, and innovation.</p>
+
+    <div class="feature-item reveal fade-up" style="display: flex; align-items: flex-start; margin-bottom: 25px; gap: 20px;">
+      <div class="feature-icon-wrapper" style="border: 2px solid #2563EB; border-radius: 50%; min-width: 60px; height: 60px; display: flex; justify-content: center; align-items: center; font-size: 28px; color: #2563EB;">
+        <i class="fas fa-desktop"></i>
+      </div>
+      <div class="feature-text">
+        <h3 style="font-size: 20px; margin: 0 0 5px;">Application Development</h3>
+        <p style="font-size: 15px; color: #cccccc;">We design and build high-performing web and mobile applications tailored to meet business goals with speed, scalability, and a great user experience.</p>
+      </div>
+    </div>
+
+    <div class="feature-item reveal fade-up" style="display: flex; align-items: flex-start; gap: 20px;">
+      <div class="feature-icon-wrapper" style="border: 2px solid #2563EB; border-radius: 50%; min-width: 60px; height: 60px; display: flex; justify-content: center; align-items: center; font-size: 28px; color: #2563EB;">
+        <i class="fas fa-robot"></i>
+      </div>
+      <div class="feature-text">
+        <h3 style="font-size: 20px; margin: 0 0 5px;">AI Automation</h3>
+        <p style="font-size: 15px; color: #cccccc;">We integrate AI tools to automate workflows, analyze data, and streamline operations — helping businesses save time and focus on growth.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- MVP SECTION -->
+<section class="mvp-section reveal fade-up" style="padding: 80px 5%; max-width: 1200px; margin: 0 auto; display: flex; gap: 30px; background-color: #1a1a1a;">
+  <div class="mvp-main-card reveal zoom-in" style="flex: 1; position: relative; border-radius: 10px; overflow: hidden; min-height: 600px;">
+    <img src="images/core.avif" alt="Developer with headphones" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;">
+    <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.1));"></div>
+    <div style="position: relative; z-index: 3; height: 100%; display: flex; flex-direction: column; justify-content: flex-end; padding: 40px;">
+      <div class="subtitle" style="color: #2563EB; font-size: 14px; margin-bottom: 10px;">OUR VALUE</div>
+      <h2 style="font-size: 38px; font-weight: 700; margin-bottom: 20px;">Your Digital Needs, Our Expert Solutions — GuruByte Delivers..</h2>
+      <p style="color: #cccccc; margin-bottom: 40px; font-size: 16px;">At GuruByte, we transform your digital needs into powerful solutions that accelerate growth and innovation.
+         From web and app development to AI automation and digital learning platforms — we don’t just build; we deliver excellence.</p>
+
+    </div>
+  </div>
+
+  <div class="mvp-side-cards" style="flex: 1; display: flex; flex-direction: column; gap: 30px;">
+    <div class="mvp-card mission reveal slide-left" style="padding: 30px; border-radius: 10px; background-color: #2563EB; color: #ffffff; box-shadow: 0 5px 20px rgba(37,99,235,0.5);">
+      <div class="subtitle" style="color: #fff; font-size: 14px; margin-bottom: 10px;">OUR MISSION</div>
+      <h3 style="font-size: 26px; font-weight: 600; margin-bottom: 15px;">IT solutions and empowering next generation</h3>
+      <p style="font-size: 15px; color: rgba(255,255,255,0.8);">To deliver world-class digital solutions while training and empowering the next generation of African tech innovators.</p>
+    </div>
+
+    <div class="mvp-card vision reveal slide-right" style="padding: 30px; border-radius: 10px; background-color: #242424; color: #ffffff;">
+      <div class="subtitle" style="color: #2563EB; font-size: 14px; margin-bottom: 10px;">OUR VISION</div>
+      <h3 style="font-size: 26px; font-weight: 600; margin-bottom: 15px;">Crafting Tomorrow and innovations</h3>
+      <p style="font-size: 15px; color: #cccccc;">To be Africa’s leading digital innovation hub — a space where businesses scale through tech and learners grow into global-ready professionals.</p>
+    </div>
+  </div>
+</section>
+<!-- SERVICES SECTION -->
+<section style="padding: 80px 5%; background-color: #0f0f0f; color: #fff; text-align: center;">
+  <div style="max-width: 1200px; margin: 0 auto;">
+    
+    <!-- Section Header -->
+    <div class="reveal fade-up" style="margin-bottom: 60px; opacity: 0; transform: translateY(40px); transition: all 0.8s ease;">
+      <div style="color: #2563eb; font-size: 14px; font-weight: 600; margin-bottom: 10px; letter-spacing: 1px; text-transform: uppercase;">
+        WHAT WE OFFER
+      </div>
+      <h2 style="font-size: 36px; font-weight: 800; margin: 0;">
+        Delivering IT solutions that enable you to work smarter.
+      </h2>
+    </div>
+
+    <!-- Flex Grid -->
+    <div id="services-flex" style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 25px;">
+
+      <!-- App Development -->
+      <div class="reveal fade-up" style="flex: 0 0 48%; background-color: #1a1a1a; border-radius: 12px; text-align: left; transition: all 0.3s ease; box-shadow: 0 4px 12px rgba(0,0,0,0.15); overflow: hidden; opacity: 0; transform: translateY(40px); transition: all 0.8s ease;">
+        <div style="position: relative; height: 220px;">
+          <img src="images/app.jpg" alt="App Development" style="width: 100%; height: 100%; object-fit: cover;">
+          <i class="fas fa-mobile-alt" style="font-size: 28px; color: #fff; background: #2563eb; padding: 15px; border-radius: 50%; position: absolute; top: 20px; right: 20px;"></i>
+        </div>
+        <div style="padding: 30px;">
+          <h3 style="font-size: 20px; font-weight: 700; margin-bottom: 10px;">App Development</h3>
+          <p style="color: #b3b3b3; font-size: 15px;">Creating responsive and intuitive mobile applications for iOS and Android platforms.</p>
+        </div>
+      </div>
+
+      <!-- Website Development -->
+      <div class="reveal fade-up" style="flex: 0 0 48%; background-color: #1a1a1a; border-radius: 12px; text-align: left; transition: all 0.3s ease; box-shadow: 0 4px 12px rgba(0,0,0,0.15); overflow: hidden; opacity: 0; transform: translateY(40px); transition: all 0.8s ease;">
+        <div style="position: relative; height: 220px;">
+          <img src="images/web.jpg" alt="Website Development" style="width: 100%; height: 100%; object-fit: cover;">
+          <i class="fas fa-globe" style="font-size: 28px; color: #fff; background: #2563eb; padding: 15px; border-radius: 50%; position: absolute; top: 20px; right: 20px;"></i>
+        </div>
+        <div style="padding: 30px;">
+          <h3 style="font-size: 20px; font-weight: 700; margin-bottom: 10px;">Website Development</h3>
+          <p style="color: #b3b3b3; font-size: 15px;">Designing and developing modern, fast, and SEO-friendly websites for all devices.</p>
+        </div>
+      </div>
+
+      <!-- AI Automation -->
+      <div class="reveal fade-up" style="flex: 0 0 48%; background-color: #1a1a1a; border-radius: 12px; text-align: left; transition: all 0.3s ease; box-shadow: 0 4px 12px rgba(0,0,0,0.15); overflow: hidden; opacity: 0; transform: translateY(40px); transition: all 0.8s ease;">
+        <div style="position: relative; height: 220px;">
+          <img src="images/ai.jpg" alt="AI Automation" style="width: 100%; height: 100%; object-fit: cover;">
+          <i class="fas fa-robot" style="font-size: 28px; color: #fff; background: #2563eb; padding: 15px; border-radius: 50%; position: absolute; top: 20px; right: 20px;"></i>
+        </div>
+        <div style="padding: 30px;">
+          <h3 style="font-size: 20px; font-weight: 700; margin-bottom: 10px;">AI Automation</h3>
+          <p style="color: #b3b3b3; font-size: 15px;">Integrating AI solutions to automate tasks, reduce costs, and boost productivity.</p>
+        </div>
+      </div>
+
+      <!-- Tutoring -->
+      <div class="reveal fade-up" style="flex: 0 0 48%; background-color: #1a1a1a; border-radius: 12px; text-align: left; transition: all 0.3s ease; box-shadow: 0 4px 12px rgba(0,0,0,0.15); overflow: hidden; opacity: 0; transform: translateY(40px); transition: all 0.8s ease;">
+        <div style="position: relative; height: 220px;">
+          <img src="images/tutor.jpg" alt="Tutoring" style="width: 100%; height: 100%; object-fit: cover;">
+          <i class="fas fa-graduation-cap" style="font-size: 28px; color: #fff; background: #2563eb; padding: 15px; border-radius: 50%; position: absolute; top: 20px; right: 20px;"></i>
+        </div>
+        <div style="padding: 30px;">
+          <h3 style="font-size: 20px; font-weight: 700; margin-bottom: 10px;">Tutoring</h3>
+          <p style="color: #b3b3b3; font-size: 15px;">Offering hands-on tech training, coding bootcamps, and skill development programs.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<section class="features-section">
+  <div class="container">
+    <div class="section-header animate-up">
+      <div class="subtitle" style="color: #2563EB;">WHY CHOOSE US</div>
+      <h2>Providing brilliant ideas for your business.</h2>
+    </div>
+
+      <div style="position: absolute; top: 25%; left: 0; width: 100%; height: 150px; background-image: url('data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000svg\' viewBox=\'0 0 1000 150\'%3E%3Cpath fill=\'none\' stroke=\'%236aa84f\' stroke-width=\'3\' d=\'M0,75 C250,25 250,125 500,75 C750,25 750,125 1000,75\' /%3E%3C/svg%3E'); background-size: cover; opacity: 0.8; z-index: 1;"></div>
+
+      <div class="feature-grid">
+        <div class="feature-card animate-left">
+          <div style="width: 70px; height: 70px; background-color: #ffffff; border-radius: 50%; margin: 0 auto 20px; display: flex; justify-content: center; align-items: center;">
+            <i class="fas fa-globe"></i>
+          </div>
+          <h3>Expertise in Technology</h3>
+          <p>We provide cutting-edge solutions designed for modern business transformation.</p>
+        </div>
+
+        <div class="feature-card animate-up" style="animation-delay: 0.2s;">
+          <div style="width: 70px; height: 70px; background-color: #ffffff; border-radius: 50%; margin: 0 auto 20px; display: flex; justify-content: center; align-items: center;">
+            <i class="fas fa-cogs"></i>
+          </div>
+          <h3>Tailored Solutions & Ideas</h3>
+          <p>Our solutions are customized to fit your specific business goals and challenges.</p>
+        </div>
+
+        <div class="feature-card animate-up" style="animation-delay: 0.4s;">
+          <div style="width: 70px; height: 70px; background-color: #ffffff; border-radius: 50%; margin: 0 auto 20px; display: flex; justify-content: center; align-items: center;">
+            <i class="fas fa-shield-alt"></i>
+          </div>
+          <h3>Smart & Secure Systems</h3>
+          <p>We build secure platforms that protect your business and client data effectively.</p>
+        </div>
+
+        <div class="feature-card animate-right" style="animation-delay: 0.6s;">
+          <div style="width: 70px; height: 70px; background-color: #ffffff; border-radius: 50%; margin: 0 auto 20px; display: flex; justify-content: center; align-items: center;">
+            <i class="fas fa-headset"></i>
+          </div>
+          <h3>24/7 Premium Client Support</h3>
+          <p>Our dedicated team ensures that you always have the help you need, anytime.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<!-- CORE SERVICES SECTION -->
+<section style="padding: 80px 5%; background-color: #0f0f0f; color: #fff; text-align: center;">
+  <div style="max-width: 1200px; margin: 0 auto;">
+
+    <!-- Header -->
+    <div class="reveal" style="margin-bottom: 50px; opacity:0; transform:translateY(50px); transition: all 0.8s ease;">
+      <div style="color: #2563eb; font-size: 14px; font-weight: 600; margin-bottom: 10px; letter-spacing: 1px; text-transform: uppercase;">
+        CORE SERVICES
+      </div>
+      <h2 style="font-size: 32px; font-weight: 800; margin: 0;">
+        Empowering Businesses with Smart Digital Solutions
+      </h2>
+    </div>
+
+    <!-- Grid -->
+    <div style="
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 25px;
+      justify-content: center;
+    ">
+
+      <!-- Card 1 -->
+      <div class="reveal" style="background-color: #1a1a1a; border-radius: 12px; padding: 25px 20px;
+        text-align: left; min-height: 160px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        transition: transform 0.3s ease; opacity:0; transform:translateY(50px); transition: all 0.8s ease;">
+        <i class="fas fa-robot" style="font-size: 28px; color: #2563eb; margin-bottom: 10px;"></i>
+        <h3 style="font-size: 18px; font-weight: 700; margin-bottom: 8px;">AI Automation</h3>
+        <p style="color: #b3b3b3; font-size: 14px;">Streamline workflows and improve efficiency with intelligent automation.</p>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="reveal" style="background-color: #1a1a1a; border-radius: 12px; padding: 25px 20px;
+        text-align: left; min-height: 160px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        transition: transform 0.3s ease; opacity:0; transform:translateY(50px); transition: all 0.8s ease;">
+        <i class="fas fa-laptop-code" style="font-size: 28px; color: #2563eb; margin-bottom: 10px;"></i>
+        <h3 style="font-size: 18px; font-weight: 700; margin-bottom: 8px;">Software Development</h3>
+        <p style="color: #b3b3b3; font-size: 14px;">Building fast, scalable, and responsive web & mobile applications.</p>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="reveal" style="background-color: #1a1a1a; border-radius: 12px; padding: 25px 20px;
+        text-align: left; min-height: 160px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        transition: transform 0.3s ease; opacity:0; transform:translateY(50px); transition: all 0.8s ease;">
+        <i class="fas fa-paint-brush" style="font-size: 28px; color: #2563eb; margin-bottom: 10px;"></i>
+        <h3 style="font-size: 18px; font-weight: 700; margin-bottom: 8px;">Graphic Design & UI/UX</h3>
+        <p style="color: #b3b3b3; font-size: 14px;">Designing visually appealing, user-friendly digital experiences.</p>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="reveal" style="background-color: #1a1a1a; border-radius: 12px; padding: 25px 20px;
+        text-align: left; min-height: 160px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        transition: transform 0.3s ease; opacity:0; transform:translateY(50px); transition: all 0.8s ease;">
+        <i class="fas fa-graduation-cap" style="font-size: 28px; color: #2563eb; margin-bottom: 10px;"></i>
+        <h3 style="font-size: 18px; font-weight: 700; margin-bottom: 8px;">Tutoring & Training</h3>
+        <p style="color: #b3b3b3; font-size: 14px;">Providing expert tech training and mentorship for future innovators.</p>
+      </div>
+
+      <!-- Card 5 -->
+      <div class="reveal" style="background-color: #1a1a1a; border-radius: 12px; padding: 25px 20px;
+        text-align: left; min-height: 160px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        transition: transform 0.3s ease; opacity:0; transform:translateY(50px); transition: all 0.8s ease;">
+        <i class="fas fa-chart-bar" style="font-size: 28px; color: #2563eb; margin-bottom: 10px;"></i>
+        <h3 style="font-size: 18px; font-weight: 700; margin-bottom: 8px;">Data Analysis</h3>
+        <p style="color: #b3b3b3; font-size: 14px;">Turning complex data into actionable business insights.</p>
+      </div>
+
+      <!-- Card 6 -->
+      <div class="reveal" style="background-color: #1a1a1a; border-radius: 12px; padding: 25px 20px;
+        text-align: left; min-height: 160px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        transition: transform 0.3s ease; opacity:0; transform:translateY(50px); transition: all 0.8s ease;">
+        <i class="fas fa-cloud" style="font-size: 28px; color: #2563eb; margin-bottom: 10px;"></i>
+        <h3 style="font-size: 18px; font-weight: 700; margin-bottom: 8px;">Cloud Integration</h3>
+        <p style="color: #b3b3b3; font-size: 14px;">Helping businesses scale with reliable cloud-based solutions.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+
+  <section class="services-cta">
+    <div class="container animate-up">
+      <h2>Ready to transform your business with technology?</h2>
+      <p>Contact our experts today for a free consultation and project roadmap.</p>
+      <a href="#" class="cta-button">Start Your Project</a>
+    </div>
+  </section>
+
+  <section class="stats-bar">
+    <div class="container stats-grid">
+      <div class="stat-item animate-left">
+        <h2>61K+</h2>
+        <p>Projects Done</p>
+      </div>
+      <div class="stat-item animate-up" style="animation-delay: 0.2s;">
+        <h2>8K+</h2>
+        <p>Happy Clients</p>
+      </div>
+      <div class="stat-item animate-up" style="animation-delay: 0.4s;">
+        <h2>4.7</h2>
+        <p>Client Ratings</p>
+      </div>
+      <div class="stat-item animate-right" style="animation-delay: 0.6s;">
+        <h2>77</h2>
+        <p>Award Winning</p>
+      </div>
+    </div>
+  </section>
+
+ <section class="testimonials-section" style="padding:80px 5%; background-color:#0f0f0f; color:#fff; text-align:center;">
+  <div class="container" style="max-width:1200px; margin:0 auto;">
+    
+    <div class="section-header animate-up" style="margin-bottom:50px;">
+      <div class="subtitle" style="color:#6366f1; font-weight:600; letter-spacing:1px;">TESTIMONIALS</div>
+      <h2 style="font-size:32px; font-weight:800;">What Our Clients Say About GuruByte</h2>
+    </div>
+
+    <div class="testimonial-grid" style="display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:25px; justify-content:center;">
+
+      <div class="testimonial-card animate-left" style="background-color:#1a1a1a; padding:25px 20px; border-radius:12px; text-align:left; box-shadow:0 4px 12px rgba(0,0,0,0.2);">
+        <p style="font-size:15px; color:#d1d5db;">GuruByte helped us transform our learning platform with a sleek UI and seamless student experience. Their tech team delivers with passion and precision.</p>
+        <div class="client-info" style="display:flex; align-items:center; margin-top:15px;">
+          <img src="images/p2.jpg" alt="James Mwangi" style="width:50px; height:50px; border-radius:50%; margin-right:12px;">
+          <div class="client-details">
+            <strong style="display:block;">James Mwangi</strong>
+            <span style="color:#9ca3af; font-size:14px;">Founder, EduLink Africa</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-card animate-up" style="background-color:#1a1a1a; padding:25px 20px; border-radius:12px; text-align:left; box-shadow:0 4px 12px rgba(0,0,0,0.2); animation-delay:0.2s;">
+        <p style="font-size:15px; color:#d1d5db;">Working with GuruByte on our company website was effortless. Their development and UX skills made our brand stand out online.</p>
+        <div class="client-info" style="display:flex; align-items:center; margin-top:15px;">
+          <img src="images/p1.jpg" alt="Grace Atieno" style="width:50px; height:50px; border-radius:50%; margin-right:12px;">
+          <div class="client-details">
+            <strong style="display:block;">Grace Atieno</strong>
+            <span style="color:#9ca3af; font-size:14px;">Marketing Manager, Nova Brands</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-card animate-right" style="background-color:#1a1a1a; padding:25px 20px; border-radius:12px; text-align:left; box-shadow:0 4px 12px rgba(0,0,0,0.2); animation-delay:0.4s;">
+        <p style="font-size:15px; color:#d1d5db;">Their AI-powered automation tool saved us hours every week. GuruByte is truly redefining how tech supports education and business.</p>
+        <div class="client-info" style="display:flex; align-items:center; margin-top:15px;">
+          <img src="images/p2.jpg" alt="Brian Ouma" style="width:50px; height:50px; border-radius:50%; margin-right:12px;">
+          <div class="client-details">
+            <strong style="display:block;">Brian Ouma</strong>
+            <span style="color:#9ca3af; font-size:14px;">Operations Lead, SmartWorks Ltd.</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<footer class="footer" style="background-color:#0b0b0b; color:#fff; padding:60px 5% 30px;">
+  <div class="container" style="max-width:1200px; margin:0 auto;">
+
+    <div class="footer-content" style="display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:40px; margin-bottom:40px;">
+      
+      <div class="footer-col animate-up">
+        <h4 style="font-size:20px; font-weight:700; color:#6366f1;">GuruByte</h4>
+        <p style="color:#d1d5db;">Empowering Africa’s digital transformation through world-class software development and tech education.</p>
+        <div class="social-links" style="margin-top:20px;">
+          <a href="#" style="color:#fff; margin-right:15px;"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" style="color:#fff; margin-right:15px;"><i class="fab fa-twitter"></i></a>
+          <a href="#" style="color:#fff; margin-right:15px;"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#" style="color:#fff;"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+
+      <div class="footer-col animate-up" style="animation-delay:0.2s;">
+        <h4 style="font-size:18px; font-weight:700; color:#6366f1;">Quick Links</h4>
+        <ul style="list-style:none; padding:0; margin-top:10px;">
+          <li><a href="#" style="color:#d1d5db; text-decoration:none;">About Us</a></li>
+          <li><a href="#" style="color:#d1d5db; text-decoration:none;">Our Team</a></li>
+          <li><a href="#" style="color:#d1d5db; text-decoration:none;">Bootcamps</a></li>
+          <li><a href="#" style="color:#d1d5db; text-decoration:none;">Blog</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col animate-up" style="animation-delay:0.4s;">
+        <h4 style="font-size:18px; font-weight:700; color:#6366f1;">Services</h4>
+        <ul style="list-style:none; padding:0; margin-top:10px;">
+          <li><a href="#" style="color:#d1d5db; text-decoration:none;">Software Development</a></li>
+          <li><a href="#" style="color:#d1d5db; text-decoration:none;">UI/UX Design</a></li>
+          <li><a href="#" style="color:#d1d5db; text-decoration:none;">AI Automation</a></li>
+          <li><a href="#" style="color:#d1d5db; text-decoration:none;">Digital Training</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col animate-up" style="animation-delay:0.6s;">
+        <h4 style="font-size:18px; font-weight:700; color:#6366f1;">Contact Info</h4>
+        <p style="color:#d1d5db;">Nairobi, Kenya</p>
+        <p style="color:#d1d5db;">Email: <a href="mailto:info@gurubyte.com" style="color:#6366f1;">info@gurubyte.com</a></p>
+        <p style="color:#d1d5db;">Phone: +254 700 123 456</p>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom" style="border-top:1px solid #1f2937; padding-top:15px; text-align:center;">
+      <p style="color:#9ca3af;">&copy; 2025 GuruByte. All Rights Reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="script/script.js"></script>
+</body>
+</html>

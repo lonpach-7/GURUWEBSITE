@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MoxTechzo Sections with Slide-in Animations</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+<style>
+  body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #0f0f0f;
+    color: #fff;
+    margin: 0;
+    scroll-behavior: smooth;
+  }
+
+  /* --- ANIMATIONS --- */
+  @keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(40px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes slideInLeft {
+    from { opacity: 0; transform: translateX(-80px); }
+    to { opacity: 1; transform: translateX(0); }
+  }
+  @keyframes slideInRight {
+    from { opacity: 0; transform: translateX(80px); }
+    to { opacity: 1; transform: translateX(0); }
+  }
+  @keyframes zoomIn {
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
+  }
+  @keyframes floatIcon {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+  }
+
+  /* --- SCROLL REVEAL BASE --- */
+  .reveal { opacity: 0; transition: all 0.9s ease; }
+
+  /* --- ACTIVE STATES --- */
+  .reveal.active.fade-up { animation: fadeInUp 1s ease forwards; }
+  .reveal.active.slide-left { animation: slideInLeft 1s ease forwards; }
+  .reveal.active.slide-right { animation: slideInRight 1s ease forwards; }
+  .reveal.active.zoom-in { animation: zoomIn 1s ease forwards; }
+
+  /* --- HOVER EFFECTS --- */
+  .service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 25px rgba(106,168,79,0.4);
+    transition: all 0.4s ease;
+  }
+
+  .service-icon-float {
+    animation: floatIcon 3s ease-in-out infinite;
+  }
+
+  /* --- INTERACTIVE BOX GLOW --- */
+  .revenue-boost-box {
+    animation: zoomIn 1.2s ease forwards;
+  }
+</style>
+</head>
+<body>
+
+<!-- ABOUT SECTION -->
+<section class="about-section reveal fade-up" style="display: flex; justify-content: center; align-items: center; padding: 80px 5%; gap: 80px; max-width: 1200px; margin: 0 auto;">
+  <div class="about-image-container reveal slide-left" style="flex: 1; position: relative; min-width: 45%;">
+    <img src="https://i.imgur.com/gK4n0Q7.jpeg" alt="Business Woman" style="width: 100%; height: auto; display: block; border-radius: 10px;">
+    <div class="revenue-boost-box" style="position: absolute; bottom: 0; left: 0; background-color: #6aa84f; padding: 25px 35px; border-radius: 0 10px 0 0; color: #ffffff; text-align: center; font-weight: 700; box-shadow: 0 5px 20px rgba(106, 168, 79, 0.5);">
+      <h2 style="font-size: 38px; margin: 0;">40%+</h2>
+      <p style="font-size: 16px; margin: 5px 0 0;">Boost Revenue</p>
+    </div>
+  </div>
+
+  <div class="about-content reveal slide-right" style="flex: 1; min-width: 45%; padding: 20px 0;">
+    <div class="subtitle" style="font-size: 14px; color: #6aa84f; margin-bottom: 15px; text-transform: uppercase; letter-spacing: 1px; font-weight: 600;">WHO WE ARE</div>
+    <h2 style="font-size: 36px; font-weight: 700; line-height: 1.2; margin-bottom: 25px;">Delivering IT solutions that enable you to work smarter.</h2>
+    <p style="font-size: 17px; margin-bottom: 30px; color: #cccccc;">Ligula ornare non lobortis luctus volutpat mauris ut bibendum lorem rhoncus.</p>
+
+    <div class="feature-item reveal fade-up" style="display: flex; align-items: flex-start; margin-bottom: 25px; gap: 20px;">
+      <div class="feature-icon-wrapper" style="border: 2px solid #6aa84f; border-radius: 50%; min-width: 60px; height: 60px; display: flex; justify-content: center; align-items: center; font-size: 28px; color: #6aa84f;">
+        <i class="fas fa-desktop"></i>
+      </div>
+      <div class="feature-text">
+        <h3 style="font-size: 20px; margin: 0 0 5px;">Application Development</h3>
+        <p style="font-size: 15px; color: #cccccc;">Eros faucibus tortor duis elementum libero primis.</p>
+      </div>
+    </div>
+
+    <div class="feature-item reveal fade-up" style="display: flex; align-items: flex-start; gap: 20px;">
+      <div class="feature-icon-wrapper" style="border: 2px solid #6aa84f; border-radius: 50%; min-width: 60px; height: 60px; display: flex; justify-content: center; align-items: center; font-size: 28px; color: #6aa84f;">
+        <i class="fas fa-chart-line"></i>
+      </div>
+      <div class="feature-text">
+        <h3 style="font-size: 20px; margin: 0 0 5px;">Digital Marketing & Branding</h3>
+        <p style="font-size: 15px; color: #cccccc;">Eros faucibus tortor duis elementum libero primis.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MVP SECTION -->
+<section class="mvp-section reveal fade-up" style="padding: 80px 5%; max-width: 1200px; margin: 0 auto; display: flex; gap: 30px; background-color: #1a1a1a;">
+  <div class="mvp-main-card reveal zoom-in" style="flex: 1; position: relative; border-radius: 10px; overflow: hidden; min-height: 600px;">
+    <img src="https://i.imgur.com/xH8tO2s.jpeg" alt="Developer with headphones" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;">
+    <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.1));"></div>
+    <div style="position: relative; z-index: 3; height: 100%; display: flex; flex-direction: column; justify-content: flex-end; padding: 40px;">
+      <div class="subtitle" style="color: #6aa84f; font-size: 14px; margin-bottom: 10px;">OUR VALUE</div>
+      <h2 style="font-size: 38px; font-weight: 700; margin-bottom: 20px;">Your Digital Future, Our Expertise: MoxTechzo Delivers Excellence.</h2>
+      <p style="color: #cccccc; margin-bottom: 40px; font-size: 16px;">Curae felis aliquet enim quam hendrerit facilisis.</p>
+      <a href="#" style="border: 2px solid #6aa84f; color: #6aa84f; padding: 10px 25px; border-radius: 5px; text-decoration: none; font-weight: 600;">Discover More</a>
+    </div>
+  </div>
+
+  <div class="mvp-side-cards" style="flex: 1; display: flex; flex-direction: column; gap: 30px;">
+    <div class="mvp-card mission reveal slide-left" style="padding: 30px; border-radius: 10px; background-color: #6aa84f; color: #ffffff; box-shadow: 0 5px 20px rgba(106,168,79,0.5);">
+      <div class="subtitle" style="color: #fff; font-size: 14px; margin-bottom: 10px;">OUR MISSION</div>
+      <h3 style="font-size: 26px; font-weight: 600; margin-bottom: 15px;">Managed IT Mastery: Enhancing Operations with Expert Support</h3>
+      <p style="font-size: 15px; color: rgba(255,255,255,0.8);">Lectus quisque ac consequat himenaeos ut mattis arcu.</p>
+    </div>
+
+    <div class="mvp-card vision reveal slide-right" style="padding: 30px; border-radius: 10px; background-color: #242424; color: #ffffff;">
+      <div class="subtitle" style="color: #6aa84f; font-size: 14px; margin-bottom: 10px;">OUR VISION</div>
+      <h3 style="font-size: 26px; font-weight: 600; margin-bottom: 15px;">Crafting Tomorrow's Solutions: MoxTechzo's Web Development Insights</h3>
+      <p style="font-size: 15px; color: #cccccc;">Lectus quisque ac consequat himenaeos ut mattis arcu.</p>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES SECTION -->
+<section class="services-section reveal fade-up" style="padding: 80px 5%; background-color: #1a1a1a; max-width: 1200px; margin: 0 auto;">
+  <div class="section-header" style="text-align: center; margin-bottom: 50px;">
+    <div class="subtitle" style="font-size: 14px; color: #6aa84f; margin-bottom: 10px;">WHAT WE OFFER</div>
+    <h2 style="font-size: 38px; font-weight: 800;">Delivering IT solutions that enable you to work smarter.</h2>
+  </div>
+
+  <div class="service-grid" style="display: flex; gap: 25px; flex-wrap: wrap;">
+    <div class="service-card reveal zoom-in" style="flex: 1; background-color: #000; border-radius: 10px; overflow: hidden;">
+      <div class="service-image-box" style="height: 250px; position: relative;">
+        <img src="https://i.imgur.com/gK4n0Q7.jpeg" alt="Website Development" style="width: 100%; height: 100%; object-fit: cover;">
+        <div class="service-icon-float"><i class="fas fa-globe" style="font-size: 28px; background:#6aa84f; padding:15px; border-radius:50%; position:absolute; top:20px; right:20px;"></i></div>
+      </div>
+      <div style="padding: 30px;">
+        <h3 style="font-size: 20px; font-weight: 700;">Website Development</h3>
+        <p style="font-size: 15px; color: #ccc;">Conubia laoreet ullamcorper ridiculus eget erat libero.</p>
+      </div>
+    </div>
+
+    <div class="service-card reveal zoom-in" style="flex: 1; background-color: #000; border-radius: 10px; overflow: hidden;">
+      <div class="service-image-box" style="height: 250px; position: relative;">
+        <img src="https://i.imgur.com/lJ41s5s.jpeg" alt="Mobile App Development" style="width: 100%; height: 100%; object-fit: cover;">
+        <div class="service-icon-float"><i class="fas fa-mobile-alt" style="font-size: 28px; background:#6aa84f; padding:15px; border-radius:50%; position:absolute; top:20px; right:20px;"></i></div>
+      </div>
+      <div style="padding: 30px;">
+        <h3 style="font-size: 20px; font-weight: 700;">Mobile App Development</h3>
+        <p style="font-size: 15px; color: #ccc;">Conubia laoreet ullamcorper ridiculus eget erat libero.</p>
+      </div>
+    </div>
+
+    <div class="service-card reveal zoom-in" style="flex: 1; background-color: #000; border-radius: 10px; overflow: hidden;">
+      <div class="service-image-box" style="height: 250px; position: relative;">
+        <img src="https://i.imgur.com/uG5uKxR.jpeg" alt="Graphic Design" style="width: 100%; height: 100%; object-fit: cover;">
+        <div class="service-icon-float"><i class="fas fa-palette" style="font-size: 28px; background:#6aa84f; padding:15px; border-radius:50%; position:absolute; top:20px; right:20px;"></i></div>
+      </div>
+      <div style="padding: 30px;">
+        <h3 style="font-size: 20px; font-weight: 700;">Graphic Design</h3>
+        <p style="font-size: 15px; color: #ccc;">Conubia laoreet ullamcorper ridiculus eget erat libero.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  // Scroll reveal logic
+  const reveals = document.querySelectorAll('.reveal');
+  const revealOnScroll = () => {
+    for (let el of reveals) {
+      const windowHeight = window.innerHeight;
+      const revealTop = el.getBoundingClientRect().top;
+      if (revealTop < windowHeight - 100) {
+        el.classList.add('active');
+      }
+    }
+  };
+  window.addEventListener('scroll', revealOnScroll);
+  revealOnScroll();
+</script>
+
+</body>
+</html>
