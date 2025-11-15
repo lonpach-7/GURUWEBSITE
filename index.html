@@ -1,516 +1,1333 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>GuruByte</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body style="margin: 0; font-family: 'Poppins', sans-serif; background-color: #1a1a1a; color: #ffffff; line-height: 1.6;">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GuruByte - Empowering Growth</title>
+    <!-- Poppins Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Combined Stylesheet -->
+    <style>
+/* ==========================================================================
+   STREAMLINED STYLES FOR GURUBYTE LANDING PAGE
+   ========================================================================== */
 
-  <section class="hero-section" style="
-      position: relative; 
-      width: 100%; 
-      min-height: 100vh; 
-      background: linear-gradient(135deg, #1a1a1a, #242424, #111111); 
-      display: flex; 
-      flex-direction: column;
-  ">
-      
-    <!-- Navbar -->
-    <nav class="main-nav" style="
-        display: flex; 
-        justify-content: space-between; 
-        align-items: center; 
-        padding: 20px 5%; 
-        width: 90%; 
-        position: fixed; 
-        top: 0;
+/* -------------------------------------------------------------------------- */
+/* GLOBAL RESET & TYPOGRAPHY                               */
+/* -------------------------------------------------------------------------- */
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #0f0f0f;
+    color: #fff;
+    margin: 0;
+    line-height: 1.6;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+a {
+    color: #2563EB;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #3B82F6;
+}
+
+h1, h2, h3, h4 {
+    color: #ffffff; /* Enforcing primary element color */
+    letter-spacing: 0.5px;
+}
+
+.subtitle {
+    font-size: 14px;
+    color: #2563EB;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* -------------------------------------------------------------------------- */
+/* NAVIGATION & UTILITY ELEMENTS                        */
+/* -------------------------------------------------------------------------- */
+.main-nav {
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    padding: 20px 5%; 
+    width: 90%; 
+    position: fixed; 
+    top: 0;
+    left: 0;
+    z-index: 100;
+    background: transparent;
+    transition: all 0.3s ease;
+}
+
+.main-nav.sticky {
+    background: rgba(26, 26, 26, 0.95);
+    backdrop-filter: blur(8px);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 24px; 
+    font-weight: 700; 
+    color: #ffffff; 
+}
+
+.logo span {
+    color: #093780;
+}
+
+.nav-links {
+    list-style: none; 
+    display: flex; 
+    margin: 0; 
+    padding: 0;
+}
+.nav-links li {
+    margin-left: 30px;
+}
+.nav-link {
+    color: #ffffff;
+    transition: all 0.3s ease;
+}
+
+.nav-link:hover {
+    color: #093780;
+    border-bottom: 2px solid #093780;
+}
+
+/* Call-to-Action Button Styling */
+.cta-button, .discover-more-button {
+    background-color: #093780; 
+    color: #ffffff; 
+    border: none; 
+    border-radius: 5px; 
+    font-weight: 600; 
+    text-decoration: none;
+    box-shadow: 0 5px 15px rgba(9, 55, 128, 0.5);
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.cta-button {
+    padding: 10px 20px; 
+    font-size: 16px;
+}
+
+.discover-more-button {
+    padding: 15px 30px; 
+    font-size: 18px; 
+    box-shadow: 0 5px 25px rgba(9, 55, 128, 0.7), 0 0 15px rgba(9, 55, 128, 0.4);
+}
+
+.cta-button:hover, .discover-more-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 50px rgba(9, 55, 128, 0.6), 0 0 20px rgba(9, 55, 128, 0.3);
+}
+
+.menu-toggle {
+    display: none; 
+    font-size: 24px;
+    cursor: pointer;
+    color: #ffffff;
+}
+
+
+/* -------------------------------------------------------------------------- */
+/* SECTION STYLING                                */
+/* -------------------------------------------------------------------------- */
+
+.section-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+/* --- HERO --- */
+.hero-section {
+    position: relative; 
+    width: 100%; 
+    min-height: 100vh; 
+    background: linear-gradient(135deg, #1a1a1a, #242424, #111111); 
+    display: flex; 
+    flex-direction: column;
+}
+
+.hero-content {
+    flex-grow: 1; 
+    display: flex; 
+    align-items: center; 
+    padding: 150px 5% 0; 
+    position: relative; 
+    z-index: 5; 
+    max-width: 1200px; 
+    margin: 0 auto;
+    animation: fadeInUp 1.2s ease;
+}
+
+.hero-content .left-content {
+    flex: 1; 
+    max-width: 50%; 
+    padding-right: 40px;
+}
+
+.hero-content .left-content h1 {
+    font-size: 56px; 
+    font-weight: 700; 
+    line-height: 1.1; 
+    margin-bottom: 20px;
+}
+
+.hero-content .left-content p {
+    font-size: 18px; 
+    line-height: 1.6; 
+    margin-bottom: 30px; 
+    opacity: 0.8; 
+    color: #cccccc;
+}
+
+.hero-content .right-content {
+    flex: 1; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    position: relative; 
+    max-width: 50%;
+    box-shadow: 0 0 50px rgba(9, 55, 128, 0.6), 0 0 20px rgba(9, 55, 128, 0.3);
+    border-radius: 15px; 
+    padding: 10px;
+    animation: float 4s ease-in-out infinite;
+}
+
+.hero-content .right-content img {
+    width: 100%; 
+    height: auto; 
+    object-fit: contain; 
+    max-width: 650px; 
+    border-radius: 10px;
+}
+
+/* --- ABOUT --- */
+.about-section {
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    padding: 80px 5%; 
+    gap: 80px; 
+    max-width: 1200px; 
+    margin: 0 auto;
+}
+
+.about-image-container {
+    flex: 1; 
+    position: relative; 
+    min-width: 45%;
+}
+
+.about-image-container img {
+    width: 100%; 
+    height: auto; 
+    display: block; 
+    border-radius: 10px;
+}
+
+.revenue-boost-box {
+    position: absolute; 
+    bottom: 0; 
+    left: 0; 
+    background-color: #2563EB; 
+    padding: 25px 35px; 
+    border-radius: 0 10px 0 0; 
+    color: #ffffff; 
+    text-align: center; 
+    font-weight: 700; 
+    box-shadow: 0 5px 20px rgba(37,99,235,0.5);
+}
+
+.revenue-boost-box h2 {
+    font-size: 38px; 
+    margin: 0;
+}
+
+.revenue-boost-box p {
+    font-size: 16px; 
+    margin: 5px 0 0;
+}
+
+.about-content {
+    flex: 1; 
+    min-width: 45%; 
+    padding: 20px 0;
+}
+
+.feature-item {
+    display: flex; 
+    align-items: flex-start; 
+    margin-bottom: 25px; 
+    gap: 20px;
+}
+
+.feature-icon-wrapper {
+    border: 2px solid #2563EB; 
+    border-radius: 50%; 
+    min-width: 60px; 
+    height: 60px; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    font-size: 28px; 
+    color: #2563EB;
+}
+
+.feature-text h3 {
+    font-size: 20px; 
+    margin: 0 0 5px;
+}
+
+.feature-text p {
+    font-size: 15px; 
+    color: #cccccc;
+}
+
+/* --- MVP (Mission, Vision, Value) --- */
+.mvp-section {
+    padding: 80px 5%; 
+    max-width: 1200px; 
+    margin: 0 auto; 
+    display: flex; 
+    gap: 30px; 
+    background-color: #1a1a1a;
+}
+
+.mvp-main-card {
+    flex: 1; 
+    position: relative; 
+    border-radius: 10px; 
+    overflow: hidden; 
+    min-height: 600px;
+}
+
+.mvp-main-card img {
+    position: absolute; 
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover;
+}
+
+.mvp-main-card .overlay {
+    position: absolute; 
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    height: 100%; 
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.1));
+}
+
+.mvp-main-card .content-wrapper {
+    position: relative; 
+    z-index: 3; 
+    height: 100%; 
+    display: flex; 
+    flex-direction: column; 
+    justify-content: flex-end; 
+    padding: 40px;
+}
+
+.mvp-side-cards {
+    flex: 1; 
+    display: flex; 
+    flex-direction: column; 
+    gap: 30px;
+}
+
+.mvp-card {
+    padding: 30px; 
+    border-radius: 10px; 
+    color: #ffffff;
+}
+
+.mvp-card.mission {
+    background-color: #2563EB; 
+    box-shadow: 0 5px 20px rgba(37,99,235,0.5);
+}
+
+.mvp-card.vision {
+    background-color: #242424;
+}
+
+.mvp-card.mission .subtitle {
+    color: #fff;
+}
+
+/* --- SERVICES (4-card flex) --- */
+.services-container {
+    padding: 80px 5%; 
+    background-color: #0f0f0f; 
+    color: #fff; 
+    text-align: center;
+}
+
+#services-flex {
+    display: flex; 
+    flex-wrap: wrap; 
+    justify-content: space-between; 
+    gap: 25px;
+}
+
+#services-flex > div {
+    flex: 0 0 48%; /* Desktop: two columns */
+    background-color: #1a1a1a; 
+    border-radius: 12px; 
+    text-align: left; 
+    transition: all 0.3s ease; 
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15); 
+    overflow: hidden; 
+}
+
+#services-flex .image-wrapper {
+    position: relative; 
+    height: 220px;
+}
+
+#services-flex img {
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover;
+}
+
+#services-flex i {
+    font-size: 28px; 
+    color: #fff; 
+    background: #2563eb; 
+    padding: 15px; 
+    border-radius: 50%; 
+    position: absolute; 
+    top: 20px; 
+    right: 20px;
+}
+
+#services-flex .card-content {
+    padding: 30px;
+}
+
+/* --- CORE FEATURES (4-card grid) --- */
+.features-section {
+    padding: 80px 0;
+    position: relative;
+    overflow: hidden;
+    background-color: #1a1a1a;
+}
+
+.feature-grid {
+    display: flex;
+    gap: 25px;
+    justify-content: center;
+    position: relative;
+    z-index: 2;
+    flex-wrap: wrap;
+}
+
+.feature-card {
+    flex: 1;
+    max-width: 25%;
+    background-color: #242424;
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+
+.feature-card i {
+    font-size: 30px;
+    color: #2563EB;
+}
+
+/* Custom class for the circular icon wrapper in the Features section */
+.feature-icon-circle { 
+    width: 70px; 
+    height: 70px; 
+    background-color: #0f0f0f; 
+    border-radius: 50%; 
+    margin: 0 auto 20px; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+}
+
+/* --- CORE SERVICES (6-card grid) --- */
+.core-services-section {
+    padding: 80px 5%; 
+    background-color: #0f0f0f; 
+    color: #fff; 
+    text-align: center;
+}
+
+.core-services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    justify-content: center;
+}
+
+.core-services-grid .card {
+    background-color: #1a1a1a; 
+    border-radius: 12px; 
+    padding: 25px 20px;
+    text-align: left; 
+    min-height: 160px; 
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    transition: transform 0.3s ease; 
+}
+
+.core-services-grid i {
+    font-size: 28px; 
+    color: #2563eb; 
+    margin-bottom: 10px;
+}
+
+.core-services-grid p {
+    color: #b3b3b3; 
+    font-size: 14px;
+}
+
+/* --- CTA BAR --- */
+.services-cta {
+    background-color: #2563EB;
+    padding: 50px 0;
+    text-align: center;
+    border-top: 5px solid #1D4ED8;
+}
+
+.services-cta h2 {
+    color: #ffffff;
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+/* --- STATS BAR --- */
+.stats-bar {
+    background-color: #1D4ED8;
+    padding: 30px 0;
+    border-bottom: 5px solid #2563EB;
+}
+
+.stats-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    flex-wrap: wrap;
+}
+
+.stat-item h2 {
+    font-size: 40px;
+    font-weight: 800;
+    margin: 0 0 5px;
+    line-height: 1;
+    color: #ffffff;
+}
+
+/* --- TESTIMONIALS --- */
+.testimonials-section {
+    padding: 80px 0;
+    background-color: #0f0f0f;
+    color: #fff; 
+    text-align: center;
+}
+
+.testimonial-grid {
+    display: flex; 
+    gap: 25px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.testimonial-card {
+    flex: 1;
+    max-width: 330px;
+    background-color: #1a1a1a; 
+    padding: 25px 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease;
+    text-align: left;
+}
+
+.testimonial-card:hover {
+    transform: translateY(-5px);
+}
+
+.client-info {
+    display: flex;
+    align-items: center;
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+.client-info img {
+    width: 50px; 
+    height: 50px; 
+    border-radius: 50%; 
+    margin-right: 12px;
+}
+.client-details strong {
+    display: block;
+}
+.client-details span {
+    color:#9ca3af; 
+    font-size:14px;
+}
+
+/* --- FOOTER --- */
+.footer {
+    background-color: #0b0b0b;
+    padding: 60px 0 20px;
+    border-top: 3px solid #2563EB;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    padding-bottom: 40px;
+    max-width: 1200px; 
+    margin: 0 auto;
+    padding: 0 20px 40px;
+}
+
+.footer-col h4 {
+    font-size: 18px;
+    margin-bottom: 20px;
+    position: relative;
+    color: #2563EB;
+}
+
+.footer-col h4::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    height: 2px;
+    width: 50px;
+    background-color: #2563EB;
+}
+
+.social-links a {
+    display: inline-block;
+    margin-right: 15px;
+    font-size: 20px;
+    color: #fff;
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: #2563EB;
+}
+
+.footer-col ul {
+    list-style:none; 
+    padding:0; 
+    margin-top:10px;
+}
+
+.footer-col ul a {
+    color:#d1d5db; 
+    display: block;
+    padding: 3px 0;
+}
+
+.footer-bottom {
+    border-top:1px solid #1f2937; 
+    padding-top:15px; 
+    text-align:center;
+}
+
+.footer-bottom p {
+    color:#9ca3af;
+}
+
+/* -------------------------------------------------------------------------- */
+/* ANIMATIONS & SCROLL REVEAL                         */
+/* -------------------------------------------------------------------------- */
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(40px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+}
+@keyframes slideInLeft {
+    from { opacity: 0; transform: translateX(-80px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+@keyframes slideInRight {
+    from { opacity: 0; transform: translateX(80px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+@keyframes zoomIn {
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+/* Base class for elements waiting to be revealed */
+.reveal { opacity: 0; transition: all 0.9s ease; } 
+
+/* Active classes triggered by JavaScript */
+.reveal.active.fade-up { animation: fadeInUp 1s ease forwards; }
+.reveal.active.slide-left { animation: slideInLeft 1s ease forwards; }
+.reveal.active.slide-right { animation: slideInRight 1s ease forwards; }
+.reveal.active.zoom-in { animation: zoomIn 1s ease forwards; }
+
+
+/* -------------------------------------------------------------------------- */
+/* RESPONSIVE DESIGN (BREAKPOINTS)                      */
+/* -------------------------------------------------------------------------- */
+
+/* --- Medium Devices (992px) --- */
+@media (max-width: 992px) {
+    .feature-card {
+        max-width: 45%; 
+    }
+    .footer-content {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* --- Small Devices (768px) --- */
+@media (max-width: 768px) {
+    /* Navigation */
+    .menu-toggle {
+        display: block;
+    }
+    .nav-links {
+        display: none; 
+        flex-direction: column;
+        background-color: #111;
+        position: absolute;
+        top: 70px;
         left: 0;
-        z-index: 100;
-        background: transparent;
-        transition: all 0.3s ease;
-    ">
-      <a href="#" class="logo" style="font-size: 24px; font-weight: 700; color: #ffffff; text-decoration: none;">
-        <span style="color: #093780;">guru</span>byte
-      </a>
+        width: 100%;
+        text-align: center;
+        padding: 20px 0;
+        z-index: 9;
+    }
+    .nav-links.active {
+        display: flex;
+        animation: fadeIn 0.4s ease forwards;
+    }
+    .nav-links li {
+        margin: 15px 0;
+    }
+    .nav-links li a {
+        display: block;
+        padding: 10px 0;
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+    
+    /* Hero Section */
+    .hero-content {
+        flex-direction: column;
+        padding: 100px 5% 50px; 
+        text-align: center;
+    }
+    .hero-content .left-content,
+    .hero-content .right-content {
+        flex: 100%; 
+        max-width: 100%; 
+        padding-right: 0;
+        margin-bottom: 40px;
+    }
+    .hero-content .left-content h1 {
+        font-size: 38px; 
+        line-height: 1.2;
+    }
 
-      <div class="menu-toggle" id="mobile-menu">
-        <i class="fas fa-bars"></i>
-      </div>
+    /* About Section */
+    .about-section {
+        flex-direction: column;
+        gap: 40px;
+    }
+    .about-image-container,
+    .about-content {
+        min-width: 100%;
+    }
+    .revenue-boost-box {
+        position: static;
+        margin-top: 20px;
+        border-radius: 10px;
+    }
+    
+    /* MVP Section */
+    .mvp-section {
+        flex-direction: column;
+        gap: 30px;
+    }
+    .mvp-main-card,
+    .mvp-side-cards {
+        min-height: auto;
+    }
+    .mvp-main-card .content-wrapper {
+        min-height: 400px;
+    }
+    .mvp-main-card h2 {
+        font-size: 30px;
+    }
 
-      <ul class="nav-links" style="list-style: none; display: flex; margin: 0; padding: 0;">
-        <li style="margin-left: 30px;"><a href="index.html" class="nav-link" style="color: #ffffff;" >Home</a></li>
-        <li style="margin-left: 30px;"><a href="about.html" class="nav-link" style="color: #ffffff;">About Us</a></li>
-         <li style="margin-left: 30px;"><a href="service.html" class="nav-link" style="color: #ffffff;">services</a></li>
-        <li style="margin-left: 30px;"><a href="#" class="nav-link" style="color: #ffffff;">GuruAcademy</a></li>
-        <li style="margin-left: 30px;"><a href="portfolio.html" class="nav-link" style="color: #ffffff;">Portfolio</a></li>
-        <li style="margin-left: 30px;"><a href="contact.html" class="nav-link" style="color: #ffffff;">Contact</a></li>
-      </ul>
+    /* Services Section (4-card flex) */
+    #services-flex > div {
+        flex: 0 0 100%;
+    }
+}
 
-      <a href="#" class="cta-button" style="
-          background-color: #093780; 
-          color: #ffffff; 
-          border: none; 
-          padding: 10px 20px; 
-          border-radius: 5px; 
-          font-size: 16px; 
-          font-weight: 600; 
-          text-decoration: none;
-          box-shadow: 0 5px 15px rgba(9, 55, 128, 0.5);
+/* --- Extra Small Devices (600px) --- */
+@media (max-width: 600px) {
+    .feature-card {
+        max-width: 100%; 
+    }
+    .stat-item {
+        padding: 15px 0;
+        min-width: 50%;
+    }
+    .footer-content {
+        grid-template-columns: 1fr; 
+    }
+}
+    </style>
+</head>
+<body>
 
-      ">Get Started</a>
-    </nav>
+    <section class="hero-section">
+        
+        <!-- Navbar -->
+        <nav class="main-nav">
+            <a href="index.html" class="logo">
+                <span>guru</span>byte
+            </a>
 
-    <!-- Hero content -->
-    <div class="hero-content" style="
-        flex-grow: 1; 
-        display: flex; 
-        align-items: center; 
-        padding: 100px 5% 0; 
-        position: relative; 
-        z-index: 5; 
-        max-width: 1200px; 
-        margin: 0 auto;
-        animation: fadeInUp 1.2s ease;
-    ">
-      <div class="left-content" style="flex: 1; max-width: 50%; padding-right: 40px;">
-        <div class="subtitle" style="font-size: 16px; color: #093780; margin-bottom: 10px; text-transform: uppercase; letter-spacing: 1px;">
-          gurubyte technologies
+            <div class="menu-toggle" id="mobile-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+
+            <ul class="nav-links">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link">About Us</a></li>
+                <li><a href="service.html" class="nav-link">Services</a></li>
+                <li><a href="#" class="nav-link">GuruAcademy</a></li>
+                <li><a href="portfolio.html" class="nav-link">Portfolio</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+
+            <a href="#" class="cta-button">Get Started</a>
+        </nav>
+
+        <!-- Hero content -->
+        <div class="hero-content">
+            <div class="left-content">
+                <div class="subtitle">
+                    gurubyte technologies
+                </div>
+                <h1>
+                    Empowering Growth Through Technology and Education.
+                </h1>
+                <p>
+                    At GuruByte, we combine innovation and learning to create lasting impact. We build digital solutions that help businesses thrive — and train future innovators to do the same. Together, we’re shaping a smarter, more connected world.
+                </p>
+                <a href="#" class="discover-more-button">Discover More</a>
+            </div>
+
+            <div class="right-content hero-image-wrapper">
+                <img 
+                    src="images/tech.png" 
+                    onerror="this.onerror=null;this.src='https://placehold.co/600x400/1D4ED8/FFFFFF?text=Digital+Solutions+Mockup';" 
+                    alt="Mobile Phone Mockup" 
+                    class="hero-image">
+            </div>
         </div>
-        <h1 style="font-size: 4.5vw; font-weight: 700; line-height: 1.1; margin-bottom: 20px;">
-         Empowering Growth Through Technology and Education.
-        </h1>
-        <p style="font-size: 18px; line-height: 1.6; margin-bottom: 30px; opacity: 0.8; color: #cccccc;">
-         At GuruByte, we combine innovation and learning to create lasting impact.
-We build digital solutions that help businesses thrive — and train future innovators to do the same.
-Together, we’re shaping a smarter, more connected world.
-        </p>
-        <a href="#" class="discover-more-button" style="
-            background-color: #093780; 
-            color: #ffffff; 
-            border: none; 
-            padding: 15px 30px; 
-            border-radius: 5px; 
-            font-size: 18px; 
-            font-weight: 600; 
-            text-decoration: none;
-         box-shadow: 0 5px 25px rgba(9, 55, 128, 0.7), 0 0 15px rgba(9, 55, 128, 0.4);
-
-        ">Discover More</a>
-      </div>
-
-      <div class="right-content hero-image-wrapper" style="
-flex: 1; 
-          display: flex; 
-          justify-content: center; 
-          align-items: center; 
-          position: relative; 
-          max-width: 50%;
-         box-shadow: 0 0 50px rgba(9, 55, 128, 0.6), 0 0 20px rgba(9, 55, 128, 0.3);
-
-          border-radius: 15px; 
-          padding: 10px;
-          animation: float 4s ease-in-out infinite;
-      ">
-        <img src="images/tech.png" alt="Mobile Phone Mockup" class="hero-image" style="
- width: 100%; height: auto; object-fit: contain; max-width: 650px; border-radius: 10px;">
-      </div>
-    </div>
-  </section>
+    </section>
 
 <!-- ABOUT SECTION -->
-<section class="about-section reveal fade-up" style="display: flex; justify-content: center; align-items: center; padding: 80px 5%; gap: 80px; max-width: 1200px; margin: 0 auto;">
-  <div class="about-image-container reveal slide-left" style="flex: 1; position: relative; min-width: 45%;">
-    <img src="images/who.jpg" alt="Team Working on Technology Project" style="width: 100%; height: auto; display: block; border-radius: 10px;">
-    <div class="revenue-boost-box" style="position: absolute; bottom: 0; left: 0; background-color: #2563EB; padding: 25px 35px; border-radius: 0 10px 0 0; color: #ffffff; text-align: center; font-weight: 700; box-shadow: 0 5px 20px rgba(37,99,235,0.5);">
-      <h2 style="font-size: 38px; margin: 0;">40%+</h2>
-      <p style="font-size: 16px; margin: 5px 0 0;">Efficiency Boost</p>
-    </div>
-  </div>
-
-  <div class="about-content reveal slide-right" style="flex: 1; min-width: 45%; padding: 20px 0;">
-    <div class="subtitle" style="font-size: 14px; color: #2563EB; margin-bottom: 15px; text-transform: uppercase; letter-spacing: 1px; font-weight: 600;">Who We Are</div>
-    <h2 style="font-size: 36px; font-weight: 700; line-height: 1.2; margin-bottom: 25px;">Delivering smart IT and AI-driven solutions to help businesses grow faster.</h2>
-    <p style="font-size: 17px; margin-bottom: 30px; color: #cccccc;">We are a forward-thinking technology team passionate about creating modern software solutions and automating business processes using artificial intelligence. Our mission is to empower organizations with tools that enhance productivity, efficiency, and innovation.</p>
-
-    <div class="feature-item reveal fade-up" style="display: flex; align-items: flex-start; margin-bottom: 25px; gap: 20px;">
-      <div class="feature-icon-wrapper" style="border: 2px solid #2563EB; border-radius: 50%; min-width: 60px; height: 60px; display: flex; justify-content: center; align-items: center; font-size: 28px; color: #2563EB;">
-        <i class="fas fa-desktop"></i>
-      </div>
-      <div class="feature-text">
-        <h3 style="font-size: 20px; margin: 0 0 5px;">Application Development</h3>
-        <p style="font-size: 15px; color: #cccccc;">We design and build high-performing web and mobile applications tailored to meet business goals with speed, scalability, and a great user experience.</p>
-      </div>
+<section class="about-section reveal fade-up">
+    <div class="about-image-container reveal slide-left">
+        <img 
+            src="images/add.jpg" 
+            onerror="this.onerror=null;this.src='https://placehold.co/500x350/2563EB/FFFFFF?text=Team+Working';" 
+            alt="Team Working on Technology Project">
+        <div class="revenue-boost-box">
+            <h2>40%+</h2>
+            <p>Efficiency Boost</p>
+        </div>
     </div>
 
-    <div class="feature-item reveal fade-up" style="display: flex; align-items: flex-start; gap: 20px;">
-      <div class="feature-icon-wrapper" style="border: 2px solid #2563EB; border-radius: 50%; min-width: 60px; height: 60px; display: flex; justify-content: center; align-items: center; font-size: 28px; color: #2563EB;">
-        <i class="fas fa-robot"></i>
-      </div>
-      <div class="feature-text">
-        <h3 style="font-size: 20px; margin: 0 0 5px;">AI Automation</h3>
-        <p style="font-size: 15px; color: #cccccc;">We integrate AI tools to automate workflows, analyze data, and streamline operations — helping businesses save time and focus on growth.</p>
-      </div>
+    <div class="about-content reveal slide-right">
+        <div class="subtitle">Who We Are</div>
+        <h2>Delivering smart IT and AI-driven solutions to help businesses grow faster.</h2>
+        <p>We are a forward-thinking technology team passionate about creating modern software solutions and automating business processes using artificial intelligence. Our mission is to empower organizations with tools that enhance productivity, efficiency, and innovation.</p>
+
+        <div class="feature-item reveal fade-up">
+            <div class="feature-icon-wrapper">
+                <i class="fas fa-desktop"></i>
+            </div>
+            <div class="feature-text">
+                <h3>Application Development</h3>
+                <p>We design and build high-performing web and mobile applications tailored to meet business goals with speed, scalability, and a great user experience.</p>
+            </div>
+        </div>
+
+        <div class="feature-item reveal fade-up">
+            <div class="feature-icon-wrapper">
+                <i class="fas fa-robot"></i>
+            </div>
+            <div class="feature-text">
+                <h3>AI Automation</h3>
+                <p>We integrate AI tools to automate workflows, analyze data, and streamline operations — helping businesses save time and focus on growth.</p>
+            </div>
+        </div>
     </div>
-  </div>
 </section>
 
 
 <!-- MVP SECTION -->
-<section class="mvp-section reveal fade-up" style="padding: 80px 5%; max-width: 1200px; margin: 0 auto; display: flex; gap: 30px; background-color: #1a1a1a;">
-  <div class="mvp-main-card reveal zoom-in" style="flex: 1; position: relative; border-radius: 10px; overflow: hidden; min-height: 600px;">
-    <img src="images/core.avif" alt="Developer with headphones" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;">
-    <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.1));"></div>
-    <div style="position: relative; z-index: 3; height: 100%; display: flex; flex-direction: column; justify-content: flex-end; padding: 40px;">
-      <div class="subtitle" style="color: #2563EB; font-size: 14px; margin-bottom: 10px;">OUR VALUE</div>
-      <h2 style="font-size: 38px; font-weight: 700; margin-bottom: 20px;">Your Digital Needs, Our Expert Solutions — GuruByte Delivers..</h2>
-      <p style="color: #cccccc; margin-bottom: 40px; font-size: 16px;">At GuruByte, we transform your digital needs into powerful solutions that accelerate growth and innovation.
-         From web and app development to AI automation and digital learning platforms — we don’t just build; we deliver excellence.</p>
-
-    </div>
-  </div>
-
-  <div class="mvp-side-cards" style="flex: 1; display: flex; flex-direction: column; gap: 30px;">
-    <div class="mvp-card mission reveal slide-left" style="padding: 30px; border-radius: 10px; background-color: #2563EB; color: #ffffff; box-shadow: 0 5px 20px rgba(37,99,235,0.5);">
-      <div class="subtitle" style="color: #fff; font-size: 14px; margin-bottom: 10px;">OUR MISSION</div>
-      <h3 style="font-size: 26px; font-weight: 600; margin-bottom: 15px;">IT solutions and empowering next generation</h3>
-      <p style="font-size: 15px; color: rgba(255,255,255,0.8);">To deliver world-class digital solutions while training and empowering the next generation of African tech innovators.</p>
+<section class="mvp-section reveal fade-up">
+    <div class="mvp-main-card reveal zoom-in">
+        <img 
+            src="images/core.avif" 
+            onerror="this.onerror=null;this.src='https://placehold.co/600x800/242424/FFFFFF?text=Core+Value';" 
+            alt="Developer with headphones">
+        <div class="overlay"></div>
+        <div class="content-wrapper">
+            <div class="subtitle">OUR VALUE</div>
+            <h2>Your Digital Needs, Our Expert Solutions — GuruByte Delivers.</h2>
+            <p>At GuruByte, we transform your digital needs into powerful solutions that accelerate growth and innovation. From web and app development to AI automation and digital learning platforms — we don’t just build; we deliver excellence.</p>
+        </div>
     </div>
 
-    <div class="mvp-card vision reveal slide-right" style="padding: 30px; border-radius: 10px; background-color: #242424; color: #ffffff;">
-      <div class="subtitle" style="color: #2563EB; font-size: 14px; margin-bottom: 10px;">OUR VISION</div>
-      <h3 style="font-size: 26px; font-weight: 600; margin-bottom: 15px;">Crafting Tomorrow and innovations</h3>
-      <p style="font-size: 15px; color: #cccccc;">To be Africa’s leading digital innovation hub — a space where businesses scale through tech and learners grow into global-ready professionals.</p>
+    <div class="mvp-side-cards">
+        <div class="mvp-card mission reveal slide-left">
+            <div class="subtitle">OUR MISSION</div>
+            <h3>IT solutions and empowering next generation</h3>
+            <p>To deliver world-class digital solutions while training and empowering the next generation of African tech innovators.</p>
+        </div>
+
+        <div class="mvp-card vision reveal slide-right">
+            <div class="subtitle">OUR VISION</div>
+            <h3>Crafting Tomorrow and innovations</h3>
+            <p>To be Africa’s leading digital innovation hub — a space where businesses scale through tech and learners grow into global-ready professionals.</p>
+        </div>
     </div>
-  </div>
 </section>
+
 <!-- SERVICES SECTION -->
-<section style="padding: 80px 5%; background-color: #0f0f0f; color: #fff; text-align: center;">
-  <div style="max-width: 1200px; margin: 0 auto;">
-    
-    <!-- Section Header -->
-    <div class="reveal fade-up" style="margin-bottom: 60px; opacity: 0; transform: translateY(40px); transition: all 0.8s ease;">
-      <div style="color: #2563eb; font-size: 14px; font-weight: 600; margin-bottom: 10px; letter-spacing: 1px; text-transform: uppercase;">
-        WHAT WE OFFER
-      </div>
-      <h2 style="font-size: 36px; font-weight: 800; margin: 0;">
-        Delivering IT solutions that enable you to work smarter.
-      </h2>
+<section class="services-container">
+    <div class="container">
+        
+        <!-- Section Header -->
+        <div class="section-header reveal fade-up">
+            <div class="subtitle">
+                WHAT WE OFFER
+            </div>
+            <h2>
+                Delivering IT solutions that enable you to work smarter.
+            </h2>
+        </div>
+
+        <!-- Flex Grid -->
+        <div id="services-flex">
+
+            <!-- App Development -->
+            <div class="reveal fade-up">
+                <div class="image-wrapper">
+                    <img 
+                        src="images/app.jpg" 
+                        onerror="this.onerror=null;this.src='https://placehold.co/400x220/1D4ED8/FFFFFF?text=App+Dev';" 
+                        alt="App Development">
+                    <i class="fas fa-mobile-alt"></i>
+                </div>
+                <div class="card-content">
+                    <h3>App Development</h3>
+                    <p>Creating responsive and intuitive mobile applications for iOS and Android platforms.</p>
+                </div>
+            </div>
+
+            <!-- Website Development -->
+            <div class="reveal fade-up" style="animation-delay: 0.1s;">
+                <div class="image-wrapper">
+                    <img 
+                        src="images/web.jpg" 
+                        onerror="this.onerror=null;this.src='https://placehold.co/400x220/111111/FFFFFF?text=Web+Dev';" 
+                        alt="Website Development">
+                    <i class="fas fa-globe"></i>
+                </div>
+                <div class="card-content">
+                    <h3>Website Development</h3>
+                    <p>Designing and developing modern, fast, and SEO-friendly websites for all devices.</p>
+                </div>
+            </div>
+
+            <!-- AI Automation -->
+            <div class="reveal fade-up" style="animation-delay: 0.2s;">
+                <div class="image-wrapper">
+                    <img 
+                        src="images/ai.jpg" 
+                        onerror="this.onerror=null;this.src='https://placehold.co/400x220/2563EB/FFFFFF?text=AI+Automation';" 
+                        alt="AI Automation">
+                    <i class="fas fa-robot"></i>
+                </div>
+                <div class="card-content">
+                    <h3>AI Automation</h3>
+                    <p>Integrating AI solutions to automate tasks, reduce costs, and boost productivity.</p>
+                </div>
+            </div>
+
+            <!-- Tutoring -->
+            <div class="reveal fade-up" style="animation-delay: 0.3s;">
+                <div class="image-wrapper">
+                    <img 
+                        src="images/tutor.jpg" 
+                        onerror="this.onerror=null;this.src='https://placehold.co/400x220/093780/FFFFFF?text=Tutoring';" 
+                        alt="Tutoring">
+                    <i class="fas fa-graduation-cap"></i>
+                </div>
+                <div class="card-content">
+                    <h3>Tutoring</h3>
+                    <p>Offering hands-on tech training, coding bootcamps, and skill development programs.</p>
+                </div>
+            </div>
+
+        </div>
     </div>
-
-    <!-- Flex Grid -->
-    <div id="services-flex" style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 25px;">
-
-      <!-- App Development -->
-      <div class="reveal fade-up" style="flex: 0 0 48%; background-color: #1a1a1a; border-radius: 12px; text-align: left; transition: all 0.3s ease; box-shadow: 0 4px 12px rgba(0,0,0,0.15); overflow: hidden; opacity: 0; transform: translateY(40px); transition: all 0.8s ease;">
-        <div style="position: relative; height: 220px;">
-          <img src="images/app.jpg" alt="App Development" style="width: 100%; height: 100%; object-fit: cover;">
-          <i class="fas fa-mobile-alt" style="font-size: 28px; color: #fff; background: #2563eb; padding: 15px; border-radius: 50%; position: absolute; top: 20px; right: 20px;"></i>
-        </div>
-        <div style="padding: 30px;">
-          <h3 style="font-size: 20px; font-weight: 700; margin-bottom: 10px;">App Development</h3>
-          <p style="color: #b3b3b3; font-size: 15px;">Creating responsive and intuitive mobile applications for iOS and Android platforms.</p>
-        </div>
-      </div>
-
-      <!-- Website Development -->
-      <div class="reveal fade-up" style="flex: 0 0 48%; background-color: #1a1a1a; border-radius: 12px; text-align: left; transition: all 0.3s ease; box-shadow: 0 4px 12px rgba(0,0,0,0.15); overflow: hidden; opacity: 0; transform: translateY(40px); transition: all 0.8s ease;">
-        <div style="position: relative; height: 220px;">
-          <img src="images/web.jpg" alt="Website Development" style="width: 100%; height: 100%; object-fit: cover;">
-          <i class="fas fa-globe" style="font-size: 28px; color: #fff; background: #2563eb; padding: 15px; border-radius: 50%; position: absolute; top: 20px; right: 20px;"></i>
-        </div>
-        <div style="padding: 30px;">
-          <h3 style="font-size: 20px; font-weight: 700; margin-bottom: 10px;">Website Development</h3>
-          <p style="color: #b3b3b3; font-size: 15px;">Designing and developing modern, fast, and SEO-friendly websites for all devices.</p>
-        </div>
-      </div>
-
-      <!-- AI Automation -->
-      <div class="reveal fade-up" style="flex: 0 0 48%; background-color: #1a1a1a; border-radius: 12px; text-align: left; transition: all 0.3s ease; box-shadow: 0 4px 12px rgba(0,0,0,0.15); overflow: hidden; opacity: 0; transform: translateY(40px); transition: all 0.8s ease;">
-        <div style="position: relative; height: 220px;">
-          <img src="images/ai.jpg" alt="AI Automation" style="width: 100%; height: 100%; object-fit: cover;">
-          <i class="fas fa-robot" style="font-size: 28px; color: #fff; background: #2563eb; padding: 15px; border-radius: 50%; position: absolute; top: 20px; right: 20px;"></i>
-        </div>
-        <div style="padding: 30px;">
-          <h3 style="font-size: 20px; font-weight: 700; margin-bottom: 10px;">AI Automation</h3>
-          <p style="color: #b3b3b3; font-size: 15px;">Integrating AI solutions to automate tasks, reduce costs, and boost productivity.</p>
-        </div>
-      </div>
-
-      <!-- Tutoring -->
-      <div class="reveal fade-up" style="flex: 0 0 48%; background-color: #1a1a1a; border-radius: 12px; text-align: left; transition: all 0.3s ease; box-shadow: 0 4px 12px rgba(0,0,0,0.15); overflow: hidden; opacity: 0; transform: translateY(40px); transition: all 0.8s ease;">
-        <div style="position: relative; height: 220px;">
-          <img src="images/tutor.jpg" alt="Tutoring" style="width: 100%; height: 100%; object-fit: cover;">
-          <i class="fas fa-graduation-cap" style="font-size: 28px; color: #fff; background: #2563eb; padding: 15px; border-radius: 50%; position: absolute; top: 20px; right: 20px;"></i>
-        </div>
-        <div style="padding: 30px;">
-          <h3 style="font-size: 20px; font-weight: 700; margin-bottom: 10px;">Tutoring</h3>
-          <p style="color: #b3b3b3; font-size: 15px;">Offering hands-on tech training, coding bootcamps, and skill development programs.</p>
-        </div>
-      </div>
-
-    </div>
-  </div>
 </section>
 
 
 <section class="features-section">
-  <div class="container">
-    <div class="section-header animate-up">
-      <div class="subtitle" style="color: #2563EB;">WHY CHOOSE US</div>
-      <h2>Providing brilliant ideas for your business.</h2>
+    <div class="container">
+        <div class="section-header reveal fade-up">
+            <div class="subtitle">WHY CHOOSE US</div>
+            <h2>Providing brilliant ideas for your business.</h2>
+        </div>
+
+        <!-- Placeholder wave graphic -->
+        <div style="position: absolute; top: 25%; left: 0; width: 100%; height: 150px; background-image: url('data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 1000 150\'%3E%3Cpath fill=\'none\' stroke=\'%232563EB\' stroke-width=\'3\' d=\'M0,75 C250,25 250,125 500,75 C750,25 750,125 1000,75\' /%3E%3C/svg%3E'); background-size: cover; opacity: 0.3; z-index: 1;"></div>
+
+        <div class="feature-grid">
+            <div class="feature-card reveal slide-left">
+                <div class="feature-icon-circle">
+                    <i class="fas fa-globe"></i>
+                </div>
+                <h3>Expertise in Technology</h3>
+                <p>We provide cutting-edge solutions designed for modern business transformation.</p>
+            </div>
+
+            <div class="feature-card reveal fade-up" style="animation-delay: 0.2s;">
+                <div class="feature-icon-circle">
+                    <i class="fas fa-cogs"></i>
+                </div>
+                <h3>Tailored Solutions & Ideas</h3>
+                <p>Our solutions are customized to fit your specific business goals and challenges.</p>
+            </div>
+
+            <div class="feature-card reveal fade-up" style="animation-delay: 0.4s;">
+                <div class="feature-icon-circle">
+                    <i class="fas fa-shield-alt"></i>
+                </div>
+                <h3>Smart & Secure Systems</h3>
+                <p>We build secure platforms that protect your business and client data effectively.</p>
+            </div>
+
+            <div class="feature-card reveal slide-right" style="animation-delay: 0.6s;">
+                <div class="feature-icon-circle">
+                    <i class="fas fa-headset"></i>
+                </div>
+                <h3>24/7 Premium Client Support</h3>
+                <p>Our dedicated team ensures that you always have the help you need, anytime.</p>
+            </div>
+        </div>
     </div>
-
-      <div style="position: absolute; top: 25%; left: 0; width: 100%; height: 150px; background-image: url('data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000svg\' viewBox=\'0 0 1000 150\'%3E%3Cpath fill=\'none\' stroke=\'%236aa84f\' stroke-width=\'3\' d=\'M0,75 C250,25 250,125 500,75 C750,25 750,125 1000,75\' /%3E%3C/svg%3E'); background-size: cover; opacity: 0.8; z-index: 1;"></div>
-
-      <div class="feature-grid">
-        <div class="feature-card animate-left">
-          <div style="width: 70px; height: 70px; background-color: #ffffff; border-radius: 50%; margin: 0 auto 20px; display: flex; justify-content: center; align-items: center;">
-            <i class="fas fa-globe"></i>
-          </div>
-          <h3>Expertise in Technology</h3>
-          <p>We provide cutting-edge solutions designed for modern business transformation.</p>
-        </div>
-
-        <div class="feature-card animate-up" style="animation-delay: 0.2s;">
-          <div style="width: 70px; height: 70px; background-color: #ffffff; border-radius: 50%; margin: 0 auto 20px; display: flex; justify-content: center; align-items: center;">
-            <i class="fas fa-cogs"></i>
-          </div>
-          <h3>Tailored Solutions & Ideas</h3>
-          <p>Our solutions are customized to fit your specific business goals and challenges.</p>
-        </div>
-
-        <div class="feature-card animate-up" style="animation-delay: 0.4s;">
-          <div style="width: 70px; height: 70px; background-color: #ffffff; border-radius: 50%; margin: 0 auto 20px; display: flex; justify-content: center; align-items: center;">
-            <i class="fas fa-shield-alt"></i>
-          </div>
-          <h3>Smart & Secure Systems</h3>
-          <p>We build secure platforms that protect your business and client data effectively.</p>
-        </div>
-
-        <div class="feature-card animate-right" style="animation-delay: 0.6s;">
-          <div style="width: 70px; height: 70px; background-color: #ffffff; border-radius: 50%; margin: 0 auto 20px; display: flex; justify-content: center; align-items: center;">
-            <i class="fas fa-headset"></i>
-          </div>
-          <h3>24/7 Premium Client Support</h3>
-          <p>Our dedicated team ensures that you always have the help you need, anytime.</p>
-        </div>
-      </div>
-    </div>
-  </section>
+</section>
 
 <!-- CORE SERVICES SECTION -->
-<section style="padding: 80px 5%; background-color: #0f0f0f; color: #fff; text-align: center;">
-  <div style="max-width: 1200px; margin: 0 auto;">
+<section class="core-services-section">
+    <div class="container">
 
-    <!-- Header -->
-    <div class="reveal" style="margin-bottom: 50px; opacity:0; transform:translateY(50px); transition: all 0.8s ease;">
-      <div style="color: #2563eb; font-size: 14px; font-weight: 600; margin-bottom: 10px; letter-spacing: 1px; text-transform: uppercase;">
-        CORE SERVICES
-      </div>
-      <h2 style="font-size: 32px; font-weight: 800; margin: 0;">
-        Empowering Businesses with Smart Digital Solutions
-      </h2>
+        <!-- Header -->
+        <div class="section-header reveal fade-up">
+            <div class="subtitle">
+                CORE SERVICES
+            </div>
+            <h2>
+                Empowering Businesses with Smart Digital Solutions
+            </h2>
+        </div>
+
+        <!-- Grid -->
+        <div class="core-services-grid">
+
+            <!-- Card 1 -->
+            <div class="card reveal fade-up">
+                <i class="fas fa-robot"></i>
+                <h3>AI Automation</h3>
+                <p>Streamline workflows and improve efficiency with intelligent automation.</p>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="card reveal fade-up" style="animation-delay: 0.1s;">
+                <i class="fas fa-laptop-code"></i>
+                <h3>Software Development</h3>
+                <p>Building fast, scalable, and responsive web & mobile applications.</p>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="card reveal fade-up" style="animation-delay: 0.2s;">
+                <i class="fas fa-paint-brush"></i>
+                <h3>Graphic Design & UI/UX</h3>
+                <p>Designing visually appealing, user-friendly digital experiences.</p>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="card reveal fade-up" style="animation-delay: 0.3s;">
+                <i class="fas fa-graduation-cap"></i>
+                <h3>Tutoring & Training</h3>
+                <p>Providing expert tech training and mentorship for future innovators.</p>
+            </div>
+
+            <!-- Card 5 -->
+            <div class="card reveal fade-up" style="animation-delay: 0.4s;">
+                <i class="fas fa-chart-bar"></i>
+                <h3>Data Analysis</h3>
+                <p>Turning complex data into actionable business insights.</p>
+            </div>
+
+            <!-- Card 6 -->
+            <div class="card reveal fade-up" style="animation-delay: 0.5s;">
+                <i class="fas fa-cloud"></i>
+                <h3>Cloud Integration</h3>
+                <p>Helping businesses scale with reliable cloud-based solutions.</p>
+            </div>
+
+        </div>
     </div>
+</section>
 
-    <!-- Grid -->
-    <div style="
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 25px;
-      justify-content: center;
-    ">
 
-      <!-- Card 1 -->
-      <div class="reveal" style="background-color: #1a1a1a; border-radius: 12px; padding: 25px 20px;
-        text-align: left; min-height: 160px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-        transition: transform 0.3s ease; opacity:0; transform:translateY(50px); transition: all 0.8s ease;">
-        <i class="fas fa-robot" style="font-size: 28px; color: #2563eb; margin-bottom: 10px;"></i>
-        <h3 style="font-size: 18px; font-weight: 700; margin-bottom: 8px;">AI Automation</h3>
-        <p style="color: #b3b3b3; font-size: 14px;">Streamline workflows and improve efficiency with intelligent automation.</p>
-      </div>
-
-      <!-- Card 2 -->
-      <div class="reveal" style="background-color: #1a1a1a; border-radius: 12px; padding: 25px 20px;
-        text-align: left; min-height: 160px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-        transition: transform 0.3s ease; opacity:0; transform:translateY(50px); transition: all 0.8s ease;">
-        <i class="fas fa-laptop-code" style="font-size: 28px; color: #2563eb; margin-bottom: 10px;"></i>
-        <h3 style="font-size: 18px; font-weight: 700; margin-bottom: 8px;">Software Development</h3>
-        <p style="color: #b3b3b3; font-size: 14px;">Building fast, scalable, and responsive web & mobile applications.</p>
-      </div>
-
-      <!-- Card 3 -->
-      <div class="reveal" style="background-color: #1a1a1a; border-radius: 12px; padding: 25px 20px;
-        text-align: left; min-height: 160px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-        transition: transform 0.3s ease; opacity:0; transform:translateY(50px); transition: all 0.8s ease;">
-        <i class="fas fa-paint-brush" style="font-size: 28px; color: #2563eb; margin-bottom: 10px;"></i>
-        <h3 style="font-size: 18px; font-weight: 700; margin-bottom: 8px;">Graphic Design & UI/UX</h3>
-        <p style="color: #b3b3b3; font-size: 14px;">Designing visually appealing, user-friendly digital experiences.</p>
-      </div>
-
-      <!-- Card 4 -->
-      <div class="reveal" style="background-color: #1a1a1a; border-radius: 12px; padding: 25px 20px;
-        text-align: left; min-height: 160px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-        transition: transform 0.3s ease; opacity:0; transform:translateY(50px); transition: all 0.8s ease;">
-        <i class="fas fa-graduation-cap" style="font-size: 28px; color: #2563eb; margin-bottom: 10px;"></i>
-        <h3 style="font-size: 18px; font-weight: 700; margin-bottom: 8px;">Tutoring & Training</h3>
-        <p style="color: #b3b3b3; font-size: 14px;">Providing expert tech training and mentorship for future innovators.</p>
-      </div>
-
-      <!-- Card 5 -->
-      <div class="reveal" style="background-color: #1a1a1a; border-radius: 12px; padding: 25px 20px;
-        text-align: left; min-height: 160px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-        transition: transform 0.3s ease; opacity:0; transform:translateY(50px); transition: all 0.8s ease;">
-        <i class="fas fa-chart-bar" style="font-size: 28px; color: #2563eb; margin-bottom: 10px;"></i>
-        <h3 style="font-size: 18px; font-weight: 700; margin-bottom: 8px;">Data Analysis</h3>
-        <p style="color: #b3b3b3; font-size: 14px;">Turning complex data into actionable business insights.</p>
-      </div>
-
-      <!-- Card 6 -->
-      <div class="reveal" style="background-color: #1a1a1a; border-radius: 12px; padding: 25px 20px;
-        text-align: left; min-height: 160px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-        transition: transform 0.3s ease; opacity:0; transform:translateY(50px); transition: all 0.8s ease;">
-        <i class="fas fa-cloud" style="font-size: 28px; color: #2563eb; margin-bottom: 10px;"></i>
-        <h3 style="font-size: 18px; font-weight: 700; margin-bottom: 8px;">Cloud Integration</h3>
-        <p style="color: #b3b3b3; font-size: 14px;">Helping businesses scale with reliable cloud-based solutions.</p>
-      </div>
-
+   <section class="services-cta" style="background-image: url('images/who.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; padding: 100px 0; color: white;">
+    <div class="container reveal fade-up">
+        <h2>Ready to transform your business with technology?</h2>
+        <p>Contact our experts today for a free consultation and project roadmap.</p>
+        <a href="#" class="cta-button">Start Your Project</a>
     </div>
-  </div>
 </section>
 
 
 
-  <section class="services-cta">
-    <div class="container animate-up">
-      <h2>Ready to transform your business with technology?</h2>
-      <p>Contact our experts today for a free consultation and project roadmap.</p>
-      <a href="#" class="cta-button">Start Your Project</a>
-    </div>
-  </section>
+    <section class="testimonials-section">
+        <div class="container">
+            
+            <div class="section-header reveal fade-up">
+                <div class="subtitle">TESTIMONIALS</div>
+                <h2>What Our Clients Say About GuruByte</h2>
+            </div>
 
-  <section class="stats-bar">
-    <div class="container stats-grid">
-      <div class="stat-item animate-left">
-        <h2>61K+</h2>
-        <p>Projects Done</p>
-      </div>
-      <div class="stat-item animate-up" style="animation-delay: 0.2s;">
-        <h2>8K+</h2>
-        <p>Happy Clients</p>
-      </div>
-      <div class="stat-item animate-up" style="animation-delay: 0.4s;">
-        <h2>4.7</h2>
-        <p>Client Ratings</p>
-      </div>
-      <div class="stat-item animate-right" style="animation-delay: 0.6s;">
-        <h2>77</h2>
-        <p>Award Winning</p>
-      </div>
-    </div>
-  </section>
+            <div class="testimonial-grid">
 
- <section class="testimonials-section" style="padding:80px 5%; background-color:#0f0f0f; color:#fff; text-align:center;">
-  <div class="container" style="max-width:1200px; margin:0 auto;">
-    
-    <div class="section-header animate-up" style="margin-bottom:50px;">
-      <div class="subtitle" style="color:#6366f1; font-weight:600; letter-spacing:1px;">TESTIMONIALS</div>
-      <h2 style="font-size:32px; font-weight:800;">What Our Clients Say About GuruByte</h2>
-    </div>
+                <div class="testimonial-card reveal slide-left">
+                    <p style="font-size:15px; color:#d1d5db;">GuruByte helped us transform our learning platform with a sleek UI and seamless student experience. Their tech team delivers with passion and precision.</p>
+                    <div class="client-info">
+                        <img 
+                            src="images/p1.jpg" 
+                            onerror="this.onerror=null;this.src='https://placehold.co/50x50/2563EB/FFFFFF?text=JM';" 
+                            alt="James Mwangi">
+                        <div class="client-details">
+                            <strong>James Mwangi</strong>
+                            <span>Founder, EduLink Africa</span>
+                        </div>
+                    </div>
+                </div>
 
-    <div class="testimonial-grid" style="display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:25px; justify-content:center;">
+                <div class="testimonial-card reveal fade-up" style="animation-delay:0.2s;">
+                    <p style="font-size:15px; color:#d1d5db;">Working with GuruByte on our company website was effortless. Their development and UX skills made our brand stand out online.</p>
+                    <div class="client-info">
+                        <img 
+                            src="images/p2.jpg" 
+                            onerror="this.onerror=null;this.src='https://placehold.co/50x50/2563EB/FFFFFF?text=GA';" 
+                            alt="Grace Atieno">
+                        <div class="client-details">
+                            <strong>Grace Atieno</strong>
+                            <span>Marketing Manager, Nova Brands</span>
+                        </div>
+                    </div>
+                </div>
 
-      <div class="testimonial-card animate-left" style="background-color:#1a1a1a; padding:25px 20px; border-radius:12px; text-align:left; box-shadow:0 4px 12px rgba(0,0,0,0.2);">
-        <p style="font-size:15px; color:#d1d5db;">GuruByte helped us transform our learning platform with a sleek UI and seamless student experience. Their tech team delivers with passion and precision.</p>
-        <div class="client-info" style="display:flex; align-items:center; margin-top:15px;">
-          <img src="images/p2.jpg" alt="James Mwangi" style="width:50px; height:50px; border-radius:50%; margin-right:12px;">
-          <div class="client-details">
-            <strong style="display:block;">James Mwangi</strong>
-            <span style="color:#9ca3af; font-size:14px;">Founder, EduLink Africa</span>
-          </div>
+                <div class="testimonial-card reveal slide-right" style="animation-delay:0.4s;">
+                    <p style="font-size:15px; color:#d1d5db;">Their AI-powered automation tool saved us hours every week. GuruByte is truly redefining how tech supports education and business.</p>
+                    <div class="client-info">
+                        <img 
+                            src="images/p3.jpg" 
+                            onerror="this.onerror=null;this.src='https://placehold.co/50x50/2563EB/FFFFFF?text=BO';" 
+                            alt="Brian Ouma">
+                        <div class="client-details">
+                            <strong>Brian Ouma</strong>
+                            <span>Operations Lead, SmartWorks Ltd.</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
         </div>
-      </div>
+    </section>
 
-      <div class="testimonial-card animate-up" style="background-color:#1a1a1a; padding:25px 20px; border-radius:12px; text-align:left; box-shadow:0 4px 12px rgba(0,0,0,0.2); animation-delay:0.2s;">
-        <p style="font-size:15px; color:#d1d5db;">Working with GuruByte on our company website was effortless. Their development and UX skills made our brand stand out online.</p>
-        <div class="client-info" style="display:flex; align-items:center; margin-top:15px;">
-          <img src="images/p1.jpg" alt="Grace Atieno" style="width:50px; height:50px; border-radius:50%; margin-right:12px;">
-          <div class="client-details">
-            <strong style="display:block;">Grace Atieno</strong>
-            <span style="color:#9ca3af; font-size:14px;">Marketing Manager, Nova Brands</span>
-          </div>
+<footer class="footer">
+    <div class="container">
+
+        <div class="footer-content">
+            
+            <div class="footer-col reveal fade-up">
+                <h4>GuruByte</h4>
+                <p style="color:#d1d5db;">Empowering Africa’s digital transformation through world-class software development and tech education.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-col reveal fade-up" style="animation-delay:0.2s;">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Our Team</a></li>
+                    <li><a href="#">Bootcamps</a></li>
+                    <li><a href="#">Blog</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col reveal fade-up" style="animation-delay:0.4s;">
+                <h4>Services</h4>
+                <ul>
+                    <li><a href="#">Software Development</a></li>
+                    <li><a href="#">UI/UX Design</a></li>
+                    <li><a href="#">AI Automation</a></li>
+                    <li><a href="#">Digital Training</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col reveal fade-up" style="animation-delay:0.6s;">
+                <h4>Contact Info</h4>
+                <p style="color:#d1d5db;">Nairobi, Kenya</p>
+                <p style="color:#d1d5db;">Email: <a href="mailto:info@gurubyte.com">info@gurubyte.com</a></p>
+                <p style="color:#d1d5db;">Phone: +254 700 123 456</p>
+            </div>
+
         </div>
-      </div>
 
-      <div class="testimonial-card animate-right" style="background-color:#1a1a1a; padding:25px 20px; border-radius:12px; text-align:left; box-shadow:0 4px 12px rgba(0,0,0,0.2); animation-delay:0.4s;">
-        <p style="font-size:15px; color:#d1d5db;">Their AI-powered automation tool saved us hours every week. GuruByte is truly redefining how tech supports education and business.</p>
-        <div class="client-info" style="display:flex; align-items:center; margin-top:15px;">
-          <img src="images/p2.jpg" alt="Brian Ouma" style="width:50px; height:50px; border-radius:50%; margin-right:12px;">
-          <div class="client-details">
-            <strong style="display:block;">Brian Ouma</strong>
-            <span style="color:#9ca3af; font-size:14px;">Operations Lead, SmartWorks Ltd.</span>
-          </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 GuruByte. All Rights Reserved.</p>
         </div>
-      </div>
-
     </div>
-  </div>
-</section>
-
-<footer class="footer" style="background-color:#0b0b0b; color:#fff; padding:60px 5% 30px;">
-  <div class="container" style="max-width:1200px; margin:0 auto;">
-
-    <div class="footer-content" style="display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:40px; margin-bottom:40px;">
-      
-      <div class="footer-col animate-up">
-        <h4 style="font-size:20px; font-weight:700; color:#6366f1;">GuruByte</h4>
-        <p style="color:#d1d5db;">Empowering Africa’s digital transformation through world-class software development and tech education.</p>
-        <div class="social-links" style="margin-top:20px;">
-          <a href="#" style="color:#fff; margin-right:15px;"><i class="fab fa-facebook-f"></i></a>
-          <a href="#" style="color:#fff; margin-right:15px;"><i class="fab fa-twitter"></i></a>
-          <a href="#" style="color:#fff; margin-right:15px;"><i class="fab fa-linkedin-in"></i></a>
-          <a href="#" style="color:#fff;"><i class="fab fa-instagram"></i></a>
-        </div>
-      </div>
-
-      <div class="footer-col animate-up" style="animation-delay:0.2s;">
-        <h4 style="font-size:18px; font-weight:700; color:#6366f1;">Quick Links</h4>
-        <ul style="list-style:none; padding:0; margin-top:10px;">
-          <li><a href="#" style="color:#d1d5db; text-decoration:none;">About Us</a></li>
-          <li><a href="#" style="color:#d1d5db; text-decoration:none;">Our Team</a></li>
-          <li><a href="#" style="color:#d1d5db; text-decoration:none;">Bootcamps</a></li>
-          <li><a href="#" style="color:#d1d5db; text-decoration:none;">Blog</a></li>
-        </ul>
-      </div>
-
-      <div class="footer-col animate-up" style="animation-delay:0.4s;">
-        <h4 style="font-size:18px; font-weight:700; color:#6366f1;">Services</h4>
-        <ul style="list-style:none; padding:0; margin-top:10px;">
-          <li><a href="#" style="color:#d1d5db; text-decoration:none;">Software Development</a></li>
-          <li><a href="#" style="color:#d1d5db; text-decoration:none;">UI/UX Design</a></li>
-          <li><a href="#" style="color:#d1d5db; text-decoration:none;">AI Automation</a></li>
-          <li><a href="#" style="color:#d1d5db; text-decoration:none;">Digital Training</a></li>
-        </ul>
-      </div>
-
-      <div class="footer-col animate-up" style="animation-delay:0.6s;">
-        <h4 style="font-size:18px; font-weight:700; color:#6366f1;">Contact Info</h4>
-        <p style="color:#d1d5db;">Nairobi, Kenya</p>
-        <p style="color:#d1d5db;">Email: <a href="mailto:info@gurubyte.com" style="color:#6366f1;">info@gurubyte.com</a></p>
-        <p style="color:#d1d5db;">Phone: +254 700 123 456</p>
-      </div>
-
-    </div>
-
-    <div class="footer-bottom" style="border-top:1px solid #1f2937; padding-top:15px; text-align:center;">
-      <p style="color:#9ca3af;">&copy; 2025 GuruByte. All Rights Reserved.</p>
-    </div>
-  </div>
 </footer>
 
-<script src="script/script.js"></script>
+<script>
+    // --- SCROLL REVEAL LOGIC ---
+    function reveal() {
+        var reveals = document.querySelectorAll(".reveal");
+        for (var i = 0; i < reveals.length; i++) {
+            var windowHeight = window.innerHeight;
+            var elementTop = reveals[i].getBoundingClientRect().top;
+            var elementVisible = 150;
+
+            if (elementTop < windowHeight - elementVisible) {
+                // Use the class mapping defined in CSS
+                if (reveals[i].classList.contains("fade-up")) {
+                    reveals[i].classList.add("active", "fade-up");
+                } else if (reveals[i].classList.contains("slide-left")) {
+                    reveals[i].classList.add("active", "slide-left");
+                } else if (reveals[i].classList.contains("slide-right")) {
+                    reveals[i].classList.add("active", "slide-right");
+                } else if (reveals[i].classList.contains("zoom-in")) {
+                    reveals[i].classList.add("active", "zoom-in");
+                } else {
+                    // Fallback for simple 'reveal' elements without specific direction
+                    reveals[i].style.opacity = 1;
+                    reveals[i].style.transform = 'translateY(0)';
+                }
+            } else {
+                 // Optionally remove 'active' state if element scrolls back up
+                 // reveals[i].classList.remove("active");
+            }
+        }
+    }
+
+    // --- NAVBAR STICKY & MOBILE TOGGLE LOGIC ---
+    document.addEventListener('DOMContentLoaded', () => {
+        const nav = document.querySelector('.main-nav');
+        const menuToggle = document.getElementById('mobile-menu');
+        const navLinks = document.querySelector('.nav-links');
+
+        // 1. Sticky Navbar
+        const handleScroll = () => {
+            if (window.scrollY > 50) {
+                nav.classList.add('sticky');
+            } else {
+                nav.classList.remove('sticky');
+            }
+        };
+
+        // 2. Mobile Menu Toggle
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            // Toggle the icon from bars to close/x
+            menuToggle.querySelector('i').classList.toggle('fa-bars');
+            menuToggle.querySelector('i').classList.toggle('fa-times');
+        });
+
+        // 3. Close menu when a link is clicked (on mobile)
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                if (window.innerWidth <= 768) {
+                    navLinks.classList.remove('active');
+                    menuToggle.querySelector('i').classList.add('fa-bars');
+                    menuToggle.querySelector('i').classList.remove('fa-times');
+                }
+            });
+        });
+
+        window.addEventListener("scroll", reveal);
+        window.addEventListener("scroll", handleScroll);
+
+        // Initial check for sticky and reveal
+        handleScroll();
+        reveal();
+    });
+</script>
 </body>
 </html>
