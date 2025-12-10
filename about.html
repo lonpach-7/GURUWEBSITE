@@ -1,115 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>GuruByte</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  <link rel="stylesheet" href="styles.css">
-  <style>
-  /* make headers and paragraphs inside light-background sections readable */
-  /* Targets sections that explicitly use the inline color or that you mark with class="light-bg" */
-  section.light-bg h1,
-  section.light-bg h2,
-  section.light-bg h3,
-  section.light-bg p,
-  section[style*="background-color:#f7f7f7"] h1,
-  section[style*="background-color:#f7f7f7"] h2,
-  section[style*="background-color:#f7f7f7"] h3,
-  section[style*="background-color:#f7f7f7"] p {
-    color: #1a1a1a !important;   /* dark readable color */
-  }
-
-  /* Slightly muted body text in light sections */
-  section.light-bg p,
-  section[style*="background-color:#f7f7f7"] p {
-    color: #555555 !important;
-  }
-
-  /* Smooth anchor scrolling */
-  html { scroll-behavior: smooth; }
-
-  /* Reveal animation utility (use class="reveal") */
-  .reveal {
-    opacity: 0;
-    transform: translateY(40px);
-    transition: opacity 700ms cubic-bezier(.22,.9,.35,1), transform 700ms cubic-bezier(.22,.9,.35,1);
-    will-change: opacity, transform;
-  }
-  /* When element is in view, add .in-view */
-  .reveal.in-view {
-    opacity: 1;
-    transform: translateY(0);
-  }
-
-  /* optional stagger helper: add style="--delay:0.15s" to card */
-  .reveal[style*="--delay"] {
-    transition-delay: var(--delay);
-  }
-
-  /* Focus outline for accessibility (nice visible state) */
-  :focus { outline: 3px solid #2563EB; outline-offset: 3px; }
-</style>
-
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GuruByte - Empowering Growth</title>
+    <!-- Poppins Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Combined Stylesheet -->
+     <link rel="stylesheet" href="style.css">
+     <link rel="icon" type="image/png" href="images/logo.png" sizes="50x50" />
+  
 </head>
-<body style="margin: 0; font-family: 'Poppins', sans-serif; background-color: #1a1a1a; color: #ffffff; line-height: 1.6;">
+<body>    
+        <!-- Navbar -->
+       <nav class="main-nav">
+    <a href="index.html" class="logo">
+        <img src="images/log.png" alt="Gurubyte" style="height: 150px; width: auto;">
+    </a>
 
-  <section class="hero-section" style="
-      position: relative; 
-      width: 100%; 
-      min-height: 100vh; 
-      background: linear-gradient(135deg, #1a1a1a, #242424, #111111); 
-      display: flex; 
-      flex-direction: column;
-  ">
-      
-    <!-- Navbar -->
-    <nav class="main-nav" style="
-        display: flex; 
-        justify-content: space-between; 
-        align-items: center; 
-        padding: 20px 5%; 
-        width: 90%; 
-        position: fixed; 
-        top: 0;
-        left: 0;
-        z-index: 100;
-        background: transparent;
-        transition: all 0.3s ease;
-    ">
-      <a href="#" class="logo" style="font-size: 24px; font-weight: 700; color: #ffffff; text-decoration: none;">
-        <span style="color: #093780;">guru</span>byte
-      </a>
+            <div class="menu-toggle" id="mobile-menu">
+                <i class="fas fa-bars"></i>
+            </div>
 
-      <div class="menu-toggle" id="mobile-menu">
-        <i class="fas fa-bars"></i>
-      </div>
+            <ul class="nav-links">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link">About Us</a></li>
+                <li><a href="service.html" class="nav-link">Services</a></li>
+                <li><a href="#" class="nav-link">GuruAcademy</a></li>
+                <li><a href="portfolio.html" class="nav-link">Portfolio</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
 
-      <ul class="nav-links" style="list-style: none; display: flex; margin: 0; padding: 0;">
-        <li style="margin-left: 30px;"><a href="index.html" class="nav-link" style="color: #ffffff;" >Home</a></li>
-        <li style="margin-left: 30px;"><a href="about.html" class="nav-link" style="color: #ffffff;">About Us</a></li>
-         <li style="margin-left: 30px;"><a href="service.html" class="nav-link" style="color: #ffffff;">services</a></li>
-        <li style="margin-left: 30px;"><a href="#" class="nav-link" style="color: #ffffff;">GuruAcademy</a></li>
-        <li style="margin-left: 30px;"><a href="portfolio.html" class="nav-link" style="color: #ffffff;">Portfolio</a></li>
-        <li style="margin-left: 30px;"><a href="contact.html" class="nav-link" style="color: #ffffff;">Contact</a></li>
-      </ul>
-
-      <a href="#" class="cta-button" style="
-          background-color: #093780; 
-          color: #ffffff; 
-          border: none; 
-          padding: 10px 20px; 
-          border-radius: 5px; 
-          font-size: 16px; 
-          font-weight: 600; 
-          text-decoration: none;
-          box-shadow: 0 5px 15px rgba(9, 55, 128, 0.5);
-
-      ">Get Started</a>
-    </nav>
-<!-- HERO SECTION -->
-<section style="position: relative; width:100%; min-height:60vh; display:flex; align-items:center; justify-content:center; 
+            <a href="#" class="cta-button">Get Started</a>
+        </nav>
+    
+    <section style="position: relative; width:100%; min-height:60vh; display:flex; align-items:center; justify-content:center; 
     background-image: url('images/web.jpg'); 
     background-size: cover; 
     background-position: center; 
@@ -121,7 +48,7 @@
 
   <!-- Content -->
   <div style="text-align:center; max-width:900px; position:relative; z-index:2; color:#ffffff;">
-    <h1 style="font-size:3.5vw; font-weight:800; margin-bottom:20px;">About GuruByte</h1>
+    <h1 style="font-size:3.5vw;color: #ffffff; font-weight:800; margin-bottom:20px;">About GuruByte</h1>
     <p style="font-size:18px; line-height:1.6;">
       GuruByte is a forward-thinking technology company empowering businesses and individuals through innovative software solutions, AI automation, and tech education. 
       Our mission is to create smarter digital experiences and nurture the next generation of tech innovators across Africa.
@@ -129,9 +56,8 @@
   </div>
 </section>
 
-
 <!-- NEW ABOUT SECTION BELOW HERO -->
-<section class="light-bg reveal" style="padding:50px 5%; background-color:#dedfe6; color:#1a1a1a;">
+<section class="light-bg reveal" style="padding:50px 5%;  background-color: #F5F5F5; color: rgba(62, 154, 167, 0.95);">
   <div style="max-width:1200px; margin:0 auto; display:flex; gap:30px; align-items:flex-start;">
     <!-- Left images -->
     <div style="flex:1; min-width:45%; position:relative; height:450px;">
@@ -142,10 +68,10 @@
 
     <!-- Right content -->
     <div style="flex:1; min-width:45%; padding-top:20px;">
-      <div style="font-size:14px; color:#093780; margin-bottom:10px; text-transform:uppercase; letter-spacing:1px; font-weight:600;">
+      <div style="font-size:14px;  color: #2ACFCF; margin-bottom:10px; text-transform:uppercase; letter-spacing:1px; font-weight:600;">
         Who We Are
       </div>
-      <h2 style="font-size:36px; font-weight:800; line-height:1.2; margin-top:0; margin-bottom:20px; color:#1a1a1a;">
+      <h2 style="font-size:36px; font-weight:800; line-height:1.2; margin-top:0; margin-bottom:20px; color: rgba(62, 154, 167, 0.95);">
         We provide perfect IT solutions &amp; technology for any startups.
       </h2>
       <p style="font-size:16px; line-height:1.6; margin-bottom:30px; color:#555555;">
@@ -155,41 +81,68 @@
       <!-- Feature highlights -->
       <div style="display:flex; flex-wrap:wrap; gap:15px; margin-bottom:30px;">
         <div style="display:flex; align-items:center; gap:10px;">
-          <i class="fas fa-shield-alt" style="font-size:24px; color:#2563eb;"></i>
+          <i class="fas fa-shield-alt" style="font-size:24px;color:#2ACFCF;"></i>
           <span style="font-size:16px; font-weight:600; color:#1a1a1a;">Internal Networking</span>
         </div>
         <div style="display:flex; align-items:center; gap:10px;">
-          <i class="fas fa-wrench" style="font-size:24px; color:#2563eb;"></i>
+          <i class="fas fa-wrench" style="font-size:24px; color:#2ACFCF;"></i>
           <span style="font-size:16px; font-weight:600; color:#1a1a1a;">Tech Services</span>
         </div>
       </div>
 
-      <a href="#" style="background-color:#093780; color:#ffffff; border:none; padding:12px 25px; border-radius:5px; font-size:16px; font-weight:600; text-decoration:none; display:inline-block; box-shadow:0 5px 15px rgba(255,140,0,0.4);">
-        Discover More &rarr;
-      </a>
+        <a href="#" class="discover-more-button">Discover More</a>
     </div>
   </div>
 </section>
 
 
-<!-- MISSION & VISION -->
-<section class="reveal" style="padding:80px 5%; max-width:1200px; margin:0 auto; display:flex; flex-wrap:wrap; gap:30px;">
-  <div style="flex:1; min-width:400px; background-color:#2563EB; padding:30px; border-radius:10px; color:#fff; box-shadow:0 5px 20px rgba(37,99,235,0.5);">
-    <h3 style="font-size:26px; font-weight:600; margin-bottom:15px;">Our Mission</h3>
-    <p>Deliver world-class digital solutions while training and empowering the next generation of African tech innovators.</p>
-  </div>
-  <div style="flex:1; min-width:400px; background-color:#242424; padding:30px; border-radius:10px; color:#fff;">
-    <h3 style="font-size:26px; font-weight:600; margin-bottom:15px;">Our Vision</h3>
-    <p>To be Africa’s leading digital innovation hub — where businesses scale through technology and learners grow into global-ready professionals.</p>
-  </div>
-</section>
+ <!-- MVP SECTION -->
+<section class="mvp-section reveal fade-up">
+    <!-- Section Header -->
+    <div class="section-header">
+        <div class="subtitle">PRINCIPLES</div>
+        <h2>Our Mission, Vision & Core Value</h2>
+       
+    </div>
 
+    <!-- Cards Container -->
+    <div class="mvp-cards-container" style="display: flex; gap: 30px;">
+        <!-- Main Value Card -->
+        <div class="mvp-main-card reveal zoom-in">
+            <img 
+                src="images/core.avif" 
+                onerror="this.onerror=null;this.src='https://placehold.co/600x800/242424/FFFFFF?text=Core+Value';" 
+                alt="Developer with headphones">
+            <div class="overlay"></div>
+            <div class="content-wrapper">
+                <div class="subtitle">OUR VALUE</div>
+                <h2>Your Digital Needs, Our Expert Solutions — GuruByte Delivers.</h2>
+                <p>At GuruByte, we transform your digital needs into powerful solutions that accelerate growth and innovation. From web and app development to AI automation and digital learning platforms — we don’t just build; we deliver excellence.</p>
+            </div>
+        </div>
+
+        <!-- Side Cards: Mission & Vision -->
+        <div class="mvp-side-cards">
+            <div class="mvp-card mission reveal slide-left">
+                <div class="subtitle">OUR MISSION</div>
+                <h3>IT solutions and empowering next generation</h3>
+                <p>To deliver world-class digital solutions while training and empowering the next generation of African tech innovators.</p>
+            </div>
+
+            <div class="mvp-card vision reveal slide-right">
+                <div class="subtitle">OUR VISION</div>
+                <h3>Crafting Tomorrow and innovations</h3>
+                <p>To be Africa’s leading digital innovation hub — a space where businesses scale through tech and learners grow into global-ready professionals.</p>
+            </div>
+        </div>
+    </div>
+</section>
 <!-- SERVICES SECTION -->
-<section class="reveal" style="padding:80px 5%; background-color:#1a1a1a;">
+<section class="reveal" style="padding:40px 5%; background-color: rgba(183, 188, 189, 0.95);">
   <div style="max-width:1200px; margin:0 auto; text-align:center; color:#fff;">
 
-    <h2 style="font-size:36px; font-weight:800; margin-bottom:20px;">Our Services</h2>
-    <p style="color:#cccccc; margin-bottom:50px;">
+    <h2 style="font-size:36px;color: #f5f3f3; font-weight:800; margin-bottom:20px;">Our Services</h2>
+    <p style="color:#fdfcfc; margin-bottom:50px;">
       We provide innovative tech solutions tailored for your business growth.
     </p>
 
@@ -206,88 +159,90 @@
 
       <!-- Service Card 1 -->
       <div class="reveal" style="
-        background-color:#242424;
+        background-color: #F5F5F5;
         padding:30px;
         border-radius:10px;
         box-shadow:0 5px 20px rgba(0,0,0,0.5);
         text-align:center;
       ">
-        <i class="fas fa-laptop-code" style="font-size:40px; color:#093780; margin-bottom:15px;"></i>
+        <i class="fas fa-laptop-code" style="font-size:40px;color:#0277ad; margin-bottom:15px;"></i>
         <h3 style="font-size:22px; margin:10px 0;">Software Development</h3>
-        <p style="color:#cccccc;">
+        <p style=" color: #121212;">
           Custom software and web applications built to scale your business efficiently.
         </p>
       </div>
 
       <!-- Service Card 2 -->
       <div class="reveal" style="
-        background-color:#242424;
+         background-color: #F5F5F5;
         padding:30px;
         border-radius:10px;
         box-shadow:0 5px 20px rgba(0,0,0,0.5);
         text-align:center;
       ">
-        <i class="fas fa-robot" style="font-size:40px; color:#093780; margin-bottom:15px;"></i>
+        <i class="fas fa-robot" style="font-size:40px; color:#0277ad; margin-bottom:15px;"></i>
         <h3 style="font-size:22px; margin:10px 0;">AI Solutions & Automation</h3>
-        <p style="color:#cccccc;">
+        <p style=" color: #121212;">
           Intelligent automation and AI-powered tools to optimize your business operations.
         </p>
       </div>
 
       <!-- Service Card 3 -->
       <div class="reveal" style="
-        background-color:#242424;
+         background-color: #F5F5F5;
         padding:30px;
         border-radius:10px;
         box-shadow:0 5px 20px rgba(0,0,0,0.5);
         text-align:center;
       ">
-        <i class="fas fa-mobile-alt" style="font-size:40px; color:#093780; margin-bottom:15px;"></i>
+        <i class="fas fa-mobile-alt" style="font-size:40px; color:#0277ad;margin-bottom:15px;"></i>
         <h3 style="font-size:22px; margin:10px 0;">Web & Mobile development</h3>
-        <p style="color:#cccccc;">
-          Responsive and engaging apps designed for seamless user experience across devices.
-        </p>
-      </div>
-       <!-- Service Card 3 -->
-      <div class="reveal" style="
-        background-color:#242424;
-        padding:30px;
-        border-radius:10px;
-        box-shadow:0 5px 20px rgba(0,0,0,0.5);
-        text-align:center;
-      ">
-        <i class="fas fa-mobile-alt" style="font-size:40px; color:#093780; margin-bottom:15px;"></i>
-        <h3 style="font-size:22px; margin:10px 0;">UI/UX design</h3>
-        <p style="color:#cccccc;">
-          Responsive and engaging apps designed for seamless user experience across devices.
-        </p>
-      </div>
-       <!-- Service Card 3 -->
-      <div class="reveal" style="
-        background-color:#242424;
-        padding:30px;
-        border-radius:10px;
-        box-shadow:0 5px 20px rgba(0,0,0,0.5);
-        text-align:center;
-      ">
-        <i class="fas fa-mobile-alt" style="font-size:40px; color:#093780; margin-bottom:15px;"></i>
-        <h3 style="font-size:22px; margin:10px 0;">Data Analysis</h3>
-        <p style="color:#cccccc;">
+        <p style=" color: #121212;">
           Responsive and engaging apps designed for seamless user experience across devices.
         </p>
       </div>
 
       <!-- Service Card 4 -->
       <div class="reveal" style="
-        background-color:#242424;
+         background-color: #F5F5F5;
         padding:30px;
         border-radius:10px;
         box-shadow:0 5px 20px rgba(0,0,0,0.5);
         text-align:center;
       ">
-        <i class="fas fa-chalkboard-teacher" style="font-size:40px; color:#093780; margin-bottom:15px;"></i>
+        <i class="fas fa-paint-brush" style="font-size:40px;color:#0277ad; margin-bottom:15px;"></i>
+        <h3 style="font-size:22px; margin:10px 0;">UI/UX Design</h3>
+        <p style=" color: #121212;">
+          Creating intuitive and engaging designs for optimal user experience.
+        </p>
+      </div>
+
+      <!-- Service Card 5 -->
+      <div class="reveal" style="
+        background-color: #F5F5F5;
+        padding:30px;
+        border-radius:10px;
+        box-shadow:0 5px 20px rgba(0,0,0,0.5);
+        text-align:center;
+      ">
+        <i class="fas fa-chart-line" style="font-size:40px; color:#0277ad;margin-bottom:15px;"></i>
+        <h3 style="font-size:22px; margin:10px 0;">Data Analysis</h3>
+        <p style=" color: #121212;">
+          Transforming raw data into actionable insights for smarter decisions.
+        </p>
+      </div>
+
+      <!-- Service Card 6 -->
+      <div class="reveal" style="
+         background-color: #F5F5F5;
+        padding:30px;
+        border-radius:10px;
+        box-shadow:0 5px 20px rgba(0,0,0,0.5);
+        text-align:center;
+      ">
+        <i class="fas fa-chalkboard-teacher" style="font-size:40px; color:#0277ad; margin-bottom:15px;"></i>
         <h3 style="font-size:22px; margin:10px 0;">Tech Consulting & Training</h3>
-        <p style="color:#cccccc;">
+        <p style=" color: #121212;">
           Professional guidance and workshops to empower teams and startups with tech knowledge.
         </p>
       </div>
@@ -333,51 +288,16 @@
       </div>
 
     </div>
+    <br>
 
     <!-- VIEW MORE BUTTON -->
-    <a href="#" 
-      style="
-        display:inline-block;
-        margin-top:50px;
-        background-color:#093780;
-        color:#fff;
-        padding:15px 35px;
-        border-radius:6px;
-        text-decoration:none;
-        font-weight:600;
-        font-size:16px;
-        box-shadow:0 6px 20px rgba(9,55,128,0.4);
-        transition:0.3s ease;
-      "
-      onmouseover="this.style.boxShadow='0 8px 25px rgba(9,55,128,0.7)'; this.style.transform='translateY(-3px)';"
-      onmouseout="this.style.boxShadow='0 6px 20px rgba(9,55,128,0.4)'; this.style.transform='translateY(0)';"
-    >
-      View More Projects →
-    </a>
-
-  </div>
-</section>
-
-<!-- TESTIMONIALS -->
-<section class="reveal" style="padding:80px 5%; text-align:center;">
-  <h2 style="font-size:36px; font-weight:800; margin-bottom:20px;">What Our Clients Say</h2>
-  <p style="color:#cccccc; margin-bottom:50px;">Feedback from some of the amazing people we've worked with.</p>
-  
-  <div style="display:flex; flex-wrap:wrap; gap:30px; justify-content:center; max-width:1200px; margin:0 auto;">
-    <div class="reveal" style="flex:1; min-width:250px; background-color:#242424; padding:30px; border-radius:10px; color:#fff; box-shadow:0 5px 20px rgba(0,0,0,0.5);">
-      <p>"GuruByte transformed our digital strategy. Highly recommended!"</p>
-      <strong>- Alice M., CEO TechNova</strong>
-    </div>
-    <div class="reveal" style="flex:1; min-width:250px; background-color:#242424; padding:30px; border-radius:10px; color:#fff; box-shadow:0 5px 20px rgba(0,0,0,0.5);">
-      <p>"Professional, creative, and reliable. The team delivers every time."</p>
-      <strong>- John K., Founder StartupX</strong>
-    </div>
+     <a href="#" class="discover-more-button">More</a>
   </div>
 </section>
 
 <!-- TEAM / EXPERTS -->
-<section class="reveal" style="padding:80px 5%; text-align:center; background-color:#093780; color:#fff;">
-  <h2 style="font-size:36px; font-weight:800; margin-bottom:50px;">Meet Our Team</h2>
+<section class="reveal" style="padding:20px 5%;height: fit-content; text-align:center; background-color:rgba(183, 188, 189, 0.95); color:#fff;">
+  <h2 style="font-size:36px; font-weight:800;color: #ffffff; margin-bottom:50px;">Meet Our Team</h2>
 
   <div 
     style="
@@ -392,143 +312,297 @@
 
     <!-- Member 1 -->
     <div class="reveal" style="
-      background-color:#242424;
+      background-color: #F5F5F5;
       padding:45px;
       border-radius:12px;
       box-shadow:0 8px 25px rgba(0,0,0,0.6);
       text-align:center;
+      
     ">
       <img src="images/team1.jpg" alt="Team Member" loading="lazy"
         style="width:230px; height:230px; object-fit:cover; border-radius:50%; margin-bottom:20px;">
-      <h3 style="margin:15px 0; font-size:24px;">Jane Doe</h3>
-      <p style="color:#cccccc; font-size:18px;">Lead Developer</p>
+      <h3 style="margin:15px 0; font-size:24px; ">Jane Doe</h3>
+      <p style="color:#110909; font-size:18px;">Lead Developer</p>
     </div>
 
     <!-- Member 2 -->
     <div class="reveal" style="
-      background-color:#242424;
+        background-color: #F5F5F5;
       padding:45px;
       border-radius:12px;
       box-shadow:0 8px 25px rgba(0,0,0,0.6);
       text-align:center;
+      color:#fff;
     ">
       <img src="images/team2.jpg" alt="Team Member" loading="lazy"
         style="width:230px; height:230px; object-fit:cover; border-radius:50%; margin-bottom:20px;">
-      <h3 style="margin:15px 0; font-size:24px;">Mark Smith</h3>
-      <p style="color:#cccccc; font-size:18px;">AI Specialist</p>
+      <h3 style="margin:15px 0; font-size:24px; ">Mark Smith</h3>
+      <p style="color:#110909; font-size:18px;">AI Specialist</p>
     </div>
 
     <!-- Member 3 -->
     <div class="reveal" style="
-      background-color:#242424;
+      background-color: #F5F5F5;
       padding:45px;
       border-radius:12px;
       box-shadow:0 8px 25px rgba(0,0,0,0.6);
       text-align:center;
+      color:#fff;
     ">
       <img src="images/team3.jpg" alt="Team Member" loading="lazy"
         style="width:230px; height:230px; object-fit:cover; border-radius:50%; margin-bottom:20px;">
       <h3 style="margin:15px 0; font-size:24px;">Sarah Lee</h3>
-      <p style="color:#cccccc; font-size:18px;">Product Designer</p>
+      <p style="color:#110909; font-size:18px;">Product Designer</p>
     </div>
 
     <!-- Member 4 -->
     <div class="reveal" style="
-      background-color:#242424;
+        background-color: #F5F5F5;
       padding:45px;
       border-radius:12px;
       box-shadow:0 8px 25px rgba(0,0,0,0.6);
       text-align:center;
+      color:#fff;
     ">
       <img src="images/team4.jpg" alt="Team Member" loading="lazy"
         style="width:230px; height:230px; object-fit:cover; border-radius:50%; margin-bottom:20px;">
-      <h3 style="margin:15px 0; font-size:24px;">Daniel Wright</h3>
-      <p style="color:#cccccc; font-size:18px;">Tech Trainer</p>
+      <h3 style="margin:15px 0; font-size:24px; ">Daniel Wright</h3>
+      <p style="color:#110909; font-size:18px;">Tech Trainer</p>
     </div>
 
   </div>
 </section>
 
-<!-- NEWSLETTER CTA -->
-<section class="reveal" style="padding:80px 5%; text-align:center;">
-  <h2>Subscribe to Our Newsletter</h2>
-  <p style="color:#cccccc; margin-bottom:30px;">Stay updated with the latest tech insights and company news.</p>
-  <input type="email" placeholder="Enter your email" style="padding:15px 20px; border-radius:5px; border:none; width:300px; max-width:100%; margin-right:10px;">
-  <button style="padding:15px 25px; border:none; border-radius:5px; background-color:#093780; color:#fff; font-weight:600; cursor:pointer;">Subscribe</button>
-</section>
+    <section class="testimonials-section">
+        <div class="container">
+            
+            <div class="section-header reveal fade-up">
+                <div class="subtitle">TESTIMONIALS</div>
+                <h2>What Our Clients Say About GuruByte</h2>
+            </div>
 
+            <div class="testimonial-grid">
 
-<footer class="footer reveal" style="background-color:#0b0b0b; color:#fff; padding:60px 5% 30px;">
-  <div class="container" style="max-width:1200px; margin:0 auto;">
+                <div class="testimonial-card reveal slide-left">
+                    <p style="font-size:15px; color:#0a0a0a;">GuruByte helped us transform our learning platform with a sleek UI and seamless student experience. Their tech team delivers with passion and precision.</p>
+                    <div class="client-info">
+                        <img 
+                            src="images/p1.jpg" 
+                            onerror="this.onerror=null;this.src='https://placehold.co/50x50/2563EB/FFFFFF?text=JM';" 
+                            alt="James Mwangi">
+                        <div class="client-details">
+                            <strong>James Mwangi</strong>
+                            <span>Founder, EduLink Africa</span>
+                        </div>
+                    </div>
+                </div>
 
-    <div class="footer-content" style="display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:40px; margin-bottom:40px;">
-      
-      <div class="footer-col animate-up">
-        <h4 style="font-size:20px; font-weight:700; color:#6366f1;">GuruByte</h4>
-        <p style="color:#d1d5db;">Empowering Africa’s digital transformation through world-class software development and tech education.</p>
-        <div class="social-links" style="margin-top:20px;">
-          <a href="#" style="color:#fff; margin-right:15px;"><i class="fab fa-facebook-f"></i></a>
-          <a href="#" style="color:#fff; margin-right:15px;"><i class="fab fa-twitter"></i></a>
-          <a href="#" style="color:#fff; margin-right:15px;"><i class="fab fa-linkedin-in"></i></a>
-          <a href="#" style="color:#fff;"><i class="fab fa-instagram"></i></a>
+                <div class="testimonial-card reveal fade-up" style="animation-delay:0.2s;">
+                    <p style="font-size:15px; color:#040505;">Working with GuruByte on our company website was effortless. Their development and UX skills made our brand stand out online.</p>
+                    <div class="client-info">
+                        <img 
+                            src="images/p2.jpg" 
+                            onerror="this.onerror=null;this.src='https://placehold.co/50x50/2563EB/FFFFFF?text=GA';" 
+                            alt="Grace Atieno">
+                        <div class="client-details">
+                            <strong>Grace Atieno</strong>
+                            <span>Marketing Manager, Nova Brands</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card reveal slide-right" style="animation-delay:0.4s;">
+                    <p style="font-size:15px; color:#0a0c0e;">Their AI-powered automation tool saved us hours every week. GuruByte is truly redefining how tech supports education and business.</p>
+                    <div class="client-info">
+                        <img 
+                            src="images/p3.jpg" 
+                            onerror="this.onerror=null;this.src='https://placehold.co/50x50/2563EB/FFFFFF?text=BO';" 
+                            alt="Brian Ouma">
+                        <div class="client-details">
+                            <strong>Brian Ouma</strong>
+                            <span>Operations Lead, SmartWorks Ltd.</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
         </div>
-      </div>
+    </section>
 
-      <div class="footer-col animate-up" style="animation-delay:0.2s;">
-        <h4 style="font-size:18px; font-weight:700; color:#6366f1;">Quick Links</h4>
-        <ul style="list-style:none; padding:0; margin-top:10px;">
-          <li><a href="#" style="color:#d1d5db; text-decoration:none;">About Us</a></li>
-          <li><a href="#" style="color:#d1d5db; text-decoration:none;">Our Team</a></li>
-          <li><a href="#" style="color:#d1d5db; text-decoration:none;">Bootcamps</a></li>
-          <li><a href="#" style="color:#d1d5db; text-decoration:none;">Blog</a></li>
-        </ul>
-      </div>
+<footer class="footer">
+    <div class="container">
 
-      <div class="footer-col animate-up" style="animation-delay:0.4s;">
-        <h4 style="font-size:18px; font-weight:700; color:#6366f1;">Services</h4>
-        <ul style="list-style:none; padding:0; margin-top:10px;">
-          <li><a href="#" style="color:#d1d5db; text-decoration:none;">Software Development</a></li>
-          <li><a href="#" style="color:#d1d5db; text-decoration:none;">UI/UX Design</a></li>
-          <li><a href="#" style="color:#d1d5db; text-decoration:none;">AI Automation</a></li>
-          <li><a href="#" style="color:#d1d5db; text-decoration:none;">Digital Training</a></li>
-        </ul>
-      </div>
+        <div class="footer-content">
+            
+            <div class="footer-col reveal fade-up">
+                <h4>GuruByte</h4>
+                <p style="color:#fdfeff;">Empowering Africa’s digital transformation through world-class software development and tech education.</p>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/profile.php?id=61583976023491"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.linkedin.com/company/gurubytes"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://www.instagram.com/gurubytesolutions/"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
 
-      <div class="footer-col animate-up" style="animation-delay:0.6s;">
-        <h4 style="font-size:18px; font-weight:700; color:#6366f1;">Contact Info</h4>
-        <p style="color:#d1d5db;">Nairobi, Kenya</p>
-        <p style="color:#d1d5db;">Email: <a href="mailto:info@gurubyte.com" style="color:#6366f1;">info@gurubyte.com</a></p>
-        <p style="color:#d1d5db;">Phone: +254 700 123 456</p>
-      </div>
+            <div class="footer-col reveal fade-up" style="animation-delay:0.2s;">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Our Team</a></li>
+                    <li><a href="#">Bootcamps</a></li>
+                    <li><a href="#">Blog</a></li>
+                </ul>
+            </div>
 
+            <div class="footer-col reveal fade-up" style="animation-delay:0.4s;">
+                <h4>Services</h4>
+                <ul>
+                    <li><a href="#">Software Development</a></li>
+                    <li><a href="#">UI/UX Design</a></li>
+                    <li><a href="#">AI Automation</a></li>
+                    <li><a href="#">Digital Training</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col reveal fade-up" style="animation-delay:0.6s;">
+                <h4>Contact Info</h4>
+                <p style="color:#f4f6f8;">Nairobi, Kenya</p>
+                <p style="color:#f8f9fa;">Email: <a href="mailto:info@gurubyte.com">info@gurubyte.com</a></p>
+                <p style="color:#f8f9fc;">Phone: +254 740184845</p>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2025 GuruByte. All Rights Reserved.</p>
+        </div>
     </div>
-
-    <div class="footer-bottom" style="border-top:1px solid #1f2937; padding-top:15px; text-align:center;">
-      <p style="color:#9ca3af;">&copy; 2025 GuruByte. All Rights Reserved.</p>
-    </div>
-  </div>
 </footer>
-
-<script src="script/script.js" defer></script>
-
-<!-- Reveal IntersectionObserver -->
 <script>
-  document.addEventListener('DOMContentLoaded', function () {
-    const observerOptions = { threshold: 0.15 };
-    const revealObserver = new IntersectionObserver((entries) => {
+document.addEventListener('DOMContentLoaded', () => {
+  // ---------- REVEAL ON SCROLL (IntersectionObserver based) ----------
+  const revealEls = document.querySelectorAll('.reveal');
+  if (revealEls.length) {
+    // set initial styles
+    revealEls.forEach(el => {
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(50px)';
+      el.style.transition = 'all 0.8s ease';
+    });
+
+    const revealObs = new IntersectionObserver((entries, obs) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
-          entry.target.classList.add('in-view');
-          revealObserver.unobserve(entry.target);
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+          entry.target.classList.add('active'); // keep for CSS selectors if used
+          obs.unobserve(entry.target);
         }
       });
-    }, observerOptions);
+    }, { threshold: 0.1 });
 
-    document.querySelectorAll('.reveal').forEach(el => {
-      revealObserver.observe(el);
+    revealEls.forEach(el => revealObs.observe(el));
+  }
+
+  // ---------- OTHER ANIMATIONS (paused until intersect) ----------
+  const animatedElements = document.querySelectorAll('.animate-up, .animate-left, .animate-right');
+  if (animatedElements.length) {
+    const animObs = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.animationPlayState = 'running';
+          animObs.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.2 });
+
+    animatedElements.forEach(el => {
+      el.style.animationPlayState = 'paused';
+      if (el.classList.contains('animate-up')) {
+        const index = Array.from(el.parentNode.children).indexOf(el);
+        el.style.animationDelay = `${index * 0.2}s`;
+      }
+      animObs.observe(el);
     });
+  }
+
+  // ---------- STICKY NAV ----------
+  const nav = document.querySelector('.main-nav');
+  if (nav) {
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('sticky', window.scrollY > 50);
+    });
+  }
+
+  // ---------- DROPDOWNS (guarded) ----------
+  const servicesToggle = document.getElementById('services-toggle');
+  const servicesDropdown = document.getElementById('services-dropdown');
+  const pagesToggle = document.getElementById('pages-toggle');
+  const pagesDropdown = document.getElementById('pages-dropdown');
+
+  if (servicesToggle && servicesDropdown) {
+    servicesToggle.addEventListener('click', (e) => {
+      e.preventDefault();
+      const show = servicesDropdown.style.display !== 'block';
+      servicesDropdown.style.display = show ? 'block' : 'none';
+      if (pagesDropdown) pagesDropdown.style.display = 'none';
+    });
+  }
+
+  if (pagesToggle && pagesDropdown) {
+    pagesToggle.addEventListener('click', (e) => {
+      e.preventDefault();
+      const show = pagesDropdown.style.display !== 'block';
+      pagesDropdown.style.display = show ? 'block' : 'none';
+      if (servicesDropdown) servicesDropdown.style.display = 'none';
+    });
+  }
+
+  // close dropdowns when clicking outside
+  document.addEventListener('click', (e) => {
+    if (servicesDropdown && !e.target.closest('#services-dropdown') && !e.target.closest('#services-toggle')) {
+      servicesDropdown.style.display = 'none';
+    }
+    if (pagesDropdown && !e.target.closest('#pages-dropdown') && !e.target.closest('#pages-toggle')) {
+      pagesDropdown.style.display = 'none';
+    }
   });
+
+  // ---------- MOBILE MENU TOGGLE (guarded + accessible) ----------
+  const menuToggle = document.getElementById('mobile-menu');
+  const navLinks = document.querySelector('.nav-links');
+
+  if (menuToggle && navLinks) {
+    menuToggle.setAttribute('role', 'button');
+    menuToggle.setAttribute('tabindex', '0');
+    menuToggle.setAttribute('aria-expanded', 'false');
+
+    const toggleMenu = (e) => {
+      e && e.stopPropagation && e.stopPropagation();
+      const isActive = navLinks.classList.toggle('active');
+      menuToggle.setAttribute('aria-expanded', String(!!isActive));
+    };
+
+    menuToggle.addEventListener('click', toggleMenu);
+    menuToggle.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        toggleMenu();
+      }
+    });
+
+    // close menu when clicking outside
+    document.addEventListener('click', (e) => {
+      if (!e.target.closest('.main-nav') && navLinks.classList.contains('active')) {
+        navLinks.classList.remove('active');
+        menuToggle.setAttribute('aria-expanded', 'false');
+      }
+    });
+  }
+});
 </script>
+
+
 
 </body>
 </html>

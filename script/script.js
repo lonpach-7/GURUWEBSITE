@@ -1,42 +1,4 @@
- 
-    // Sticky Navbar
-    const nav = document.querySelector('.main-nav');
-    window.addEventListener('scroll', () => {
-      nav.classList.toggle('sticky', window.scrollY > 50);
-    });
 
-    // Dropdowns
-    const servicesToggle = document.getElementById('services-toggle');
-    const servicesDropdown = document.getElementById('services-dropdown');
-    const pagesToggle = document.getElementById('pages-toggle');
-    const pagesDropdown = document.getElementById('pages-dropdown');
-
-    servicesToggle.addEventListener('click', (e) => {
-      e.preventDefault();
-      servicesDropdown.style.display = servicesDropdown.style.display === 'block' ? 'none' : 'block';
-      pagesDropdown.style.display = 'none';
-    });
-
-    pagesToggle.addEventListener('click', (e) => {
-      e.preventDefault();
-      pagesDropdown.style.display = pagesDropdown.style.display === 'block' ? 'none' : 'block';
-      servicesDropdown.style.display = 'none';
-    });
-
-    // Close dropdown when clicking outside
-    document.addEventListener('click', (e) => {
-      if (!e.target.closest('.nav-link')) {
-        servicesDropdown.style.display = 'none';
-        pagesDropdown.style.display = 'none';
-      }
-    });
-
-    // Mobile menu toggle
-    const menuToggle = document.getElementById('mobile-menu');
-    const navLinks = document.querySelector('.nav-links');
-    menuToggle.addEventListener('click', () => {
-      navLinks.classList.toggle('active');
-    });
  
     //about section read more
     // Scroll reveal logic
@@ -101,4 +63,5 @@
   };
 
   applyRevealAnimation();
+
 

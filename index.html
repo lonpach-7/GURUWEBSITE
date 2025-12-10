@@ -9,852 +9,19 @@
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <!-- Combined Stylesheet -->
-    <style>
-/* ==========================================================================
-   STREAMLINED STYLES FOR GURUBYTE LANDING PAGE
-   ========================================================================== */
-
-/* -------------------------------------------------------------------------- */
-/* GLOBAL RESET & TYPOGRAPHY                               */
-/* -------------------------------------------------------------------------- */
-
-body {
-    font-family: 'Poppins', sans-serif;
-    background-color: #0f0f0f;
-    color: #fff;
-    margin: 0;
-    line-height: 1.6;
-    scroll-behavior: smooth;
-    overflow-x: hidden;
-}
-
-a {
-    color: #2563EB;
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-a:hover {
-    color: #3B82F6;
-}
-
-h1, h2, h3, h4 {
-    color: #ffffff; /* Enforcing primary element color */
-    letter-spacing: 0.5px;
-}
-
-.subtitle {
-    font-size: 14px;
-    color: #2563EB;
-    margin-bottom: 10px;
-    text-transform: uppercase;
-    font-weight: 600;
-    letter-spacing: 1px;
-}
-
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-/* -------------------------------------------------------------------------- */
-/* NAVIGATION & UTILITY ELEMENTS                        */
-/* -------------------------------------------------------------------------- */
-.main-nav {
-    display: flex; 
-    justify-content: space-between; 
-    align-items: center; 
-    padding: 20px 5%; 
-    width: 90%; 
-    position: fixed; 
-    top: 0;
-    left: 0;
-    z-index: 100;
-    background: transparent;
-    transition: all 0.3s ease;
-}
-
-.main-nav.sticky {
-    background: rgba(26, 26, 26, 0.95);
-    backdrop-filter: blur(8px);
-    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-    z-index: 1000;
-}
-
-.logo {
-    font-size: 24px; 
-    font-weight: 700; 
-    color: #ffffff; 
-}
-
-.logo span {
-    color: #093780;
-}
-
-.nav-links {
-    list-style: none; 
-    display: flex; 
-    margin: 0; 
-    padding: 0;
-}
-.nav-links li {
-    margin-left: 30px;
-}
-.nav-link {
-    color: #ffffff;
-    transition: all 0.3s ease;
-}
-
-.nav-link:hover {
-    color: #093780;
-    border-bottom: 2px solid #093780;
-}
-
-/* Call-to-Action Button Styling */
-.cta-button, .discover-more-button {
-    background-color: #093780; 
-    color: #ffffff; 
-    border: none; 
-    border-radius: 5px; 
-    font-weight: 600; 
-    text-decoration: none;
-    box-shadow: 0 5px 15px rgba(9, 55, 128, 0.5);
-    transition: all 0.3s ease;
-    display: inline-block;
-}
-
-.cta-button {
-    padding: 10px 20px; 
-    font-size: 16px;
-}
-
-.discover-more-button {
-    padding: 15px 30px; 
-    font-size: 18px; 
-    box-shadow: 0 5px 25px rgba(9, 55, 128, 0.7), 0 0 15px rgba(9, 55, 128, 0.4);
-}
-
-.cta-button:hover, .discover-more-button:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 0 50px rgba(9, 55, 128, 0.6), 0 0 20px rgba(9, 55, 128, 0.3);
-}
-
-.menu-toggle {
-    display: none; 
-    font-size: 24px;
-    cursor: pointer;
-    color: #ffffff;
-}
-
-
-/* -------------------------------------------------------------------------- */
-/* SECTION STYLING                                */
-/* -------------------------------------------------------------------------- */
-
-.section-header {
-    text-align: center;
-    margin-bottom: 50px;
-}
-
-/* -------------------- HERO SECTION -------------------- */
-
-.hero-section {
-    position: relative; 
-    width: 100%; 
-    min-height: 100vh; 
-    background: linear-gradient(135deg, #1a1a1a, #242424, #111111);
-    display: flex; 
-    align-items: center; 
-    justify-content: center;
-    padding: 100px 20px;
-    box-sizing: border-box;
-}
-
-.hero-content {
-    display: flex;
-    flex-wrap: wrap; /* allows stacking on small screens */
-    align-items: center;
-    max-width: 1200px;
-    width: 100%;
-    gap: 40px;
-}
-
-.left-content {
-    flex: 1 1 500px; /* grows and shrinks, min-width 500px */
-    min-width: 300px;
-}
-
-.left-content h1 {
-    font-size: clamp(28px, 5vw, 56px);
-    line-height: 1.2;
-    margin-bottom: 20px;
-}
-
-.left-content p {
-    font-size: clamp(14px, 2vw, 18px);
-    line-height: 1.6;
-    margin-bottom: 30px;
-    color: #cccccc;
-}
-
-.right-content {
-    flex: 1 1 400px;
-    min-width: 280px;
-    display: flex;
-    justify-content: center;
-}
-
-.right-content img {
-    width: 100%;
-    max-width: 600px;
-    height: auto;
-    border-radius: 10px;
-    object-fit: contain;
-    box-shadow: 0 0 50px rgba(9, 55, 128, 0.6), 0 0 20px rgba(9, 55, 128, 0.3);
-    animation: float 4s ease-in-out infinite;
-}
-
-/* Float animation for hero image */
-@keyframes float {
-    0%, 100% { transform: translateY(0px); }
-    50% { transform: translateY(-10px); }
-}
-
-/* Responsive adjustments for smaller screens */
-@media (max-width: 992px) {
-    .hero-content {
-        gap: 30px;
-    }
-}
-
-@media (max-width: 768px) {
-    .hero-content {
-        flex-direction: column;
-        text-align: center;
-    }
-    .left-content, .right-content {
-        min-width: 100%;
-    }
-    .left-content h1 {
-        font-size: clamp(24px, 6vw, 38px);
-    }
-}
-
-
-/* --- ABOUT --- */
-.about-section {
-    display: flex; 
-    justify-content: center; 
-    align-items: center; 
-    padding: 80px 5%; 
-    gap: 80px; 
-    max-width: 1200px; 
-    margin: 0 auto;
-}
-
-.about-image-container {
-    flex: 1; 
-    position: relative; 
-    min-width: 45%;
-}
-
-.about-image-container img {
-    width: 100%; 
-    height: auto; 
-    display: block; 
-    border-radius: 10px;
-}
-
-.revenue-boost-box {
-    position: absolute; 
-    bottom: 0; 
-    left: 0; 
-    background-color: #2563EB; 
-    padding: 25px 35px; 
-    border-radius: 0 10px 0 0; 
-    color: #ffffff; 
-    text-align: center; 
-    font-weight: 700; 
-    box-shadow: 0 5px 20px rgba(37,99,235,0.5);
-}
-
-.revenue-boost-box h2 {
-    font-size: 38px; 
-    margin: 0;
-}
-
-.revenue-boost-box p {
-    font-size: 16px; 
-    margin: 5px 0 0;
-}
-
-.about-content {
-    flex: 1; 
-    min-width: 45%; 
-    padding: 20px 0;
-}
-
-.feature-item {
-    display: flex; 
-    align-items: flex-start; 
-    margin-bottom: 25px; 
-    gap: 20px;
-}
-
-.feature-icon-wrapper {
-    border: 2px solid #2563EB; 
-    border-radius: 50%; 
-    min-width: 60px; 
-    height: 60px; 
-    display: flex; 
-    justify-content: center; 
-    align-items: center; 
-    font-size: 28px; 
-    color: #2563EB;
-}
-
-.feature-text h3 {
-    font-size: 20px; 
-    margin: 0 0 5px;
-}
-
-.feature-text p {
-    font-size: 15px; 
-    color: #cccccc;
-}
-
-/* --- MVP (Mission, Vision, Value) --- */
-.mvp-section {
-    padding: 80px 5%; 
-    max-width: 1200px; 
-    margin: 0 auto; 
-    display: flex; 
-    gap: 30px; 
-    background-color: #1a1a1a;
-}
-
-.mvp-main-card {
-    flex: 1; 
-    position: relative; 
-    border-radius: 10px; 
-    overflow: hidden; 
-    min-height: 600px;
-}
-
-.mvp-main-card img {
-    position: absolute; 
-    top: 0; 
-    left: 0; 
-    width: 100%; 
-    height: 100%; 
-    object-fit: cover;
-}
-
-.mvp-main-card .overlay {
-    position: absolute; 
-    top: 0; 
-    left: 0; 
-    width: 100%; 
-    height: 100%; 
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.1));
-}
-
-.mvp-main-card .content-wrapper {
-    position: relative; 
-    z-index: 3; 
-    height: 100%; 
-    display: flex; 
-    flex-direction: column; 
-    justify-content: flex-end; 
-    padding: 40px;
-}
-
-.mvp-side-cards {
-    flex: 1; 
-    display: flex; 
-    flex-direction: column; 
-    gap: 30px;
-}
-
-.mvp-card {
-    padding: 30px; 
-    border-radius: 10px; 
-    color: #ffffff;
-}
-
-.mvp-card.mission {
-    background-color: #2563EB; 
-    box-shadow: 0 5px 20px rgba(37,99,235,0.5);
-}
-
-.mvp-card.vision {
-    background-color: #242424;
-}
-
-.mvp-card.mission .subtitle {
-    color: #fff;
-}
-
-/* --- SERVICES (4-card flex) --- */
-.services-container {
-    padding: 80px 5%; 
-    background-color: #0f0f0f; 
-    color: #fff; 
-    text-align: center;
-}
-
-#services-flex {
-    display: flex; 
-    flex-wrap: wrap; 
-    justify-content: space-between; 
-    gap: 25px;
-}
-
-#services-flex > div {
-    flex: 0 0 48%; /* Desktop: two columns */
-    background-color: #1a1a1a; 
-    border-radius: 12px; 
-    text-align: left; 
-    transition: all 0.3s ease; 
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15); 
-    overflow: hidden; 
-}
-
-#services-flex .image-wrapper {
-    position: relative; 
-    height: 220px;
-}
-
-#services-flex img {
-    width: 100%; 
-    height: 100%; 
-    object-fit: cover;
-}
-
-#services-flex i {
-    font-size: 28px; 
-    color: #fff; 
-    background: #2563eb; 
-    padding: 15px; 
-    border-radius: 50%; 
-    position: absolute; 
-    top: 20px; 
-    right: 20px;
-}
-
-#services-flex .card-content {
-    padding: 30px;
-}
-
-/* --- CORE FEATURES (4-card grid) --- */
-.features-section {
-    padding: 80px 0;
-    position: relative;
-    overflow: hidden;
-    background-color: #1a1a1a;
-}
-
-.feature-grid {
-    display: flex;
-    gap: 25px;
-    justify-content: center;
-    position: relative;
-    z-index: 2;
-    flex-wrap: wrap;
-}
-
-.feature-card {
-    flex: 1;
-    max-width: 25%;
-    background-color: #242424;
-    padding: 30px;
-    border-radius: 10px;
-    text-align: center;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.feature-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
-}
-
-.feature-card i {
-    font-size: 30px;
-    color: #2563EB;
-}
-
-/* Custom class for the circular icon wrapper in the Features section */
-.feature-icon-circle { 
-    width: 70px; 
-    height: 70px; 
-    background-color: #0f0f0f; 
-    border-radius: 50%; 
-    margin: 0 auto 20px; 
-    display: flex; 
-    justify-content: center; 
-    align-items: center;
-}
-
-/* --- CORE SERVICES (6-card grid) --- */
-.core-services-section {
-    padding: 80px 5%; 
-    background-color: #0f0f0f; 
-    color: #fff; 
-    text-align: center;
-}
-
-.core-services-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 25px;
-    justify-content: center;
-}
-
-.core-services-grid .card {
-    background-color: #1a1a1a; 
-    border-radius: 12px; 
-    padding: 25px 20px;
-    text-align: left; 
-    min-height: 160px; 
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-    transition: transform 0.3s ease; 
-}
-
-.core-services-grid i {
-    font-size: 28px; 
-    color: #2563eb; 
-    margin-bottom: 10px;
-}
-
-.core-services-grid p {
-    color: #b3b3b3; 
-    font-size: 14px;
-}
-
-/* --- CTA BAR --- */
-.services-cta {
-    background-color: #2563EB;
-    padding: 50px 0;
-    text-align: center;
-    border-top: 5px solid #1D4ED8;
-}
-
-.services-cta h2 {
-    color: #ffffff;
-    font-size: 32px;
-    margin-bottom: 10px;
-}
-
-/* --- STATS BAR --- */
-.stats-bar {
-    background-color: #1D4ED8;
-    padding: 30px 0;
-    border-bottom: 5px solid #2563EB;
-}
-
-.stats-grid {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-    display: flex;
-    justify-content: space-around;
-    text-align: center;
-    flex-wrap: wrap;
-}
-
-.stat-item h2 {
-    font-size: 40px;
-    font-weight: 800;
-    margin: 0 0 5px;
-    line-height: 1;
-    color: #ffffff;
-}
-
-/* --- TESTIMONIALS --- */
-.testimonials-section {
-    padding: 80px 0;
-    background-color: #0f0f0f;
-    color: #fff; 
-    text-align: center;
-}
-
-.testimonial-grid {
-    display: flex; 
-    gap: 25px;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-
-.testimonial-card {
-    flex: 1;
-    max-width: 330px;
-    background-color: #1a1a1a; 
-    padding: 25px 20px;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-    transition: transform 0.3s ease;
-    text-align: left;
-}
-
-.testimonial-card:hover {
-    transform: translateY(-5px);
-}
-
-.client-info {
-    display: flex;
-    align-items: center;
-    margin-top: 15px;
-    padding-top: 15px;
-    border-top: 1px solid rgba(255,255,255,0.1);
-}
-
-.client-info img {
-    width: 50px; 
-    height: 50px; 
-    border-radius: 50%; 
-    margin-right: 12px;
-}
-.client-details strong {
-    display: block;
-}
-.client-details span {
-    color:#9ca3af; 
-    font-size:14px;
-}
-
-/* --- FOOTER --- */
-.footer {
-    background-color: #0b0b0b;
-    padding: 60px 0 20px;
-    border-top: 3px solid #2563EB;
-}
-
-.footer-content {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 30px;
-    padding-bottom: 40px;
-    max-width: 1200px; 
-    margin: 0 auto;
-    padding: 0 20px 40px;
-}
-
-.footer-col h4 {
-    font-size: 18px;
-    margin-bottom: 20px;
-    position: relative;
-    color: #2563EB;
-}
-
-.footer-col h4::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: -5px;
-    height: 2px;
-    width: 50px;
-    background-color: #2563EB;
-}
-
-.social-links a {
-    display: inline-block;
-    margin-right: 15px;
-    font-size: 20px;
-    color: #fff;
-    transition: color 0.3s ease;
-}
-
-.social-links a:hover {
-    color: #2563EB;
-}
-
-.footer-col ul {
-    list-style:none; 
-    padding:0; 
-    margin-top:10px;
-}
-
-.footer-col ul a {
-    color:#d1d5db; 
-    display: block;
-    padding: 3px 0;
-}
-
-.footer-bottom {
-    border-top:1px solid #1f2937; 
-    padding-top:15px; 
-    text-align:center;
-}
-
-.footer-bottom p {
-    color:#9ca3af;
-}
-
-/* -------------------------------------------------------------------------- */
-/* ANIMATIONS & SCROLL REVEAL                         */
-/* -------------------------------------------------------------------------- */
-
-@keyframes fadeInUp {
-    from { opacity: 0; transform: translateY(40px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-@keyframes float {
-    0%, 100% { transform: translateY(0px); }
-    50% { transform: translateY(-10px); }
-}
-@keyframes slideInLeft {
-    from { opacity: 0; transform: translateX(-80px); }
-    to { opacity: 1; transform: translateX(0); }
-}
-@keyframes slideInRight {
-    from { opacity: 0; transform: translateX(80px); }
-    to { opacity: 1; transform: translateX(0); }
-}
-@keyframes zoomIn {
-    from { opacity: 0; transform: scale(0.9); }
-    to { opacity: 1; transform: scale(1); }
-}
-
-/* Base class for elements waiting to be revealed */
-.reveal { opacity: 0; transition: all 0.9s ease; } 
-
-/* Active classes triggered by JavaScript */
-.reveal.active.fade-up { animation: fadeInUp 1s ease forwards; }
-.reveal.active.slide-left { animation: slideInLeft 1s ease forwards; }
-.reveal.active.slide-right { animation: slideInRight 1s ease forwards; }
-.reveal.active.zoom-in { animation: zoomIn 1s ease forwards; }
-
-
-/* -------------------------------------------------------------------------- */
-/* RESPONSIVE DESIGN (BREAKPOINTS)                      */
-/* -------------------------------------------------------------------------- */
-
-/* --- Medium Devices (992px) --- */
-@media (max-width: 992px) {
-    .feature-card {
-        max-width: 45%; 
-    }
-    .footer-content {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-/* --- Small Devices (768px) --- */
-@media (max-width: 768px) {
-    /* Navigation */
-    .menu-toggle {
-        display: block;
-    }
-    .nav-links {
-        display: none; 
-        flex-direction: column;
-        background-color: #111;
-        position: absolute;
-        top: 70px;
-        left: 0;
-        width: 100%;
-        text-align: center;
-        padding: 20px 0;
-        z-index: 9;
-    }
-    .nav-links.active {
-        display: flex;
-        animation: fadeIn 0.4s ease forwards;
-    }
-    .nav-links li {
-        margin: 15px 0;
-    }
-    .nav-links li a {
-        display: block;
-        padding: 10px 0;
-        border-bottom: 1px solid rgba(255,255,255,0.1);
-    }
-    
-    /* Hero Section */
-    .hero-content {
-        flex-direction: column;
-        padding: 100px 5% 50px; 
-        text-align: center;
-    }
-    .hero-content .left-content,
-    .hero-content .right-content {
-        flex: 100%; 
-        max-width: 100%; 
-        padding-right: 0;
-        margin-bottom: 40px;
-    }
-    .hero-content .left-content h1 {
-        font-size: 38px; 
-        line-height: 1.2;
-    }
-
-    /* About Section */
-    .about-section {
-        flex-direction: column;
-        gap: 40px;
-    }
-    .about-image-container,
-    .about-content {
-        min-width: 100%;
-    }
-    .revenue-boost-box {
-        position: static;
-        margin-top: 20px;
-        border-radius: 10px;
-    }
-    
-    /* MVP Section */
-    .mvp-section {
-        flex-direction: column;
-        gap: 30px;
-    }
-    .mvp-main-card,
-    .mvp-side-cards {
-        min-height: auto;
-    }
-    .mvp-main-card .content-wrapper {
-        min-height: 400px;
-    }
-    .mvp-main-card h2 {
-        font-size: 30px;
-    }
-
-    /* Services Section (4-card flex) */
-    #services-flex > div {
-        flex: 0 0 100%;
-    }
-}
-
-/* --- Extra Small Devices (600px) --- */
-@media (max-width: 600px) {
-    .feature-card {
-        max-width: 100%; 
-    }
-    .stat-item {
-        padding: 15px 0;
-        min-width: 50%;
-    }
-    .footer-content {
-        grid-template-columns: 1fr; 
-    }
-}
-    </style>
+     <link rel="stylesheet" href="style.css">
+     <link rel="icon" type="image/png" href="images/logo.png" sizes="50x50" />
+  
 </head>
 <body>
 
     <section class="hero-section">
         
         <!-- Navbar -->
-        <nav class="main-nav">
-            <a href="index.html" class="logo">
-                <span>guru</span>byte
-            </a>
+       <nav class="main-nav">
+    <a href="index.html" class="logo">
+        <img src="images/log.png" alt="Gurubyte" style="height: 150px; width: auto;">
+    </a>
 
             <div class="menu-toggle" id="mobile-menu">
                 <i class="fas fa-bars"></i>
@@ -904,69 +71,82 @@ h1, h2, h3, h4 {
             src="images/add.jpg" 
             onerror="this.onerror=null;this.src='https://placehold.co/500x350/2563EB/FFFFFF?text=Team+Working';" 
             alt="Team Working on Technology Project">
-        <div class="revenue-boost-box">
-            <h2>40%+</h2>
-            <p>Efficiency Boost</p>
-        </div>
+        
     </div>
 
     <div class="about-content reveal slide-right">
         <div class="subtitle">Who We Are</div>
-        <h2>Delivering smart IT and AI-driven solutions to help businesses grow faster.</h2>
-        <p>We are a forward-thinking technology team passionate about creating modern software solutions and automating business processes using artificial intelligence. Our mission is to empower organizations with tools that enhance productivity, efficiency, and innovation.</p>
+        <h2>Transform ideas into solutions and skills into success.</h2>
+        <p>GuruByte is a digital solutions studio and tech academy. We build apps, websites, and provide professional digital skills training that help businesses grow, developing future innovators to do the same.</p>
 
         <div class="feature-item reveal fade-up">
             <div class="feature-icon-wrapper">
                 <i class="fas fa-desktop"></i>
             </div>
             <div class="feature-text">
-                <h3>Application Development</h3>
+                <h3>software Development</h3>
                 <p>We design and build high-performing web and mobile applications tailored to meet business goals with speed, scalability, and a great user experience.</p>
             </div>
         </div>
 
-        <div class="feature-item reveal fade-up">
-            <div class="feature-icon-wrapper">
-                <i class="fas fa-robot"></i>
-            </div>
-            <div class="feature-text">
-                <h3>AI Automation</h3>
-                <p>We integrate AI tools to automate workflows, analyze data, and streamline operations — helping businesses save time and focus on growth.</p>
-            </div>
-        </div>
+       <div class="feature-item reveal fade-up">
+    <div class="feature-icon-wrapper">
+        <i class="fas fa-chalkboard-teacher"></i>
+    </div>
+    <div class="feature-text">
+        <h3>Tech Tutoring</h3>
+        <p>We provide practical tutoring in coding, software development, and digital skills — helping learners build confidence, mastery, and real-world capabilities.</p>
+    </div>
+</div>
+
     </div>
 </section>
 
 
-<!-- MVP SECTION -->
+
+
+ <!-- MVP SECTION -->
 <section class="mvp-section reveal fade-up">
-    <div class="mvp-main-card reveal zoom-in">
-        <img 
-            src="images/core.avif" 
-            onerror="this.onerror=null;this.src='https://placehold.co/600x800/242424/FFFFFF?text=Core+Value';" 
-            alt="Developer with headphones">
-        <div class="overlay"></div>
-        <div class="content-wrapper">
-            <div class="subtitle">OUR VALUE</div>
-            <h2>Your Digital Needs, Our Expert Solutions — GuruByte Delivers.</h2>
-            <p>At GuruByte, we transform your digital needs into powerful solutions that accelerate growth and innovation. From web and app development to AI automation and digital learning platforms — we don’t just build; we deliver excellence.</p>
-        </div>
+    <!-- Section Header -->
+    <div class="section-header">
+        <div class="subtitle">PRINCIPLES</div>
+        <h2>Our Mission, Vision & Core Value</h2>
+       
     </div>
 
-    <div class="mvp-side-cards">
-        <div class="mvp-card mission reveal slide-left">
-            <div class="subtitle">OUR MISSION</div>
-            <h3>IT solutions and empowering next generation</h3>
-            <p>To deliver world-class digital solutions while training and empowering the next generation of African tech innovators.</p>
+    <!-- Cards Container -->
+    <div class="mvp-cards-container" style="display: flex; gap: 30px;">
+        <!-- Main Value Card -->
+        <div class="mvp-main-card reveal zoom-in">
+            <img 
+                src="images/core.avif" 
+                onerror="this.onerror=null;this.src='https://placehold.co/600x800/242424/FFFFFF?text=Core+Value';" 
+                alt="Developer with headphones">
+            <div class="overlay"></div>
+            <div class="content-wrapper">
+                <div class="subtitle">OUR VALUE</div>
+                <h2>Your Digital Needs, Our Expert Solutions — GuruByte Delivers.</h2>
+                <p>At GuruByte, we transform your digital needs into powerful solutions that accelerate growth and innovation. From web and app development to AI automation and digital learning platforms — we don’t just build; we deliver excellence.</p>
+            </div>
         </div>
 
-        <div class="mvp-card vision reveal slide-right">
-            <div class="subtitle">OUR VISION</div>
-            <h3>Crafting Tomorrow and innovations</h3>
-            <p>To be Africa’s leading digital innovation hub — a space where businesses scale through tech and learners grow into global-ready professionals.</p>
+        <!-- Side Cards: Mission & Vision -->
+        <div class="mvp-side-cards">
+            <div class="mvp-card mission reveal slide-left">
+                <div class="subtitle">OUR MISSION</div>
+                <h3>IT solutions and empowering next generation</h3>
+                <p>To deliver world-class digital solutions while training and empowering the next generation of African tech innovators.</p>
+            </div>
+
+            <div class="mvp-card vision reveal slide-right">
+                <div class="subtitle">OUR VISION</div>
+                <h3>Crafting Tomorrow and innovations</h3>
+                <p>To be Africa’s leading digital innovation hub — a space where businesses scale through tech and learners grow into global-ready professionals.</p>
+            </div>
         </div>
     </div>
 </section>
+
 
 <!-- SERVICES SECTION -->
 <section class="services-container">
@@ -1181,7 +361,7 @@ h1, h2, h3, h4 {
             <div class="testimonial-grid">
 
                 <div class="testimonial-card reveal slide-left">
-                    <p style="font-size:15px; color:#d1d5db;">GuruByte helped us transform our learning platform with a sleek UI and seamless student experience. Their tech team delivers with passion and precision.</p>
+                    <p style="font-size:15px; color:#0a0a0a;">GuruByte helped us transform our learning platform with a sleek UI and seamless student experience. Their tech team delivers with passion and precision.</p>
                     <div class="client-info">
                         <img 
                             src="images/p1.jpg" 
@@ -1195,7 +375,7 @@ h1, h2, h3, h4 {
                 </div>
 
                 <div class="testimonial-card reveal fade-up" style="animation-delay:0.2s;">
-                    <p style="font-size:15px; color:#d1d5db;">Working with GuruByte on our company website was effortless. Their development and UX skills made our brand stand out online.</p>
+                    <p style="font-size:15px; color:#040505;">Working with GuruByte on our company website was effortless. Their development and UX skills made our brand stand out online.</p>
                     <div class="client-info">
                         <img 
                             src="images/p2.jpg" 
@@ -1209,7 +389,7 @@ h1, h2, h3, h4 {
                 </div>
 
                 <div class="testimonial-card reveal slide-right" style="animation-delay:0.4s;">
-                    <p style="font-size:15px; color:#d1d5db;">Their AI-powered automation tool saved us hours every week. GuruByte is truly redefining how tech supports education and business.</p>
+                    <p style="font-size:15px; color:#0a0c0e;">Their AI-powered automation tool saved us hours every week. GuruByte is truly redefining how tech supports education and business.</p>
                     <div class="client-info">
                         <img 
                             src="images/p3.jpg" 
@@ -1233,12 +413,11 @@ h1, h2, h3, h4 {
             
             <div class="footer-col reveal fade-up">
                 <h4>GuruByte</h4>
-                <p style="color:#d1d5db;">Empowering Africa’s digital transformation through world-class software development and tech education.</p>
+                <p style="color:#fafbfc;">Empowering Africa’s digital transformation through world-class software development and tech education.</p>
                 <div class="social-links">
-                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.facebook.com/profile.php?id=61583976023491"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.linkedin.com/company/gurubytes"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://www.instagram.com/gurubytesolutions/"><i class="fab fa-instagram"></i></a>
                 </div>
             </div>
 
@@ -1264,9 +443,9 @@ h1, h2, h3, h4 {
 
             <div class="footer-col reveal fade-up" style="animation-delay:0.6s;">
                 <h4>Contact Info</h4>
-                <p style="color:#d1d5db;">Nairobi, Kenya</p>
-                <p style="color:#d1d5db;">Email: <a href="mailto:info@gurubyte.com">info@gurubyte.com</a></p>
-                <p style="color:#d1d5db;">Phone: +254 700 123 456</p>
+                <p style="color:#fafbfd;">Nairobi, Kenya</p>
+                <p style="color:#fafbfc;">Email: <a href="mailto:info@gurubyte.com">info@gurubyte.com</a></p>
+                <p style="color:#f9fafc;">Phone: +254 740184845</p>
             </div>
 
         </div>
@@ -1276,79 +455,131 @@ h1, h2, h3, h4 {
         </div>
     </div>
 </footer>
-
 <script>
-    // --- SCROLL REVEAL LOGIC ---
-    function reveal() {
-        var reveals = document.querySelectorAll(".reveal");
-        for (var i = 0; i < reveals.length; i++) {
-            var windowHeight = window.innerHeight;
-            var elementTop = reveals[i].getBoundingClientRect().top;
-            var elementVisible = 150;
-
-            if (elementTop < windowHeight - elementVisible) {
-                // Use the class mapping defined in CSS
-                if (reveals[i].classList.contains("fade-up")) {
-                    reveals[i].classList.add("active", "fade-up");
-                } else if (reveals[i].classList.contains("slide-left")) {
-                    reveals[i].classList.add("active", "slide-left");
-                } else if (reveals[i].classList.contains("slide-right")) {
-                    reveals[i].classList.add("active", "slide-right");
-                } else if (reveals[i].classList.contains("zoom-in")) {
-                    reveals[i].classList.add("active", "zoom-in");
-                } else {
-                    // Fallback for simple 'reveal' elements without specific direction
-                    reveals[i].style.opacity = 1;
-                    reveals[i].style.transform = 'translateY(0)';
-                }
-            } else {
-                 // Optionally remove 'active' state if element scrolls back up
-                 // reveals[i].classList.remove("active");
-            }
-        }
-    }
-
-    // --- NAVBAR STICKY & MOBILE TOGGLE LOGIC ---
-    document.addEventListener('DOMContentLoaded', () => {
-        const nav = document.querySelector('.main-nav');
-        const menuToggle = document.getElementById('mobile-menu');
-        const navLinks = document.querySelector('.nav-links');
-
-        // 1. Sticky Navbar
-        const handleScroll = () => {
-            if (window.scrollY > 50) {
-                nav.classList.add('sticky');
-            } else {
-                nav.classList.remove('sticky');
-            }
-        };
-
-        // 2. Mobile Menu Toggle
-        menuToggle.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-            // Toggle the icon from bars to close/x
-            menuToggle.querySelector('i').classList.toggle('fa-bars');
-            menuToggle.querySelector('i').classList.toggle('fa-times');
-        });
-
-        // 3. Close menu when a link is clicked (on mobile)
-        navLinks.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => {
-                if (window.innerWidth <= 768) {
-                    navLinks.classList.remove('active');
-                    menuToggle.querySelector('i').classList.add('fa-bars');
-                    menuToggle.querySelector('i').classList.remove('fa-times');
-                }
-            });
-        });
-
-        window.addEventListener("scroll", reveal);
-        window.addEventListener("scroll", handleScroll);
-
-        // Initial check for sticky and reveal
-        handleScroll();
-        reveal();
+document.addEventListener('DOMContentLoaded', () => {
+  // ---------- REVEAL ON SCROLL (IntersectionObserver based) ----------
+  const revealEls = document.querySelectorAll('.reveal');
+  if (revealEls.length) {
+    // set initial styles
+    revealEls.forEach(el => {
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(50px)';
+      el.style.transition = 'all 0.8s ease';
     });
+
+    const revealObs = new IntersectionObserver((entries, obs) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+          entry.target.classList.add('active'); // keep for CSS selectors if used
+          obs.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    revealEls.forEach(el => revealObs.observe(el));
+  }
+
+  // ---------- OTHER ANIMATIONS (paused until intersect) ----------
+  const animatedElements = document.querySelectorAll('.animate-up, .animate-left, .animate-right');
+  if (animatedElements.length) {
+    const animObs = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.animationPlayState = 'running';
+          animObs.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.2 });
+
+    animatedElements.forEach(el => {
+      el.style.animationPlayState = 'paused';
+      if (el.classList.contains('animate-up')) {
+        const index = Array.from(el.parentNode.children).indexOf(el);
+        el.style.animationDelay = `${index * 0.2}s`;
+      }
+      animObs.observe(el);
+    });
+  }
+
+  // ---------- STICKY NAV ----------
+  const nav = document.querySelector('.main-nav');
+  if (nav) {
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('sticky', window.scrollY > 50);
+    });
+  }
+
+  // ---------- DROPDOWNS (guarded) ----------
+  const servicesToggle = document.getElementById('services-toggle');
+  const servicesDropdown = document.getElementById('services-dropdown');
+  const pagesToggle = document.getElementById('pages-toggle');
+  const pagesDropdown = document.getElementById('pages-dropdown');
+
+  if (servicesToggle && servicesDropdown) {
+    servicesToggle.addEventListener('click', (e) => {
+      e.preventDefault();
+      const show = servicesDropdown.style.display !== 'block';
+      servicesDropdown.style.display = show ? 'block' : 'none';
+      if (pagesDropdown) pagesDropdown.style.display = 'none';
+    });
+  }
+
+  if (pagesToggle && pagesDropdown) {
+    pagesToggle.addEventListener('click', (e) => {
+      e.preventDefault();
+      const show = pagesDropdown.style.display !== 'block';
+      pagesDropdown.style.display = show ? 'block' : 'none';
+      if (servicesDropdown) servicesDropdown.style.display = 'none';
+    });
+  }
+
+  // close dropdowns when clicking outside
+  document.addEventListener('click', (e) => {
+    if (servicesDropdown && !e.target.closest('#services-dropdown') && !e.target.closest('#services-toggle')) {
+      servicesDropdown.style.display = 'none';
+    }
+    if (pagesDropdown && !e.target.closest('#pages-dropdown') && !e.target.closest('#pages-toggle')) {
+      pagesDropdown.style.display = 'none';
+    }
+  });
+
+  // ---------- MOBILE MENU TOGGLE (guarded + accessible) ----------
+  const menuToggle = document.getElementById('mobile-menu');
+  const navLinks = document.querySelector('.nav-links');
+
+  if (menuToggle && navLinks) {
+    menuToggle.setAttribute('role', 'button');
+    menuToggle.setAttribute('tabindex', '0');
+    menuToggle.setAttribute('aria-expanded', 'false');
+
+    const toggleMenu = (e) => {
+      e && e.stopPropagation && e.stopPropagation();
+      const isActive = navLinks.classList.toggle('active');
+      menuToggle.setAttribute('aria-expanded', String(!!isActive));
+    };
+
+    menuToggle.addEventListener('click', toggleMenu);
+    menuToggle.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        toggleMenu();
+      }
+    });
+
+    // close menu when clicking outside
+    document.addEventListener('click', (e) => {
+      if (!e.target.closest('.main-nav') && navLinks.classList.contains('active')) {
+        navLinks.classList.remove('active');
+        menuToggle.setAttribute('aria-expanded', 'false');
+      }
+    });
+  }
+});
 </script>
+
+
+
 </body>
 </html>

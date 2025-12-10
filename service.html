@@ -1,171 +1,305 @@
-<!DOCTYPE html>
+  <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8"/>
-  <meta name="viewport" content="width=device-width,initial-scale=1"/>
-  <title>Services — GuruByte</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  <link rel="stylesheet" href="styles.css">
-  <style>
-    .services-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:20px; max-width:1200px;margin:100px auto;padding:0 5%; }
-    .service-card { background:#111;padding:22px;border-radius:12px;box-shadow:0 10px 30px rgba(0,0,0,0.6); min-height:200px; }
-    .pricing { display:flex; gap:18px; flex-wrap:wrap; max-width:1200px;margin:40px auto;padding:0 5%; }
-    .package { background:#0f1724;padding:18px;border-radius:10px;flex:1;min-width:220px;text-align:center;border:1px solid #1f2937; }
-  </style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GuruByte - Empowering Growth</title>
+    <!-- Poppins Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Combined Stylesheet -->
+     <link rel="stylesheet" href="style.css">
+     <link rel="icon" type="image/png" href="images/logo.png" sizes="50x50" />
+
 </head>
-<body style="background:#0b0b0b;color:#fff;font-family:'Poppins',sans-serif;margin:0;">
+<body>    
+        <!-- Navbar -->
+       <nav class="main-nav">
+    <a href="index.html" class="logo">
+        <img src="images/log.png" alt="Gurubyte" style="height: 150px; width: auto;">
+    </a>
 
-  <!-- NAV -->
-  <nav class="main-nav" style="display:flex;justify-content:space-between;align-items:center;padding:18px 5%;position:fixed;top:0;left:0;width:100%;z-index:100;background:transparent;">
-    <a href="index.html" class="logo" style="font-size:22px;font-weight:700;color:#fff;text-decoration:none;"><span style="color:#093780">guru</span>byte</a>
-    <ul style="display:flex;list-style:none;gap:28px;margin:0;padding:0;">
-      <li><a href="index.html" style="color:#fff;text-decoration:none;">Home</a></li>
-      <li><a href="about.html" style="color:#fff;text-decoration:none;">About</a></li>
-      <li><a href="services.html" style="color:#fff;text-decoration:none;font-weight:700;">Services</a></li>
-      <li><a href="portfolio.html" style="color:#fff;text-decoration:none;">Portfolio</a></li>
-      <li><a href="contact.html" style="color:#fff;text-decoration:none;">Contact</a></li>
-    </ul>
-    <a href="#" class="cta-button" style="background:#093780;color:#fff;padding:10px 18px;border-radius:6px;text-decoration:none;font-weight:600;">Get Started</a>
-  </nav>
+            <div class="menu-toggle" id="mobile-menu">
+                <i class="fas fa-bars"></i>
+            </div>
 
-  <main style="padding-top:110px;">
-    <section style="text-align:center;padding:40px 5% 0;">
-      <h1 style="font-size:2.4rem;margin-bottom:6px;">What We Do</h1>
-      <p style="color:#9ca3af;max-width:900px;margin:8px auto;">End-to-end product development, AI automation, cloud integrations and training — built for African businesses.</p>
-    </section>
+            <ul class="nav-links">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link">About Us</a></li>
+                <li><a href="service.html" class="nav-link">Services</a></li>
+                <li><a href="#" class="nav-link">GuruAcademy</a></li>
+                <li><a href="portfolio.html" class="nav-link">Portfolio</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
 
-    <section class="services-grid" aria-label="services">
-      <div class="service-card">
-        <i class="fas fa-mobile-alt" style="font-size:28px;color:#2563EB;"></i>
-        <h3 style="margin-top:12px;">Mobile App Development</h3>
-        <p style="color:#cfcfcf;">Android & iOS apps: native and cross-platform (Kotlin, Flutter, React Native). Offline sync and performance optimisations included.</p>
-        <ul style="color:#9ca3af;padding-left:18px;margin-top:8px;">
-          <li>Product design & prototyping</li>
-          <li>Backend APIs & analytics</li>
-          <li>App store submission support</li>
-        </ul>
-      </div>
-
-      <div class="service-card">
-        <i class="fas fa-globe" style="font-size:28px;color:#2563EB;"></i>
-        <h3 style="margin-top:12px;">Web & Backend</h3>
-        <p style="color:#cfcfcf;">Modern web applications (React, Next.js) and robust backends (Node.js, Python). Scalable architecture and secure deployments.</p>
-        <ul style="color:#9ca3af;padding-left:18px;margin-top:8px;">
-          <li>API design (REST / GraphQL)</li>
-          <li>Serverless & containerised deployments</li>
-          <li>Performance & security audits</li>
-        </ul>
-      </div>
-
-      <div class="service-card">
-        <i class="fas fa-robot" style="font-size:28px;color:#2563EB;"></i>
-        <h3 style="margin-top:12px;">AI Automation & Data</h3>
-        <p style="color:#cfcfcf;">Automation that saves time: data extraction, reports, predictive models and intelligent workflows that integrate with your systems.</p>
-        <ul style="color:#9ca3af;padding-left:18px;margin-top:8px;">
-          <li>Data pipelines & dashboards</li>
-          <li>Model prototyping & deployment</li>
-          <li>RPA and workflow automation</li>
-        </ul>
-      </div>
-
-      <div class="service-card">
-        <i class="fas fa-graduation-cap" style="font-size:28px;color:#2563EB;"></i>
-        <h3 style="margin-top:12px;">Training & Bootcamps</h3>
-        <p style="color:#cfcfcf;">Practical, project-based courses for teams and individuals — focusing on web, mobile, data and product thinking.</p>
-        <ul style="color:#9ca3af;padding-left:18px;margin-top:8px;">
-          <li>Short courses & mentorship</li>
-          <li>Custom corporate upskilling</li>
-          <li>Graduate placements & projects</li>
-        </ul>
-      </div>
-
-      <div class="service-card">
-        <i class="fas fa-cloud" style="font-size:28px;color:#2563EB;"></i>
-        <h3 style="margin-top:12px;">Cloud & DevOps</h3>
-        <p style="color:#cfcfcf;">Cloud strategy, CI/CD pipelines, containerisation and monitoring to help you scale reliably and cost-effectively.</p>
-        <ul style="color:#9ca3af;padding-left:18px;margin-top:8px;">
-          <li>Infrastructure as code</li>
-          <li>Cost & reliability optimisations</li>
-          <li>Secure deployments</li>
-        </ul>
-      </div>
-
-      <div class="service-card">
-        <i class="fas fa-chart-bar" style="font-size:28px;color:#2563EB;"></i>
-        <h3 style="margin-top:12px;">Data Analysis & BI</h3>
-        <p style="color:#cfcfcf;">Turn raw data into clear insights for decisions — dashboards, KPIs and automated reports tailored to your operations.</p>
-        <ul style="color:#9ca3af;padding-left:18px;margin-top:8px;">
-          <li>Dashboards & KPIs</li>
-          <li>Automated reports</li>
-          <li>Training & handover</li>
-        </ul>
-      </div>
-    </section>
-
-    <!-- Pricing examples -->
-    <section style="max-width:1200px;margin:30px auto;padding:0 5%;">
-      <h2 style="margin-bottom:12px;">Starter Packages</h2>
-      <div class="pricing">
-        <div class="package">
-          <h3>Starter</h3>
-          <p style="color:#9ca3af;margin:8px 0;">Good for trials & pilots</p>
-          <strong>From $1,500</strong>
-          <ul style="list-style:none;padding:0;margin-top:10px;color:#cfcfcf;">
-            <li>Prototype & UX</li>
-            <li>2-week delivery</li>
-            <li>Support 2 weeks</li>
-          </ul>
+            <a href="#" class="cta-button">Get Started</a>
+        </nav>
+   <!-- HERO / SERVICE INTRO -->
+<section class="hero-section" style="position:relative; height: 60vh; padding:20px 5% 30px; text-align:center; overflow:hidden; color:#fff;">
+ 
+    <div class="hero-content" style="position:relative; z-index:1; max-width:1200px; margin:0 auto;">
+        <div class="left-content reveal fade-up">
+            <h1>Our Services</h1>
+            <p style="margin-top:20px;">We provide end-to-end solutions to empower your business, from software development to digital training.</p>
+            <a href="#contact" class="cta-button" style="margin-top:30px; background:#0277ad; color:#fff; padding:12px 24px; border-radius:8px; text-decoration:none; font-weight:700;">Get Started</a>
         </div>
-        <div class="package">
-          <h3>Growth</h3>
-          <p style="color:#9ca3af;margin:8px 0;">For early products</p>
-          <strong>From $7,500</strong>
-          <ul style="list-style:none;padding:0;margin-top:10px;color:#cfcfcf;">
-            <li>Full MVP</li>
-            <li>4–8 week delivery</li>
-            <li>QA & analytics</li>
-          </ul>
+        <div class="right-content reveal fade-right">
+            <img src="images/ecommer.webp" alt="Our Services" style="max-width:500px;">
         </div>
-        <div class="package">
-          <h3>Enterprise</h3>
-          <p style="color:#9ca3af;margin:8px 0;">Scale & automation</p>
-          <strong>Custom pricing</strong>
-          <ul style="list-style:none;padding:0;margin-top:10px;color:#cfcfcf;">
-            <li>Custom architecture</li>
-            <li>Onsite & training</li>
-            <li>Ongoing support</li>
-          </ul>
-        </div>
-      </div>
-
-      <div style="text-align:center;margin-top:22px;">
-        <a href="contact.html" style="background:#093780;color:#fff;padding:12px 18px;border-radius:8px;text-decoration:none;font-weight:700;">Request a Quote</a>
-      </div>
-    </section>
-  </main>
-
-  <footer style="background:#0b0b0b;padding:40px 5%;margin-top:40px;">
-    <div style="max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:30px;color:#cfcfcf;">
-      <div>
-        <h4 style="color:#6366f1;margin-bottom:8px;">GuruByte</h4>
-        <p>Empowering Africa’s digital transformation through software and skills.</p>
-      </div>
-      <div>
-        <h4 style="color:#6366f1;margin-bottom:8px;">Quick Links</h4>
-        <ul style="list-style:none;padding:0;margin:0;color:#cfcfcf">
-          <li><a href="portfolio.html" style="color:#cfcfcf;text-decoration:none;">Portfolio</a></li>
-          <li><a href="about.html" style="color:#cfcfcf;text-decoration:none;">About</a></li>
-          <li><a href="contact.html" style="color:#cfcfcf;text-decoration:none;">Contact</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4 style="color:#6366f1;margin-bottom:8px;">Contact</h4>
-        <p>Nairobi, Kenya<br>Email: <a href="mailto:info@gurubyte.com" style="color:#6366f1;text-decoration:none;">info@gurubyte.com</a><br>Phone: +254 700 123 456</p>
-      </div>
     </div>
-    <div style="text-align:center;color:#9ca3af;margin-top:20px;">&copy; 2025 GuruByte. All Rights Reserved.</div>
-  </footer>
+</section>
+
+
+<!-- SERVICES GRID -->
+<section id="services-overview" style=" background-color:#F5F5F5;">
+    <h2 class="section-header reveal fade-up" style="text-align:center;">What We Offer</h2>
+    <div class="core-services-grid reveal fade-up" style="margin-top:50px; display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:30px;">
+        <div class="card" style="background:#fff; padding:30px; border-radius:12px; text-align:center; box-shadow:0 8px 30px rgba(0,0,0,0.1); transition: transform 0.3s ease;">
+            <i class="fas fa-code" style="font-size:36px; color:#0277ad; margin-bottom:15px;"></i>
+            <h3 style="">Software Development</h3>
+            <p>Custom applications tailored to your business needs, optimized for performance and scalability.</p>
+        </div>
+        <div class="card" style="background:#fff; padding:30px; border-radius:12px; text-align:center; box-shadow:0 8px 30px rgba(0,0,0,0.1); transition: transform 0.3s ease;">
+            <i class="fas fa-paint-brush" style="font-size:36px; color:#0277ad; margin-bottom:15px;"></i>
+            <h3 style="">UI/UX Design</h3>
+            <p>User-centric designs to enhance engagement and provide seamless experiences for your customers.</p>
+        </div>
+        <div class="card" style="background:#fff; padding:30px; border-radius:12px; text-align:center; box-shadow:0 8px 30px rgba(0,0,0,0.1); transition: transform 0.3s ease;">
+            <i class="fas fa-robot" style="font-size:36px; color:#0277ad; margin-bottom:15px;"></i>
+            <h3 style="">AI Automation</h3>
+            <p>Leverage AI and machine learning to automate tasks, improve efficiency, and reduce operational costs.</p>
+        </div>
+        <div class="card" style="background:#fff; padding:30px; border-radius:12px; text-align:center; box-shadow:0 8px 30px rgba(0,0,0,0.1); transition: transform 0.3s ease;">
+            <i class="fas fa-graduation-cap" style="font-size:36px; color:#0277ad; margin-bottom:15px;"></i>
+            <h3 style="">Digital Training</h3>
+            <p>Upskill your team with world-class training in software, AI, and digital transformation.</p>
+        </div>
+        <div class="card" style="background:#fff; padding:30px; border-radius:12px; text-align:center; box-shadow:0 8px 30px rgba(0,0,0,0.1); transition: transform 0.3s ease;">
+            <i class="fas fa-server" style="font-size:36px; color:#0277ad; margin-bottom:15px;"></i>
+            <h3 style="">Hosting</h3>
+            <p>Reliable web and cloud hosting solutions to keep your websites and applications fast and secure.</p>
+        </div>
+        <div class="card" style="background:#fff; padding:30px; border-radius:12px; text-align:center; box-shadow:0 8px 30px rgba(0,0,0,0.1); transition: transform 0.3s ease;">
+            <i class="fas fa-image" style="font-size:36px; color:#0277ad; margin-bottom:15px;"></i>
+            <h3 style="">Graphic Design</h3>
+            <p>Creative visuals and branding materials that communicate your message and enhance your brand identity.</p>
+        </div>
+    </div>
+</section>
+
+<!-- WHY CHOOSE US / CORE FEATURES -->
+<section id="why-choose" style="padding:80px 5%; background-color:#F5F5F5;">
+    <h2 class="section-header reveal fade-up">Why Choose GuruByte</h2>
+    <div class="feature-grid reveal fade-up" style="margin-top:50px;">
+        <div class="feature-card">
+            <div class="feature-icon-circle"><i class="fas fa-lightbulb"></i></div>
+            <h3>Innovative Solutions</h3>
+            <p>We bring creative, future-ready solutions for your business challenges.</p>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon-circle"><i class="fas fa-users"></i></div>
+            <h3>Expert Team</h3>
+            <p>Experienced developers and designers committed to delivering excellence.</p>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon-circle"><i class="fas fa-award"></i></div>
+            <h3>Proven Track Record</h3>
+            <p>Successful projects across multiple industries with measurable results.</p>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon-circle"><i class="fas fa-headset"></i></div>
+            <h3>24/7 Support</h3>
+            <p>Reliable support ensuring your business stays operational around the clock.</p>
+        </div>
+    </div>
+</section>
+
+ <section class="services-cta" style="background-image: url('images/who.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; padding: 100px 0; color: white;">
+    <div class="container reveal fade-up">
+        <h2>Ready to transform your business with technology?</h2>
+        <p>Contact our experts today for a free consultation and project roadmap.</p>
+        <a href="#" class="cta-button">Start Your Project</a>
+    </div>
+</section>
+
+
+    <!-- Footer -->
+
+<footer class="footer">
+    <div class="container">
+
+        <div class="footer-content">
+            
+            <div class="footer-col reveal fade-up">
+                <h4>GuruByte</h4>
+                <p style="color:#fbfcfd;">Empowering Africa’s digital transformation through world-class software development and tech education.</p>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/profile.php?id=61583976023491"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.linkedin.com/company/gurubytes"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://www.instagram.com/gurubytesolutions/"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-col reveal fade-up" style="animation-delay:0.2s;">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Our Team</a></li>
+                    <li><a href="#">Bootcamps</a></li>
+                    <li><a href="#">Blog</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col reveal fade-up" style="animation-delay:0.4s;">
+                <h4>Services</h4>
+                <ul>
+                    <li><a href="#">Software Development</a></li>
+                    <li><a href="#">UI/UX Design</a></li>
+                    <li><a href="#">AI Automation</a></li>
+                    <li><a href="#">Digital Training</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col reveal fade-up" style="animation-delay:0.6s;">
+                <h4>Contact Info</h4>
+                <p style="color:#fdfeff;">Nairobi, Kenya</p>
+                <p style="color:#f1f3f5;">Email: <a href="mailto:info@gurubyte.com">info@gurubyte.com</a></p>
+                <p style="color:#f9f9fa;">Phone: +254 740184845</p>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2025 GuruByte. All Rights Reserved.</p>
+        </div>
+    </div>
+</footer>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  // ---------- REVEAL ON SCROLL (IntersectionObserver based) ----------
+  const revealEls = document.querySelectorAll('.reveal');
+  if (revealEls.length) {
+    // set initial styles
+    revealEls.forEach(el => {
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(50px)';
+      el.style.transition = 'all 0.8s ease';
+    });
+
+    const revealObs = new IntersectionObserver((entries, obs) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+          entry.target.classList.add('active'); // keep for CSS selectors if used
+          obs.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    revealEls.forEach(el => revealObs.observe(el));
+  }
+
+  // ---------- OTHER ANIMATIONS (paused until intersect) ----------
+  const animatedElements = document.querySelectorAll('.animate-up, .animate-left, .animate-right');
+  if (animatedElements.length) {
+    const animObs = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.animationPlayState = 'running';
+          animObs.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.2 });
+
+    animatedElements.forEach(el => {
+      el.style.animationPlayState = 'paused';
+      if (el.classList.contains('animate-up')) {
+        const index = Array.from(el.parentNode.children).indexOf(el);
+        el.style.animationDelay = `${index * 0.2}s`;
+      }
+      animObs.observe(el);
+    });
+  }
+
+  // ---------- STICKY NAV ----------
+  const nav = document.querySelector('.main-nav');
+  if (nav) {
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('sticky', window.scrollY > 50);
+    });
+  }
+
+  // ---------- DROPDOWNS (guarded) ----------
+  const servicesToggle = document.getElementById('services-toggle');
+  const servicesDropdown = document.getElementById('services-dropdown');
+  const pagesToggle = document.getElementById('pages-toggle');
+  const pagesDropdown = document.getElementById('pages-dropdown');
+
+  if (servicesToggle && servicesDropdown) {
+    servicesToggle.addEventListener('click', (e) => {
+      e.preventDefault();
+      const show = servicesDropdown.style.display !== 'block';
+      servicesDropdown.style.display = show ? 'block' : 'none';
+      if (pagesDropdown) pagesDropdown.style.display = 'none';
+    });
+  }
+
+  if (pagesToggle && pagesDropdown) {
+    pagesToggle.addEventListener('click', (e) => {
+      e.preventDefault();
+      const show = pagesDropdown.style.display !== 'block';
+      pagesDropdown.style.display = show ? 'block' : 'none';
+      if (servicesDropdown) servicesDropdown.style.display = 'none';
+    });
+  }
+
+  // close dropdowns when clicking outside
+  document.addEventListener('click', (e) => {
+    if (servicesDropdown && !e.target.closest('#services-dropdown') && !e.target.closest('#services-toggle')) {
+      servicesDropdown.style.display = 'none';
+    }
+    if (pagesDropdown && !e.target.closest('#pages-dropdown') && !e.target.closest('#pages-toggle')) {
+      pagesDropdown.style.display = 'none';
+    }
+  });
+
+  // ---------- MOBILE MENU TOGGLE (guarded + accessible) ----------
+  const menuToggle = document.getElementById('mobile-menu');
+  const navLinks = document.querySelector('.nav-links');
+
+  if (menuToggle && navLinks) {
+    menuToggle.setAttribute('role', 'button');
+    menuToggle.setAttribute('tabindex', '0');
+    menuToggle.setAttribute('aria-expanded', 'false');
+
+    const toggleMenu = (e) => {
+      e && e.stopPropagation && e.stopPropagation();
+      const isActive = navLinks.classList.toggle('active');
+      menuToggle.setAttribute('aria-expanded', String(!!isActive));
+    };
+
+    menuToggle.addEventListener('click', toggleMenu);
+    menuToggle.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        toggleMenu();
+      }
+    });
+
+    // close menu when clicking outside
+    document.addEventListener('click', (e) => {
+      if (!e.target.closest('.main-nav') && navLinks.classList.contains('active')) {
+        navLinks.classList.remove('active');
+        menuToggle.setAttribute('aria-expanded', 'false');
+      }
+    });
+  }
+});
+</script>
+
+
 
 </body>
 </html>

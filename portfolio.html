@@ -1,139 +1,329 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8"/>
-  <meta name="viewport" content="width=device-width,initial-scale=1"/>
-  <title>Portfolio — GuruByte</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  <link rel="stylesheet" href="styles.css">
-  <style>
-    .projects-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:20px; max-width:1200px;margin:100px auto;padding:0 5%; }
-    .project-card { background:#111;border-radius:12px;overflow:hidden;box-shadow:0 10px 30px rgba(0,0,0,0.6); }
-    .project-card img { width:100%; height:180px; object-fit:cover; display:block; }
-    .project-body { padding:18px; }
-    .filters { max-width:1200px;margin:30px auto 0;padding:0 5%; display:flex; gap:12px; flex-wrap:wrap; }
-    .filter-btn { background:#111;border:1px solid #1f2937;color:#cfcfcf;padding:8px 12px;border-radius:8px;cursor:pointer; }
-  </style>
-</head>
-<body style="background:#0b0b0b;color:#fff;font-family:'Poppins',sans-serif;margin:0;">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GuruByte - Empowering Growth</title>
+    <!-- Poppins Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Combined Stylesheet -->
+     <link rel="stylesheet" href="style.css">
+     <link rel="icon" type="image/png" href="images/logo.png" sizes="50x50" />
+  
 
-  <!-- NAV -->
-  <nav class="main-nav" style="display:flex;justify-content:space-between;align-items:center;padding:18px 5%;position:fixed;top:0;left:0;width:100%;z-index:100;background:transparent;">
-    <a href="index.html" class="logo" style="font-size:22px;font-weight:700;color:#fff;text-decoration:none;"><span style="color:#093780">guru</span>byte</a>
-    <ul style="display:flex;list-style:none;gap:28px;margin:0;padding:0;">
-      <li><a href="index.html" style="color:#fff;text-decoration:none;">Home</a></li>
-      <li><a href="about.html" style="color:#fff;text-decoration:none;">About</a></li>
-      <li><a href="services.html" style="color:#fff;text-decoration:none;">Services</a></li>
-      <li><a href="portfolio.html" style="color:#fff;text-decoration:none;font-weight:700;">Portfolio</a></li>
-      <li><a href="contact.html" style="color:#fff;text-decoration:none;">Contact</a></li>
-    </ul>
-    <a href="#" class="cta-button" style="background:#093780;color:#fff;padding:10px 18px;border-radius:6px;text-decoration:none;font-weight:600;">Get Started</a>
-  </nav>
+    </head>
+<body>
 
-  <main style="padding-top:110px;">
-    <header style="text-align:center;padding:40px 5% 10px;">
-      <h1 style="font-size:2.4rem;margin-bottom:6px;">Our Work</h1>
-      <p style="color:#9ca3af;max-width:900px;margin:8px auto;">Selected projects across web, mobile, AI automation and training. We focus on outcomes and measurable value.</p>
-    </header>
+   
+        <!-- Navbar -->
+       <nav class="main-nav">
+    <a href="index.html" class="logo">
+        <img src="images/log.png" alt="Gurubyte" style="height: 150px; width: auto;">
+    </a>
 
-    <div class="filters">
-      <button class="filter-btn" data-filter="all">All</button>
-      <button class="filter-btn" data-filter="app">App Development</button>
-      <button class="filter-btn" data-filter="web">Web</button>
-      <button class="filter-btn" data-filter="ai">AI</button>
-      <button class="filter-btn" data-filter="training">Training</button>
+            <div class="menu-toggle" id="mobile-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+
+            <ul class="nav-links">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link">About Us</a></li>
+                <li><a href="service.html" class="nav-link">Services</a></li>
+                <li><a href="#" class="nav-link">GuruAcademy</a></li>
+                <li><a href="portfolio.html" class="nav-link">Portfolio</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+
+            <a href="#" class="cta-button">Get Started</a>
+        </nav>
+
+<section class="project-hero">
+    <video class="hero-video" autoplay muted loop playsinline>
+        <source src="images/hero-video.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <div class="hero-overlay"></div>
+    <div class="project-hero-content reveal fade-up">
+        <h1 style="color: #f9fafc;">Our Projects</h1>
+        <p>Explore real solutions we’ve delivered—from mobile apps to web platforms. Each project reflects our commitment to quality, innovation, and user-centered design.</p>
+        <a href="#projects-list" class="cta-button">View Our Work</a>
+    </div>
+</section>
+
+   <!-- ========== PROJECTS SECTION ========== -->
+<section class="projects-section">
+  <div class="container">
+    <div class="projects-header reveal">
+      <h2>Selected Projects</h2>
+      <p style="margin:0; color:#55607a;">A curated showcase of native apps, websites, and web apps built by GuruByte.</p>
     </div>
 
-    <section class="projects-grid">
-      <!-- Project 1 -->
-      <div class="project-card" data-type="web">
-        <img src="images/project-web1.jpg" alt="Edu platform">
-        <div class="project-body">
-          <h3 style="margin:0 0 6px;">EduLink Platform</h3>
-          <p style="color:#9ca3af;margin:0 0 12px;">A responsive LMS for schools with offline-first features and assessments.</p>
-          <a href="#" style="color:#2563EB;text-decoration:none;font-weight:700;">View case study →</a>
+    <div class="projects-grid" aria-live="polite">
+      <!-- Project 1: TuWork (Service booking app - Kotlin) -->
+      <article class="project-card reveal" aria-labelledby="proj-tuwork">
+        <div style="display:flex; align-items:center; gap:12px;">
+          <div class="project-icon" aria-hidden="true">
+            <img src="images/app.jpg" alt="TuWork App Icon" style="width:46px; height:46px; border-radius:8px;">
+          </div>
+          <div>
+            <h3 id="proj-tuwork">TuWork — Service Booking App</h3>
+            <div class="project-meta">
+              <span class="badge">Mobile App</span>
+              <span class="badge">Kotlin / Android</span>
+            </div>
+          </div>
         </div>
-      </div>
-
-      <!-- Project 2 -->
-      <div class="project-card" data-type="app">
-        <img src="images/project-app1.jpg" alt="Mobile app">
-        <div class="project-body">
-          <h3 style="margin:0 0 6px;">FieldForce Mobile</h3>
-          <p style="color:#9ca3af;margin:0 0 12px;">Android app for remote workers to capture inspections and sync when online.</p>
-          <a href="#" style="color:#2563EB;text-decoration:none;font-weight:700;">View case study →</a>
+        <p>Native Android app for booking local services — scheduling, provider ratings, and seamless in-app payments.</p>
+        <div class="card-actions">
+          <a class="btn-link" href="projects/tuwork.html" title="View more about TuWork (Kotlin)">View more →</a>
         </div>
-      </div>
+      </article>
 
-      <!-- Project 3 -->
-      <div class="project-card" data-type="ai">
-        <img src="images/project-ai1.jpg" alt="AI automation">
-        <div class="project-body">
-          <h3 style="margin:0 0 6px;">AutoInsights</h3>
-          <p style="color:#9ca3af;margin:0 0 12px;">AI pipeline that extracts business metrics and generates weekly reports automatically.</p>
-          <a href="#" style="color:#2563EB;text-decoration:none;font-weight:700;">View case study →</a>
+      <!-- Project 2: Zoe Causine (Restaurant - HTML/CSS) -->
+      <article class="project-card reveal" aria-labelledby="proj-zoe">
+        <div style="display:flex; align-items:center; gap:12px;">
+          <div class="project-icon" aria-hidden="true">
+            <img src="images/web.jpg" alt="Zoe Causine Icon" style="width:46px; height:46px; border-radius:8px;">
+          </div>
+          <div>
+            <h3 id="proj-zoe">Zoe Causine — Restaurant Website</h3>
+            <div class="project-meta">
+              <span class="badge">Website</span>
+              <span class="badge">HTML/CSS</span>
+            </div>
+          </div>
         </div>
-      </div>
-
-      <!-- Project 4 -->
-      <div class="project-card" data-type="training">
-        <img src="images/project-training.jpg" alt="Bootcamp">
-        <div class="project-body">
-          <h3 style="margin:0 0 6px;">Dev Bootcamp</h3>
-          <p style="color:#9ca3af;margin:0 0 12px;">Hands-on coding bootcamp focused on building production-ready projects.</p>
-          <a href="#" style="color:#2563EB;text-decoration:none;font-weight:700;">View outcomes →</a>
+        <p>Responsive, high-conversion restaurant site built with semantic HTML and elegant CSS — menu, booking, and gallery.</p>
+        <div class="card-actions">
+          <a class="btn-link" href="projects/zoe-cuisine/index.html" title="View more about Zoe Causine (HTML/CSS)">View more →</a>
         </div>
-      </div>
+      </article>
 
-      <!-- Project 5 (placeholder) -->
-      <div class="project-card" data-type="web">
-        <img src="images/project-web2.jpg" alt="Website">
-        <div class="project-body">
-          <h3 style="margin:0 0 6px;">Nova Brands Website</h3>
-          <p style="color:#9ca3af;margin:0 0 12px;">Marketing website with performance and SEO optimisation.</p>
-          <a href="#" style="color:#2563EB;text-decoration:none;font-weight:700;">View project →</a>
+      <!-- Project 3: WatecBlog (Next.js Blog) -->
+      <article class="project-card reveal" aria-labelledby="proj-watec">
+        <div style="display:flex; align-items:center; gap:12px;">
+          <div class="project-icon" aria-hidden="true">
+            <img src="images/tech.png" alt="WatecBlog Icon" style="width:46px; height:46px; border-radius:8px;">
+          </div>
+          <div>
+            <h3 id="proj-watec">WatecBlog — Next.js Blog</h3>
+            <div class="project-meta">
+              <span class="badge">Web App</span>
+              <span class="badge">Next.js</span>
+            </div>
+          </div>
         </div>
-      </div>
-    </section>
+        <p>Modern blog and content platform built with Next.js — fast SEO, markdown publishing, and incremental static regen.</p>
+        <div class="card-actions">
+          <a class="btn-link" href="https://watecblog.example.com" target="_blank" rel="noopener noreferrer" title="Open WatecBlog">View more →</a>
+        </div>
+      </article>
 
-    <section style="text-align:center;padding:40px 5%;">
-      <a href="contact.html" style="background:#093780;color:#fff;padding:12px 18px;border-radius:8px;text-decoration:none;font-weight:700;">Get a similar solution</a>
-    </section>
-  </main>
-
-  <footer style="background:#0b0b0b;padding:40px 5%;margin-top:40px;">
-    <div style="max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:30px;color:#cfcfcf;">
-      <div>
-        <h4 style="color:#6366f1;margin-bottom:8px;">GuruByte</h4>
-        <p>Empowering Africa’s digital transformation through software and skills.</p>
-      </div>
-      <div>
-        <h4 style="color:#6366f1;margin-bottom:8px;">Quick Links</h4>
-        <ul style="list-style:none;padding:0;margin:0;color:#cfcfcf">
-          <li><a href="services.html" style="color:#cfcfcf;text-decoration:none;">Services</a></li>
-          <li><a href="about.html" style="color:#cfcfcf;text-decoration:none;">About</a></li>
-          <li><a href="contact.html" style="color:#cfcfcf;text-decoration:none;">Contact</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4 style="color:#6366f1;margin-bottom:8px;">Contact</h4>
-        <p>Nairobi, Kenya<br>Email: <a href="mailto:info@gurubyte.com" style="color:#6366f1;text-decoration:none;">info@gurubyte.com</a><br>Phone: +254 700 123 456</p>
-      </div>
+      <!-- Project 4: E-commerce (React) -->
+      <article class="project-card reveal" aria-labelledby="proj-ecom">
+        <div style="display:flex; align-items:center; gap:12px;">
+          <div class="project-icon" aria-hidden="true">
+            <img src="images/ecommer.webp" alt="E-commerce Icon" style="width:46px; height:46px; border-radius:8px;">
+          </div>
+          <div>
+            <h3 id="proj-ecom">E-commerce Platform</h3>
+            <div class="project-meta">
+              <span class="badge">E-commerce</span>
+              <span class="badge">React</span>
+            </div>
+          </div>
+        </div>
+        <p>Feature-rich React store with product categories, cart, checkout flows, and admin product management.</p>
+        <div class="card-actions">
+          <a class="btn-link" href="projects/ecommerce-react/index.html" title="View more about E-commerce (React)">View more →</a>
+        </div>
+      </article>
     </div>
-    <div style="text-align:center;color:#9ca3af;margin-top:20px;">&copy; 2025 GuruByte. All Rights Reserved.</div>
-  </footer>
+  </div>
+</section>
+<!-- ========== END PROJECTS SECTION ========== -->
 
-  <script>
-    // small client-side filter behavior
-    document.querySelectorAll('.filter-btn').forEach(btn => {
-      btn.onclick = () => {
-        const f = btn.dataset.filter;
-        document.querySelectorAll('.project-card').forEach(card => {
-          card.style.display = (f === 'all' || card.dataset.type === f) ? 'block' : 'none';
-        });
-      };
+ <section class="services-cta" style="background-image: url('images/who.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; padding: 100px 0; color: white;">
+    <div class="container reveal fade-up">
+        <h2>Ready to transform your business with technology?</h2>
+        <p>Contact our experts today for a free consultation and project roadmap.</p>
+        <a href="#" class="cta-button">Start Your Project</a>
+    </div>
+</section>
+<footer class="footer">
+    <div class="container">
+
+        <div class="footer-content">
+            
+            <div class="footer-col reveal fade-up">
+                <h4>GuruByte</h4>
+                <p style="color:#fafbfc;">Empowering Africa’s digital transformation through world-class software development and tech education.</p>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/profile.php?id=61583976023491"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.linkedin.com/company/gurubytes"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://www.instagram.com/gurubytesolutions/"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-col reveal fade-up" style="animation-delay:0.2s;">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Our Team</a></li>
+                    <li><a href="#">Bootcamps</a></li>
+                    <li><a href="#">Blog</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col reveal fade-up" style="animation-delay:0.4s;">
+                <h4>Services</h4>
+                <ul>
+                    <li><a href="#">Software Development</a></li>
+                    <li><a href="#">UI/UX Design</a></li>
+                    <li><a href="#">AI Automation</a></li>
+                    <li><a href="#">Digital Training</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col reveal fade-up" style="animation-delay:0.6s;">
+                <h4>Contact Info</h4>
+                <p style="color:#fafbfd;">Nairobi, Kenya</p>
+                <p style="color:#fafbfc;">Email: <a href="mailto:info@gurubyte.com">info@gurubyte.com</a></p>
+                <p style="color:#f9fafc;">Phone: +254 740184845</p>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2025 GuruByte. All Rights Reserved.</p>
+        </div>
+    </div>
+</footer>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  // ---------- REVEAL ON SCROLL (IntersectionObserver based) ----------
+  const revealEls = document.querySelectorAll('.reveal');
+  if (revealEls.length) {
+    // set initial styles
+    revealEls.forEach(el => {
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(50px)';
+      el.style.transition = 'all 0.8s ease';
     });
-  </script>
+
+    const revealObs = new IntersectionObserver((entries, obs) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+          entry.target.classList.add('active'); // keep for CSS selectors if used
+          obs.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    revealEls.forEach(el => revealObs.observe(el));
+  }
+
+  // ---------- OTHER ANIMATIONS (paused until intersect) ----------
+  const animatedElements = document.querySelectorAll('.animate-up, .animate-left, .animate-right');
+  if (animatedElements.length) {
+    const animObs = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.animationPlayState = 'running';
+          animObs.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.2 });
+
+    animatedElements.forEach(el => {
+      el.style.animationPlayState = 'paused';
+      if (el.classList.contains('animate-up')) {
+        const index = Array.from(el.parentNode.children).indexOf(el);
+        el.style.animationDelay = `${index * 0.2}s`;
+      }
+      animObs.observe(el);
+    });
+  }
+
+  // ---------- STICKY NAV ----------
+  const nav = document.querySelector('.main-nav');
+  if (nav) {
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('sticky', window.scrollY > 50);
+    });
+  }
+
+  // ---------- DROPDOWNS (guarded) ----------
+  const servicesToggle = document.getElementById('services-toggle');
+  const servicesDropdown = document.getElementById('services-dropdown');
+  const pagesToggle = document.getElementById('pages-toggle');
+  const pagesDropdown = document.getElementById('pages-dropdown');
+
+  if (servicesToggle && servicesDropdown) {
+    servicesToggle.addEventListener('click', (e) => {
+      e.preventDefault();
+      const show = servicesDropdown.style.display !== 'block';
+      servicesDropdown.style.display = show ? 'block' : 'none';
+      if (pagesDropdown) pagesDropdown.style.display = 'none';
+    });
+  }
+
+  if (pagesToggle && pagesDropdown) {
+    pagesToggle.addEventListener('click', (e) => {
+      e.preventDefault();
+      const show = pagesDropdown.style.display !== 'block';
+      pagesDropdown.style.display = show ? 'block' : 'none';
+      if (servicesDropdown) servicesDropdown.style.display = 'none';
+    });
+  }
+
+  // close dropdowns when clicking outside
+  document.addEventListener('click', (e) => {
+    if (servicesDropdown && !e.target.closest('#services-dropdown') && !e.target.closest('#services-toggle')) {
+      servicesDropdown.style.display = 'none';
+    }
+    if (pagesDropdown && !e.target.closest('#pages-dropdown') && !e.target.closest('#pages-toggle')) {
+      pagesDropdown.style.display = 'none';
+    }
+  });
+
+  // ---------- MOBILE MENU TOGGLE (guarded + accessible) ----------
+  const menuToggle = document.getElementById('mobile-menu');
+  const navLinks = document.querySelector('.nav-links');
+
+  if (menuToggle && navLinks) {
+    menuToggle.setAttribute('role', 'button');
+    menuToggle.setAttribute('tabindex', '0');
+    menuToggle.setAttribute('aria-expanded', 'false');
+
+    const toggleMenu = (e) => {
+      e && e.stopPropagation && e.stopPropagation();
+      const isActive = navLinks.classList.toggle('active');
+      menuToggle.setAttribute('aria-expanded', String(!!isActive));
+    };
+
+    menuToggle.addEventListener('click', toggleMenu);
+    menuToggle.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        toggleMenu();
+      }
+    });
+
+    // close menu when clicking outside
+    document.addEventListener('click', (e) => {
+      if (!e.target.closest('.main-nav') && navLinks.classList.contains('active')) {
+        navLinks.classList.remove('active');
+        menuToggle.setAttribute('aria-expanded', 'false');
+      }
+    });
+  }
+});
+</script>
+
 </body>
 </html>
